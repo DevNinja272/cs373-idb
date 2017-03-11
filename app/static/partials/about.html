@@ -52,16 +52,19 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="../../templates/index.html">Home</a>
                         </li>
                         <li>
                             <a href="about.html">About</a>
                         </li>
                         <li>
-                            <a href="blog.html">Blog</a>
+                            <a href="blog.html">Universities</a>
                         </li>
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="contact.html">States</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Degrees</a>
                         </li>
                     </ul>
                 </div>
@@ -82,6 +85,29 @@
                         <div class="row">
                             <h2 class="text-center">{{member.name}}</h2>
                         </div>
+                        <div class="row text-center">
+                            <a ng-href="{{github[member.login].url}}">
+                              <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                          </a>
+                          <a ng-href="{{member.instagram_url}}">
+                              <i ng-show="member.instagram_url != null" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+                          </a>
+                          <a ng-href="{{member.twitter_url}}">
+                              <i ng-show="member.twitter_url != null" class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                          </a>
+                          <a ng-href="{{member.linkedin_url}}">
+                              <i ng-show="member.linkedin_url != null" class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+                          </a>
+                          <a ng-href="{{member.pintrest_url}}">
+                              <i ng-show="member.pintrest_url != null" class="fa fa-pintrest fa-2x" aria-hidden="true"></i>
+                          </a>
+                          <a ng-href="{{member.twitch_url}}">
+                              <i ng-show="member.twitch_url != null" class="fa fa-twitch fa-2x" aria-hidden="true"></i>
+                          </a>
+                          <a ng-href="{{member.reddit_url}}">
+                              <i ng-show="member.reddit_url != null" class="fa fa-reddit-alien fa-2x" aria-hidden="true"></i>
+                          </a>
+                      </div>
                       <div class="row text-center">
                         <p><strong>Commit Count:</strong> {{github[member.login].contributions}}</p>
                         <p><strong>Issue Count:</strong> {{github[member.login].issues}}</p>
