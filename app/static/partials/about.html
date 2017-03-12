@@ -1,169 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="container">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>About - Business Casual - Start Bootstrap Theme</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../css/business-casual.css" rel="stylesheet">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-    </head>
-
-    <body>
-
-        <div class="brand">College Database</div>
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                    <a class="navbar-brand" href="index.html">Business Casual</a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="../../templates/index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="about.html">About</a>
-                        </li>
-                        <li>
-                            <a href="blog.html">Universities</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">States</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">Degrees</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
-
-        <div class="container">
-
-            <div class="row">
-                <div class="box">
-                    <div class="row">
-                        <div class="col-md-5 col-xs-7 col-sm-7 col-center" ng-repeat="member in members">
-                          <div class="row">
-                            <img ng-src="{{github[member.login].avatar_url}}" style="width:100%"/>
-                        </div>
-                        <div class="row">
-                            <h2 class="text-center">{{member.name}}</h2>
-                        </div>
-                        <div class="row text-center">
-                            <a ng-href="{{github[member.login].url}}">
-                              <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-                          </a>
-                          <a ng-href="{{member.instagram_url}}">
-                              <i ng-show="member.instagram_url != null" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                          </a>
-                          <a ng-href="{{member.twitter_url}}">
-                              <i ng-show="member.twitter_url != null" class="fa fa-twitter fa-2x" aria-hidden="true"></i>
-                          </a>
-                          <a ng-href="{{member.linkedin_url}}">
-                              <i ng-show="member.linkedin_url != null" class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
-                          </a>
-                          <a ng-href="{{member.pintrest_url}}">
-                              <i ng-show="member.pintrest_url != null" class="fa fa-pintrest fa-2x" aria-hidden="true"></i>
-                          </a>
-                          <a ng-href="{{member.twitch_url}}">
-                              <i ng-show="member.twitch_url != null" class="fa fa-twitch fa-2x" aria-hidden="true"></i>
-                          </a>
-                          <a ng-href="{{member.reddit_url}}">
-                              <i ng-show="member.reddit_url != null" class="fa fa-reddit-alien fa-2x" aria-hidden="true"></i>
-                          </a>
-                      </div>
-                      <div class="row text-center">
-                        <p><strong>Commit Count:</strong> {{github[member.login].contributions}}</p>
-                        <p><strong>Issue Count:</strong> {{github[member.login].issues}}</p>
-                        <p><strong>Unit Tests Count:</strong> {{member.tests}}</p>
-                        <p><strong>Responsible for:</strong> {{member.responsibilities}}</p>
-                    </div>
-                    <div class="row">
-                        <p class="text-center">{{member.description}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="horizontal-divider"></div>
-            <div class="row">
-                <div class="col-md-5 text-center">
-                  <h2>Statistics</h2>
-                  <p><strong>Total Commit Count:</strong> {{stats.commits}}</p>
-                  <p><strong>Total Issue Count:</strong> {{stats.issues}}</p>
-                  <p><strong>Total Unit Tests:</strong> {{stats.tests}}</p>
-              </div>
-              <div class="col-md-5 text-center">
-                  <h2>Tools</h2>
-                  <div ng-repeat="tool in tools">
-                    <a ng-href="{{tool.link}}"><p>{{tool.name}}</p></a>
-                </div>
-            </div>
-            <div class="col-md-5 text-center">
-              <h2>Project Links</h2>
-              <div ng-repeat="info in information">
-                <a ng-href="{{info.link}}"><p>{{info.name}}</p><a>
-                </div>
-            </div>
-            <div class="col-md-5 text-center">
-              <h2>Data</h2>
-              <div ng-repeat="data in dataUsed">
-                <a ng-href="{{data.link}}"><p>{{data.name}}</p></a>
-            </div>
+<div class="row">
+  <div class="box">
+    <div class="row">
+      <div class="col-md-5 col-xs-7 col-sm-7 col-center" ng-repeat="member in members">
+        <div class="row">
+          <img ng-src="{{github[member.login].avatar_url}}" style="width:100%"/>
+        </div>
+        <div class="row">
+          <h2 class="text-center">{{member.name}}</h2>
+        </div>
+        <div class="row text-center">
+          <a ng-href="{{github[member.login].url}}">
+            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+          <a ng-href="{{member.instagram_url}}">
+            <i ng-show="member.instagram_url != null" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+          </a>
+          <a ng-href="{{member.twitter_url}}">
+            <i ng-show="member.twitter_url != null" class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+          </a>
+          <a ng-href="{{member.linkedin_url}}">
+            <i ng-show="member.linkedin_url != null" class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+          <a ng-href="{{member.pintrest_url}}">
+            <i ng-show="member.pintrest_url != null" class="fa fa-pintrest fa-2x" aria-hidden="true"></i>
+          </a>
+          <a ng-href="{{member.twitch_url}}">
+            <i ng-show="member.twitch_url != null" class="fa fa-twitch fa-2x" aria-hidden="true"></i>
+          </a>
+          <a ng-href="{{member.reddit_url}}">
+            <i ng-show="member.reddit_url != null" class="fa fa-reddit-alien fa-2x" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="row text-center">
+          <p><strong>Commit Count:</strong> {{github[member.login].contributions}}</p>
+          <p><strong>Issue Count:</strong> {{github[member.login].issues}}</p>
+          <p><strong>Unit Tests Count:</strong> {{member.tests}}</p>
+          <p><strong>Responsible for:</strong> {{member.responsibilities}}</p>
+        </div>
+        <div class="row">
+          <p class="text-center">{{member.description}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="horizontal-divider"></div>
+    <div class="row">
+      <div class="col-md-5 text-center">
+        <h2>Statistics</h2>
+        <p><strong>Total Commit Count:</strong> {{stats.commits}}</p>
+        <p><strong>Total Issue Count:</strong> {{stats.issues}}</p>
+        <p><strong>Total Unit Tests:</strong> {{stats.tests}}</p>
+      </div>
+      <div class="col-md-5 text-center">
+        <h2>Tools</h2>
+        <div ng-repeat="tool in tools">
+          <a ng-href="{{tool.link}}"><p>{{tool.name}}</p></a>
+        </div>
+      </div>
+      <div class="col-md-5 text-center">
+        <h2>Project Links</h2>
+        <div ng-repeat="info in information">
+          <a ng-href="{{info.link}}"><p>{{info.name}}</p><a>
+          </div>
+        </div>
+        <div class="col-md-5 text-center">
+          <h2>Data</h2>
+          <div ng-repeat="data in dataUsed">
+            <a ng-href="{{data.link}}"><p>{{data.name}}</p></a>
+          </div>
         </div>
         <div class="col-md-5 text-center">
           <h2>Other Databases</h2>
           <div ng-repeat="site in sites">
             <a ng-href="{{site.link}}"><p>{{site.name}}</p></a>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-</div>
-</div>
+  </div>
 
 </div>
-<!-- /.container -->
-
-<!-- jQuery -->
-<script src="../js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="../js/bootstrap.min.js"></script>
-
-</body>
-
-</html>

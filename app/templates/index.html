@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,29 +10,32 @@
 
     <title>College Database</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!-- Custom CSS -->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.5.3/angular-route.min.js"></script>
+
+    <!-- Custom AngularJS -->
+    <script src="/static/js/app.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom CSS from Template -->
     <link href="../static/css/business-casual.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
-<body>
-
+<header>
     <div class="brand">College Database</div>
-    <<!-- div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div> -->
 
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
@@ -53,19 +55,19 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="/#/">Home</a>
                     </li>
                     <li>
-                        <a href="../static/partials/about.html">About</a>
+                        <a href="/#/about">About</a>
                     </li>
                     <li>
-                        <a href="../static/universities.html">Universities</a>
+                        <a href="/#/universities">Universiites</a>
                     </li>
                     <li>
-                        <a href="../static/states.html">States</a>
+                        <a href="/#/states">States</a>
                     </li>
                     <li>
-                        <a href="../static/degrees.html">Degrees</a>
+                        <a href="/#/degrees">Degrees</a>
                     </li>
                 </ul>
             </div>
@@ -73,25 +75,10 @@
         </div>
         <!-- /.container -->
     </nav>
+</header>
 
-    <div class="container">
-
-        
-    </div>
-
-    <!-- jQuery -->
-    <script src="../static/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../static/js/bootstrap.min.js"></script>
-
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
-
+<body ng-app="myApp">
+   <div ng-view></div>
 </body>
 
 </html>
