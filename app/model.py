@@ -11,8 +11,8 @@ Created 5 column attributes of University model:
 3. Whether school is public or not
 4. URL of school's website
 5. Academic cost
-Linked each university to the degrees they offer(DegreesUniversities model)
-Linked each university to what state they are from(State model)
+Linked the University model to the DegreesUniversities model to check all the degrees offered by the university
+Linked the University model to the State model to check what state a university is from
 """
 class University(Base):
     __tablename__ = 'university'
@@ -42,6 +42,15 @@ class University(Base):
         return "<University(name={}, num_students={}, is_public={}, website_URL={}, academic_cost={}"\
             .format(self.name, self.num_students, self.is_public, self.website_URL, self.academic_cost)
 
+"""
+Created 5 column attributes of State model: 
+1. Name of state 
+2. Region state is located
+3. Average public tuition in the state
+4. Average private tuition in the state
+5. Number of colleges in the state
+Linked the State model to to the University model to find all the universities in a given state
+"""
 class State(Base):
     __tablename__ = 'state'
     id = Column(Integer, primary_key=True)
