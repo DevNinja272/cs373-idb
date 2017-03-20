@@ -1,14 +1,42 @@
+/*{ 
+    "stuff": {
+        "onetype": [
+            {"id":1,"name":"John Doe"},
+            {"id":2,"name":"Don Joeh"}
+        ],
+        "othertype": {"id":2,"company":"ACME"}
+    }, 
+    "otherstuff": {
+        "thing": [[1,42],[2,2]]
+     }
+}*/
+
 myApp.factory('UniversityFactory', function() { 
   universities = 
         {"results":[
-        {"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-        "degree_id":0, "degree_name": "Education"},
+          {"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
+          
+          "degrees":[
+            {"degree_id":0, "degree_name": "Education"},
+            {"degree_id":1, "degree_name": "Engineering"},
+            {"degree_id":2, "degree_name": "Psychology"},
+          ]
+
+        },
 
         {"id":1, "cost":37444,"school.name":"Texas Lutheran University","school.ownership":2,"school.school_url":"www.tlu.edu","size":1270, "state": "Texas", "state_id": 0, 
-        "degree_id":1, "degree_name": "Engineering"},
+        "degrees":[
+            {"degree_id":0, "degree_name": "Education"},
+            {"degree_id":1, "degree_name": "Engineering"},
+            {"degree_id":2, "degree_name": "Psychology"},
+          ]},
 
         {"id":2, "cost":18039,"school.name":"West Texas A & M University","school.ownership":1,"school.school_url":"www.wtamu.edu","size":7121, "state": "Texas", "state_id": 0, 
-        "degree_id":2, "degree_name": "Psychology"}]};
+        "degrees":[
+            {"degree_id":0, "degree_name": "Education"},
+            {"degree_id":1, "degree_name": "Engineering"},
+            {"degree_id":2, "degree_name": "Psychology"},
+          ]}]};
         for(var i = 0; i < universities.results.length; i++) {
             if (universities.results[i]["school.ownership"] == 1){
                 universities.results[i]["school.ownership"] = "Public";
