@@ -17,7 +17,7 @@ myApp.config(['$routeProvider',
                  templateUrl: '../static/partials/universities.html',
                  controller: 'UniversityCtrl'
              }).
-             when('/universities/:universityId', {
+             when('/universities/:id', {
                  templateUrl: '../static/partials/universitySpecific.html',
                  controller: 'UniversitySpecificCtrl'
              }).
@@ -25,7 +25,7 @@ myApp.config(['$routeProvider',
                  templateUrl: '../static/partials/states.html',
                  controller: 'StateCtrl'
              }).
-             when('/states/:stateId', {
+             when('/states/:id', {
                  templateUrl: '../static/partials/stateSpecific.html',
                  controller: 'StateSpecificCtrl'
              }).
@@ -33,7 +33,7 @@ myApp.config(['$routeProvider',
                  templateUrl: '../static/partials/degrees.html',
                  controller: 'DegreeCtrl'
              }).
-             when('/degrees/:degreeId', {
+             when('/degrees/:id', {
                  templateUrl: '../static/partials/degreeSpecific.html',
                  controller: 'DegreeSpecificCtrl'
              }).
