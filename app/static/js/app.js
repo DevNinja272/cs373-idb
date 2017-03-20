@@ -19,11 +19,7 @@ myApp.config(['$routeProvider',
              }).
              when('/states', {
                  templateUrl: '../static/partials/states.html',
-<<<<<<< HEAD
-                 // controller: 'StateCtrl'
-=======
                  controller: 'StateCtrl'
->>>>>>> master
              }).
              when('/degrees', {
                  templateUrl: '../static/partials/degrees.html',
