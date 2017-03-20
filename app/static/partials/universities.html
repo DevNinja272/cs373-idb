@@ -39,7 +39,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat = "result in results | orderBy:sortType:sortReverse "  >
-                      <td>{{ result["school.name"] }}</td>
+                      <td><a ng-href="/#/universities/{{result.id}}">{{ result["school.name"] }}</td>
                       <td>{{ result["school.ownership"] }}</td>
                       <td> <a ng-href="http://{{ result['school.school_url'] }}"> {{ result["school.school_url"] }}</td>
                       <td>{{ result.cost | currency}}</td>
