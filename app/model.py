@@ -6,7 +6,7 @@ Base = declarative_base()
 
 
 class University(Base):
-    __tablename__ = 'University'
+    __tablename__ = 'university'
     id = Column(Integer, primary_key=True)
 
     name = Column(String)
@@ -30,7 +30,7 @@ class University(Base):
             .format(self.name, self.num_students, self.is_public, self.website_URL, self.academic_cost)
 
 class State(Base):
-    __tablename__ = 'State'
+    __tablename__ = 'state'
     id = Column(Integer, primary_key=True)
 
     name = Column(String)
@@ -54,7 +54,7 @@ class State(Base):
             .format(self.name, self.region, self.average_public_tuition, self.average_private_tuition, self.number_colleges)
 
 class Degrees(Base):
-    __tablename__ = 'Degree'
+    __tablename__ = 'degree'
     id = Column(Integer, primary_key=True)
 
     name = Column(String)
@@ -71,14 +71,15 @@ class Degrees(Base):
         return "<Ingredient(title='%s', serving_size='%s', total_weight='%s', brand='%s', category='%s')>" % (
             self.title, self.serving_size, self.total_weight, self.brand, self.category)
     """
+    degrees_relationship = relationship("DegreesRelationship", back_populates="degree")
 
     def __repr__(self):
         return "<Degrees(name={}, num_public_offer={}, num_private_offer={}\
             , num_percent_public= {}, num_percent_private={}".format(self.name, self.num_public_offer,\
                 self.num_private_offer, self.num_percent_public, self.num_percent_private)
 
-class DegreesInfo(Base):
-    __tablename__ = 'degreesInfo'
+class DegreesRelationship(Base):
+    __tablename__ = 'degreesRelationship'
 
     id = Column(Integer, primary_key=True)
 
@@ -86,11 +87,11 @@ class DegreesInfo(Base):
     university_id = Column(Integer, ForeignKey("University.id"))
     degree_id = Column(Integer, ForeignKey("Degrees.id"))
 
-    degree = relationship("Degree", back_populates = "degreeInfos")
-    university = relationship("University", back_populates = "degreeInfos")
+    degree = relationship("Degree", back_populates = "degrees_relationship")
+    university = relationship("University", back_populates = "degrees_relationship")
 
     def __repr__(self):
-        return "<DegreesInfo(degree_name={})>".format(self.degree_name)
+        return "<DegreesRelationship(degree_name={})>".format(self.degree_name)
 
 
 if __name__ == '__main__':
