@@ -25,6 +25,9 @@ class University(Base):
         return "<Recipe(title='%s', readyInMinutes='%i', servings='%i', calories='%i', steps='%s', numberOfSteps='%i')>" % (
             self.title, self.readyInMinutes, self.servings, self.calories, self.steps, self.numberOfSteps)
     """
+
+    state_id = Column(Integer, ForeignKey('state.id'))
+
     def __repr__(self):
         return "<University(name={}, num_students={}, is_public={}, website_URL={}, academic_cost={}"\
             .format(self.name, self.num_students, self.is_public, self.website_URL, self.academic_cost)
@@ -48,6 +51,7 @@ class State(Base):
         return "<IngredientInfo(name='%s', fullName='%s')>" % (
             self.name, self.fullName)
     """
+    universities = relationship('University', backref='state')
 
     def __repr__(self):
         return "<State(name={}, region={}, average_public_tuition={}, average_private_tuition={}, number_colleges={}"\
