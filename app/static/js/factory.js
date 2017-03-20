@@ -1,16 +1,3 @@
-/*{ 
-    "stuff": {
-        "onetype": [
-            {"id":1,"name":"John Doe"},
-            {"id":2,"name":"Don Joeh"}
-        ],
-        "othertype": {"id":2,"company":"ACME"}
-    }, 
-    "otherstuff": {
-        "thing": [[1,42],[2,2]]
-     }
-}*/
-
 myApp.factory('UniversityFactory', function() { 
   universities = 
         {"results":[
@@ -60,9 +47,18 @@ myApp.factory('StateFactory', function() {
 
   states = 
         {"results":[
-        {"id":0, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest"},
-        {"id":1, "average_public_cost":40726,"name": "Florida","average_private_cost":57873,"schools":54,"region":"SouthEast"},
-        {"id":2, "average_public_cost":35733,"name": "Utah","average_private_cost":61283,"schools":10,"region":"Rocky Mountains"}]}
+          {"id":0, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
+            "universities":[
+              {"university_id": 0, "university_name": "Stephen F Austin State University"},
+              {"university_id": 1, "university_name": "Texas Lutheran University"},
+              {"university_id": 2, "university_name": "West Texas A & M University"},
+            ]},
+          {"id":1, "average_public_cost":40726,"name": "Florida","average_private_cost":57873,"schools":54,"region":"SouthEast"},
+          {"id":2, "average_public_cost":35733,"name": "Utah","average_private_cost":61283,"schools":10,"region":"Rocky Mountains"}]}
+
+          for (var i = 0; i < states.results.length; i++){
+            states.results[i]["map_url"] = "http://www.50states.com/maps/" + states.results[i]["name"] + ".gif";
+          }
 
   return {
     fetch: function () {
@@ -78,9 +74,28 @@ myApp.factory('DegreeFactory', function() {
 
   degrees = 
         {"results":[
-        {"id":0, "name": "Education","numPub":3423,"numPriv":1231,"AwardedPub":"10%","AwardedPriv":"25%" },
-        {"id":1, "name": "Engineering","numPub":4213,"numPriv":2349,"AwardedPub":"17%","AwardedPriv":"12%"},
-        {"id":2, "name": "Psychology","numPub":1023,"numPriv":976,"AwardedPub":"11%","AwardedPriv":"5%"}]}
+          {"id":0, "name": "Education","numPub":3423,"numPriv":1231,"AwardedPub":"10%","AwardedPriv":"25%", 
+            "universities":[
+              {"university_id": 0, "university_name": "Stephen F Austin State University"},
+              {"university_id": 1, "university_name": "Texas Lutheran University"},
+              {"university_id": 2, "university_name": "West Texas A & M University"},
+            ]},
+
+          {"id":1, "name": "Engineering","numPub":4213,"numPriv":2349,"AwardedPub":"17%","AwardedPriv":"12%",
+            "universities":[
+              {"university_id": 0, "university_name": "Stephen F Austin State University"},
+              {"university_id": 1, "university_name": "Texas Lutheran University"},
+              {"university_id": 2, "university_name": "West Texas A & M University"},
+            ]},
+          {"id":2, "name": "Psychology","numPub":1023,"numPriv":976,"AwardedPub":"11%","AwardedPriv":"5%",
+            "universities":[
+              {"university_id": 0, "university_name": "Stephen F Austin State University"},
+              {"university_id": 1, "university_name": "Texas Lutheran University"},
+              {"university_id": 2, "university_name": "West Texas A & M University"},
+            ]}
+
+
+          ]}
 
   return {
     fetch: function () {
