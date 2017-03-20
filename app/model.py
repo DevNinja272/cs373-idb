@@ -65,6 +65,21 @@ class Degrees(Base):
             self.title, self.serving_size, self.total_weight, self.brand, self.category)
     """
 
+class DegreesInfo(Base):
+    __tablename__ = 'degreesInfo'
+
+    id = Column(Integer, primary_key=True)
+
+    degree_name = Column(String)
+    university_id = Column(Integer, ForeignKey("University.id"))
+    degree_id = Column(Integer, ForeignKey("Degrees.id"))
+
+    degree = relationship("Degree", back_populates = "degreeInfos")
+    university = relationship("University", back_populates = "degreeInfos")
+
+    def __repr__(self):
+        return "<DegreesInfo(degree_name={})>".format(self.degree_name)
+
 
 if __name__ == '__main__':
     engine = create_engine("")
