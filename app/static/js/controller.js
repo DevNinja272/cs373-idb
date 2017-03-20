@@ -1,35 +1,27 @@
 myApp.controller('UniversityCtrl',
-    ['$scope',
-    function($scope) {
+    ['$scope', 'UniversityFactory',
+    function($scope, UniversityFactory) {
         /*$scope.sortType     = 'title';
         $scope.sortReverse  = false; 
         $scope.currentPage  = 1; 
 */
-        data = 
-        {"metadata":{"total":88,"page":2,"per_page":3},"results":[
-        {"id":1, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692},
-        {"id":2, "cost":37444,"school.name":"Texas Lutheran University","school.ownership":2,"school.school_url":"www.tlu.edu","size":1270},
-        {"id":3, "cost":18039,"school.name":"West Texas A & M University","school.ownership":1,"school.school_url":"www.wtamu.edu","size":7121}]}
-        for(var i = 0; i < data.results.length; i++) {
-            if (data.results[i]["school.ownership"] == 1){
-                data.results[i]["school.ownership"] = "Public";
-            }
-            else{
-                data.results[i]["school.ownership"] = "Private";
-            }
-        }
-        $scope.results = data["results"]
+        UniversityFactory.fetch().then(function(data)
+        {
+            $scope.results = data["results"];
+        });
     }]);
 
 myApp.controller('UniversitySpecificCtrl',
-    ['$scope',
-    function($scope) {
-        $scope.hello = 'hello from university specific!'
-        
+    ['$scope', '$routeParams', 'UniversityFactory',
+    function($scope, $routeParams, UniversityFactory) {
+        UniversityFactory.fetchAt($routeParams['id']).then(function(data)
+        {
+            $scope.results = data;
+        });
     }]);
 
 myApp.controller('StateCtrl',
-    ['$scope',
+    ['$scope', 'StateFactory',
     function($scope) {
         /*$scope.sortType     = 'title';
         $scope.sortReverse  = false; 
@@ -51,7 +43,7 @@ myApp.controller('StateSpecificCtrl',
     }]);
 
 myApp.controller('DegreeCtrl',
-    ['$scope',
+    ['$scope', 'DegreeFactory',
     function($scope) {
         /*$scope.sortType     = 'title';
         $scope.sortReverse  = false; 
