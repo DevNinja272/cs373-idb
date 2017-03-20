@@ -46,6 +46,10 @@ class State(Base):
             self.name, self.fullName)
     """
 
+    def __repr__(self):
+        return "<State(name={}, region={}, average_public_tuition={}, average_private_tuition={}, number_colleges={}"\
+            .format(self.name, self.region, self.average_public_tuition, self.average_private_tuition, self.number_colleges)
+
 class Degrees(Base):
     __tablename__ = 'Degree'
     id = Column(Integer, primary_key=True)
