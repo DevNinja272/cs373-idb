@@ -59,10 +59,54 @@ class TestModels (TestCase):
         session.commit()
 
     def test_state_1(self):
+        session = self.sess()
+
+        state = State(name='Alabama', region='South', average_public_tution=5, average_private_tuition=109, number_colleges=1)
+        session.add(state)
+        session.commit()
+        result_first = session.query(State).first()
+        self.assertEqual(result_first.name, 'Alabama')
+        session.delete(state)
+        session.commit()
 
     def test_state_2(self):
+        session = self.sess()
+
+        state_1 = State(name='Alabama', region='South', average_public_tution=5, average_private_tuition=109, number_colleges=1)
+        state_2 = State(name='Texas', region='South', average_public_tution=5, average_private_tuition=109, number_colleges=1)
+        session.add(state_1)
+        session.add(state_2)
+        session.commit()
+        result_count = session.query(State).count()
+        self.assertEqual(result_count, 2)
+
+        session.delete(state_1)
+        session.commit()
+
+        result_count = session.query(State).count()
+        self.assertEqual(result_count, 1)
+        session.delete(state_2)
+        session.commit()
 
     def test_state_3(self):
+        session = self.sess()
+
+        university_1 = University(name='Test University 1', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        university_2 = University(name='Test University 2', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        state_1 = State(name='Alabama', region='South', average_public_tution=5, average_private_tuition=109, number_colleges=1)
+        university_1.state = state_1
+        university_2.state = state_1
+        session.add(university_1)
+        session.add(university_2)
+        session.add(state_1)
+        session.commit()
+
+        result_state = session.query(State).first()
+        self.assertEqual(len(result_state.universities), 2)
+        session.delete(university_1)
+        session.delete(university_2)
+        session.delete(state_1)
+        session.commit()
 
     def test_degrees_1(self):
 
