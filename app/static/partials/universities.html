@@ -1,6 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="box">
+<<<<<<< HEAD
      <table class="table table-bordered table-striped">
       <thead>
         <tr>
@@ -49,4 +50,54 @@
     </table>
   </div>
 </div>
+=======
+			            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <td width="20%">
+                          <a href="/#/universities" ng-click="sortType = 'school.name'; sortReverse = !sortReverse">
+                            Name
+                          <span ng-show="sortType == 'school.name' && !sortReverse" class="fa fa-caret-down"></span>
+                          <span ng-show="sortType == 'school.name' && sortReverse" class="fa fa-caret-up"></span>
+                        </td>
+                        <td width="20%">
+                          <a href="/#/universities" ng-click="sortType = 'school.ownership'; sortReverse = !sortReverse">
+                            Ownership
+                          <span ng-show="sortType == 'school.ownership' && !sortReverse" class="fa fa-caret-down"></span>
+                          <span ng-show="sortType == 'school.ownership' && sortReverse" class="fa fa-caret-up"></span>
+                        </td>
+                        <td width="20%">
+                          <a href="/#/universities" ng-click="sortType = 'school.school_url'; sortReverse = !sortReverse">
+                            School Website
+                          <span ng-show="sortType == 'school.school_url' && !sortReverse" class="fa fa-caret-down"></span>
+                          <span ng-show="sortType == 'school.school_url' && sortReverse" class="fa fa-caret-up"></span>
+                        </td>
+
+                        <td width="20%">
+                          <a href="/#/universities" ng-click="sortType = 'cost'; sortReverse = !sortReverse">
+                            2014 Academic Cost
+                          <span ng-show="sortType == 'cost' && !sortReverse" class="fa fa-caret-down"></span>
+                          <span ng-show="sortType == 'cost' && sortReverse" class="fa fa-caret-up"></span>
+                        </td>
+                        <td width="20%">
+                          <a href="/#/universities" ng-click="sortType = 'size'; sortReverse = !sortReverse">
+                            2014 Student Size
+                          <span ng-show="sortType == 'size' && !sortReverse" class="fa fa-caret-down"></span>
+                          <span ng-show="sortType == 'size' && sortReverse" class="fa fa-caret-up"></span>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat = "result in results | orderBy:sortType:sortReverse "  >
+                      <td>{{ result["school.name"] }}</td>
+                      <td>{{ result["school.ownership"] }}</td>
+                      <td> <a ng-href="http://{{ result['school.school_url'] }}"> {{ result["school.school_url"] }}</td>
+                      <td>{{ result.cost | currency}}</td>
+                      <td>{{ result.size }}</td>
+                    </tr>
+                </tbody>
+            </table>
+		</div>
+	</div>
+>>>>>>> master
 </div>
