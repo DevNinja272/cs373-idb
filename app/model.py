@@ -76,6 +76,15 @@ class State(Base):
         return "<State(name={}, region={}, average_public_tuition={}, average_private_tuition={}, number_colleges={}"\
             .format(self.name, self.region, self.average_public_tuition, self.average_private_tuition, self.number_colleges)
 
+"""
+Created 5 column attributes of Degree model: 
+1. Name of degree 
+2. Number of public schools that offer degree
+3. Number of private schools that offer degree
+4. Percent of public schools that offer degree
+5. Percent of private schools that offer degree
+Linked Degree model to DegreeUniversities model to check all the universities that offer the degree
+"""
 class Degree(Base):
     __tablename__ = 'degree'
     id = Column(Integer, primary_key=True)
@@ -102,6 +111,8 @@ class Degree(Base):
                 self.num_private_offer, self.num_percent_public, self.num_percent_private)
 
 # Reference many to many: http://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html#many-to-many
+"Helps link the Degrees model and University model together to help check all the degrees \
+ offered by a university and all the universities that offer a degree"
 class DegreesUniversities(Base):
     __tablename__ = 'degreesUniversities'
 
