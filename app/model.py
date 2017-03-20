@@ -11,9 +11,9 @@ class University(Base):
 
     name = Column(String)
     num_students = Column(Integer)
-    is_public = Column(Integer)
-    website_URL = Column(Integer)
-    Completion_Rate = Column(Integer)
+    is_public = Column(Boolean)
+    website_URL = Column(String)
+    Completion_Rate = Column(Float)
     """
     # Relationships for recipes
     cuisine_id = Column(Integer, ForeignKey('cuisine.id'))
@@ -32,9 +32,9 @@ class State(Base):
 
     name = Column(String)
     region = Column(String)
-    average_public_tuition = Column(Integer, ())
-    average_private_tuition = Column(Integer,())
-    number_colleges = Column(Integer, ())
+    average_public_tuition = Column(Integer)
+    average_private_tuition = Column(Integer)
+    number_colleges = Column(Integer)
     """
     # Relationships for ingredients
     recipe = relationship("Recipe", back_populates="ingredientInfos")
@@ -51,10 +51,10 @@ class Degrees(Base):
     id = Column(Integer, primary_key=True)
 
     name = Column(String)
-    num_public_offer = Column(String)
-    num_private_offer = Column(String)
-    num_percent_public = Column(String)
-    num_percent_private = Column(String)
+    num_public_offer = Column(Integer)
+    num_private_offer = Column(Integer)
+    num_percent_public = Column(Integer)
+    num_percent_private = Column(Integer)
     """
     # Relationships for ingredients
     ingredientInfos = relationship("IngredientInfo", back_populates="ingredient")
@@ -68,4 +68,4 @@ class Degrees(Base):
 
 if __name__ == '__main__':
     engine = create_engine("")
-Base.metadata.create_all(engine)
+    Base.metadata.create_all(engine)
