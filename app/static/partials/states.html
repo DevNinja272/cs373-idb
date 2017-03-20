@@ -1,7 +1,52 @@
 <div class="container">
 	<div class="row">
 		<div class="box">
-			TODO: Table for States
+			<!-- <table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<td width="20%">
+							<a href="/#/states" ng-click="sortType = 'name'; sortReverse = !sortReverse"></a>
+							Name
+							<span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+							<span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+						</td>
+						<td width="20%">
+							<a href="/#/states" ng-click="sortType = 'region'; sortReverse = !sortReverse"></a>
+							Region
+							<span ng-show="sortType == 'region' && !sortReverse" class="fa fa-caret-down"></span>
+							<span ng-show="sortType == 'region' && sortReverse" class="fa fa-caret-up"></span>
+						</td>
+						<td width="20%">
+							<a href="/#/states" ng-click="sortType = 'average_public_cost'; sortReverse = !sortReverse"></a>
+							Average Public Cost
+							<span ng-show="sortType == 'average_public_cost' && !sortReverse" class="fa fa-caret-down"></span>
+							<span ng-show="sortType == 'average_public_cost' && sortReverse" class="fa fa-caret-up"></span>
+						</td>
+
+						<td width="20%">
+							<a href="/#/states" ng-click="sortType = 'average_private_cost'; sortReverse = !sortReverse"></a>
+							Average Private Cost
+							<span ng-show="sortType == 'average_private_cost' && !sortReverse" class="fa fa-caret-down"></span>
+							<span ng-show="sortType == 'average_private_cost' && sortReverse" class="fa fa-caret-up"></span>
+						</td>
+						<td width="20%">
+							<a href="/#/states" ng-click="sortType = 'schools'; sortReverse = !sortReverse"></a>
+							Number of Colleges
+							<span ng-show="sortType == 'schools' && !sortReverse" class="fa fa-caret-down"></span>
+							<span ng-show="sortType == 'schools' && sortReverse" class="fa fa-caret-up"></span>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat = "result in results | orderBy:sortType:sortReverse" >
+						<td>{{ result.name }}</td>
+						<td>{{ result.region }}</td>
+						<td>{{ result.average_public_cost | currency }}</td>
+						<td>{{ result.average_private_cost | currency}}</td>
+						<td>{{ result.schools }}</td>
+					</tr>
+				</tbody>
+			</table> -->
 		</div>
 	</div>
 </div>

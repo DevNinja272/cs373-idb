@@ -16,3 +16,14 @@ myApp.controller('UniversityCtrl',
 		}
     	$scope.results = data["results"]
     }]);
+
+// myApp.controller('StateCtrl',
+//     ['$scope',
+//     function($scope) {
+//         /*$scope.sortType     = 'title';
+//         $scope.sortReverse  = false; 
+//         $scope.currentPage  = 1; 
+// */
+//         data = {"results":[{"average_public_cost":35987,"name: Texas","average_private_cost":67234,"schools":98,"region":"SouthWest"},{"average_public_cost":40726,"name: Florida","average_private_cost":57873,"schools":54,"region":"SouthEast"},{"average_public_cost":35733,"name: Utah","average_private_cost":61283,"schools":10,"region":"Rocky Mountains"}]}
+//         $scope.results = data["results"]
+//     }]);
