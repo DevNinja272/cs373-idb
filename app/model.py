@@ -13,7 +13,7 @@ class University(Base):
     num_students = Column(Integer)
     is_public = Column(Boolean)
     website_URL = Column(String)
-    Completion_Rate = Column(Float)
+    completion_rate = Column(Float)
     """
     # Relationships for recipes
     cuisine_id = Column(Integer, ForeignKey('cuisine.id'))
@@ -25,6 +25,9 @@ class University(Base):
         return "<Recipe(title='%s', readyInMinutes='%i', servings='%i', calories='%i', steps='%s', numberOfSteps='%i')>" % (
             self.title, self.readyInMinutes, self.servings, self.calories, self.steps, self.numberOfSteps)
     """
+    def __repr__(self):
+        return "<University(name={}, num_students={}, is_public={}, website_URL={}, completion_rate={}"\
+            .format(self.name, self.num_students, self.is_public, self.website_URL, self.completion_rate)
 
 class State(Base):
     __tablename__ = 'State'
