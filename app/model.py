@@ -75,15 +75,15 @@ class Degree(Base):
         return "<Ingredient(title='%s', serving_size='%s', total_weight='%s', brand='%s', category='%s')>" % (
             self.title, self.serving_size, self.total_weight, self.brand, self.category)
     """
-    degrees_relationship = relationship("DegreesRelationship", back_populates="degree")
+    degrees_universities = relationship("DegreesUniversities", back_populates="degree")
 
     def __repr__(self):
         return "<Degree(name={}, num_public_offer={}, num_private_offer={}\
             , num_percent_public= {}, num_percent_private={}".format(self.name, self.num_public_offer,\
                 self.num_private_offer, self.num_percent_public, self.num_percent_private)
 
-class DegreesRelationship(Base):
-    __tablename__ = 'degreesRelationship'
+class DegreesUniversities(Base):
+    __tablename__ = 'degreesUniversities'
 
     id = Column(Integer, primary_key=True)
 
@@ -91,11 +91,11 @@ class DegreesRelationship(Base):
     university_id = Column(Integer, ForeignKey("University.id"))
     degree_id = Column(Integer, ForeignKey("Degree.id"))
 
-    degree = relationship("Degree", back_populates = "degrees_relationship")
-    university = relationship("University", back_populates = "degrees_relationship")
+    degree = relationship("Degree", back_populates = "degrees_universities")
+    university = relationship("University", back_populates = "degrees_universities")
 
     def __repr__(self):
-        return "<DegreesRelationship(degree_name={})>".format(self.degree_name)
+        return "<DegreesUniversities(degree_name={})>".format(self.degree_name)
 
 
 if __name__ == '__main__':
