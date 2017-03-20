@@ -65,6 +65,11 @@ class Degrees(Base):
             self.title, self.serving_size, self.total_weight, self.brand, self.category)
     """
 
+    def __repr__(self):
+        return "<Degrees(name={}, num_public_offer={}, num_private_offer={}\
+            , num_percent_public= {}, num_percent_private={}".format(self.name, self.num_public_offer,\
+                self.num_private_offer, self.num_percent_public, self.num_percent_private)
+
 class DegreesInfo(Base):
     __tablename__ = 'degreesInfo'
 
