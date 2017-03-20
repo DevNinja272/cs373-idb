@@ -57,7 +57,7 @@ class State(Base):
         return "<State(name={}, region={}, average_public_tuition={}, average_private_tuition={}, number_colleges={}"\
             .format(self.name, self.region, self.average_public_tuition, self.average_private_tuition, self.number_colleges)
 
-class Degrees(Base):
+class Degree(Base):
     __tablename__ = 'degree'
     id = Column(Integer, primary_key=True)
 
@@ -78,7 +78,7 @@ class Degrees(Base):
     degrees_relationship = relationship("DegreesRelationship", back_populates="degree")
 
     def __repr__(self):
-        return "<Degrees(name={}, num_public_offer={}, num_private_offer={}\
+        return "<Degree(name={}, num_public_offer={}, num_private_offer={}\
             , num_percent_public= {}, num_percent_private={}".format(self.name, self.num_public_offer,\
                 self.num_private_offer, self.num_percent_public, self.num_percent_private)
 
@@ -89,7 +89,7 @@ class DegreesRelationship(Base):
 
     degree_name = Column(String)
     university_id = Column(Integer, ForeignKey("University.id"))
-    degree_id = Column(Integer, ForeignKey("Degrees.id"))
+    degree_id = Column(Integer, ForeignKey("Degree.id"))
 
     degree = relationship("Degree", back_populates = "degrees_relationship")
     university = relationship("University", back_populates = "degrees_relationship")
