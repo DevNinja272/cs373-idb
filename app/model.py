@@ -25,6 +25,7 @@ class University(Base):
         return "<Recipe(title='%s', readyInMinutes='%i', servings='%i', calories='%i', steps='%s', numberOfSteps='%i')>" % (
             self.title, self.readyInMinutes, self.servings, self.calories, self.steps, self.numberOfSteps)
     """
+    degrees_universities = relationship("DegreesUniversities", back_populates="university")
 
     state_id = Column(Integer, ForeignKey('state.id'))
 
@@ -64,8 +65,8 @@ class Degree(Base):
     name = Column(String)
     num_public_offer = Column(Integer)
     num_private_offer = Column(Integer)
-    num_percent_public = Column(Integer)
-    num_percent_private = Column(Integer)
+    num_percent_public = Column(Float)
+    num_percent_private = Column(Float)
     """
     # Relationships for ingredients
     ingredientInfos = relationship("IngredientInfo", back_populates="ingredient")

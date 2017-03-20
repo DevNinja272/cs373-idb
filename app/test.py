@@ -108,11 +108,50 @@ class TestModels (TestCase):
         session.delete(state_1)
         session.commit()
 
-    def test_degrees_1(self):
+    def test_degree_1(self):
+        session = self.sess()
 
-    def test_degrees_2(self):
+        degree = Degree(name='Degree', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
+        session.add(degree)
+        session.commit()
+        result_first = session.query(Degree).first()
+        self.assertEqual(result_first.name, 'Degree')
+        session.delete(degree)
+        session.commit()
 
-    def test_degrees_3(self):
+    def test_degree_2(self):
+        session = self.sess()
+
+        degree_1 = Degree(name='Degree 1', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
+        degree_2 = Degree(name='Degree 2', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
+        session.add(degree_1)
+        session.add(degree_2)
+        session.commit()
+        result_count = session.query(Degree).count()
+        self.assertEqual(result_count, 2)
+        session.delete(degree_1)
+        session.delete(degree_2)
+        session.commit()
+
+    def test_degree_3(self):
+        session = self.sess()
+
+        degree_1 = Degree(name='Degree 1', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
+        degree_2 = Degree(name='Degree 2', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
+        session.add(degree_1)
+        session.add(degree_2)
+        session.commit()
+        result_count = session.query(Degree).count()
+        self.assertEqual(result_count, 2)
+
+        session.delete(degree_1)
+        session.commit()
+        result_count = session.query(Degree).count()
+        self.assertEqual(result_count, 1)
+
+        session.delete(degree_2)
+        session.commit()
+
 
 if __name__ == "__main__":
     main()
