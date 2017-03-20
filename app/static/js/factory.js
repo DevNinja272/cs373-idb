@@ -16,6 +16,7 @@ myApp.factory('UniversityFactory', function() {
             else{
                 universities.results[i]["school.ownership"] = "Private";
             }
+            universities.results[i]["logo_url"] = "//logo.clearbit.com/" + universities.results[i]["school.school_url"];
         }
   return {
     fetch: function () {
