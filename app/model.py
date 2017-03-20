@@ -4,7 +4,16 @@ from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
-
+"""
+Created 5 column attributes of University model: 
+1. Name of the university 
+2. Number of students
+3. Whether school is public or not
+4. URL of school's website
+5. Academic cost
+Linked each university to the degrees they offer(DegreesUniversities model)
+Linked each university to what state they are from(State model)
+"""
 class University(Base):
     __tablename__ = 'university'
     id = Column(Integer, primary_key=True)
