@@ -152,6 +152,25 @@ class TestModels (TestCase):
         session.delete(degree_2)
         session.commit()
 
+    def test_degrees_universities_1(self):
+        session = self.sess()
+
+        university_1 = University(name='Test University 1', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        degree_1 = Degree(name='Degree 1', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
+        degrees_universities = DegreesUniversities()
+        degrees_universities.university = university_1
+        degree_1.universities.append(degrees_universities)
+        session.add(university_1)
+        session.add(degree_1)
+        session.add(degrees_universities)
+        session.commit()
+
+        result = session.query(University).first()
+        self.assertEqual(result.degrees[0].degree.name, 'Degree 1')
+        session.delete(university_1)
+        session.delete(degree_1)
+        session.delete(degrees_universities)
+        session.commit()
 
 if __name__ == "__main__":
     main()
