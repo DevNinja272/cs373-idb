@@ -15,9 +15,11 @@ myApp.config(['$routeProvider',
              }).
              when('/universities', {
                  templateUrl: '../static/partials/universities.html',
+                 controller: 'UniversityCtrl'
              }).
              when('/states', {
                  templateUrl: '../static/partials/states.html',
+                 controller: 'StateCtrl'
              }).
              when('/degrees', {
                  templateUrl: '../static/partials/degrees.html',
