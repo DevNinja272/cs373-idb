@@ -25,7 +25,7 @@ class University(Base):
         return "<Recipe(title='%s', readyInMinutes='%i', servings='%i', calories='%i', steps='%s', numberOfSteps='%i')>" % (
             self.title, self.readyInMinutes, self.servings, self.calories, self.steps, self.numberOfSteps)
     """
-    degrees_universities = relationship("DegreesUniversities", back_populates="university")
+    degrees = relationship("DegreesUniversities", back_populates="university")
 
     state_id = Column(Integer, ForeignKey('state.id'))
 
@@ -76,24 +76,24 @@ class Degree(Base):
         return "<Ingredient(title='%s', serving_size='%s', total_weight='%s', brand='%s', category='%s')>" % (
             self.title, self.serving_size, self.total_weight, self.brand, self.category)
     """
-    degrees_universities = relationship("DegreesUniversities", back_populates="degree")
+    universities = relationship("DegreesUniversities", back_populates="degree")
 
     def __repr__(self):
         return "<Degree(name={}, num_public_offer={}, num_private_offer={}\
             , num_percent_public= {}, num_percent_private={}".format(self.name, self.num_public_offer,\
                 self.num_private_offer, self.num_percent_public, self.num_percent_private)
 
+# Reference many to many: http://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html#many-to-many
 class DegreesUniversities(Base):
     __tablename__ = 'degreesUniversities'
 
     id = Column(Integer, primary_key=True)
 
-    degree_name = Column(String)
     university_id = Column(Integer, ForeignKey("University.id"))
     degree_id = Column(Integer, ForeignKey("Degree.id"))
 
-    degree = relationship("Degree", back_populates = "degrees_universities")
-    university = relationship("University", back_populates = "degrees_universities")
+    degree = relationship("Degree", back_populates = "universities")
+    university = relationship("University", back_populates = "degrees")
 
     def __repr__(self):
         return "<DegreesUniversities(degree_name={})>".format(self.degree_name)
