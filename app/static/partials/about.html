@@ -1,18 +1,20 @@
 <div class="container">
 
+<link rel="stylesheet" href="/static/css/about.css">
+
 <div class="row">
   <div class="box">
     <div class="row">
       <div class="col-md-5 col-xs-7 col-sm-7 col-center" ng-repeat="member in members">
         <div class="row">
-          <img ng-src="{{github[member.login].avatar_url}}" style="width:100%"/>
+          <img ng-src="{{github[member.login].avatar_url}}" style="width:50%"/>
         </div>
         <div class="row">
           <h2 class="text-center">{{member.name}}</h2>
         </div>
         <div class="row text-center">
           <a ng-href="{{github[member.login].url}}">
-            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+            <!-- <i class="fa fa-github fa-2x" aria-hidden="true"></i> -->
           </a>
           <a ng-href="{{member.instagram_url}}">
             <i ng-show="member.instagram_url != null" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
