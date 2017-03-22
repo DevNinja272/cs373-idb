@@ -1,15 +1,15 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html><head><title>Python: module model</title>
+<html><head><title>Python: module models</title>
 <meta charset="utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>model</strong></big></big></font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/ahmeda24/Documents/cs373-idb/app/model.py">/v/filer4b/v38q001/ahmeda24/Documents/cs373-idb/app/model.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/ahmeda24/Documents/cs373-idb/app/models.py">/v/filer4b/v38q001/ahmeda24/Documents/cs373-idb/app/models.py</a></font></td></tr></table>
     <p><tt>Model.py&nbsp;is&nbsp;used&nbsp;to&nbsp;represent&nbsp;all&nbsp;the&nbsp;tables&nbsp;in&nbsp;sqlalchemy&nbsp;database.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -22,10 +22,10 @@
 <dt><font face="helvetica, arial">sqlalchemy.ext.declarative.api.Base(<a href="__builtin__.html#object">__builtin__.object</a>)
 </font></dt><dd>
 <dl>
-<dt><font face="helvetica, arial"><a href="model.html#Degree">Degree</a>
-</font></dt><dt><font face="helvetica, arial"><a href="model.html#DegreesUniversities">DegreesUniversities</a>
-</font></dt><dt><font face="helvetica, arial"><a href="model.html#State">State</a>
-</font></dt><dt><font face="helvetica, arial"><a href="model.html#University">University</a>
+<dt><font face="helvetica, arial"><a href="models.html#Degree">Degree</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#DegreesUniversities">DegreesUniversities</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#State">State</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#University">University</a>
 </font></dt></dl>
 </dd>
 </dl>
@@ -45,7 +45,7 @@
 Linked&nbsp;<a href="#Degree">Degree</a>&nbsp;model&nbsp;to&nbsp;DegreeUniversities&nbsp;model&nbsp;to&nbsp;check&nbsp;all&nbsp;the&nbsp;universities&nbsp;that&nbsp;offer&nbsp;the&nbsp;degree<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
-<dd><a href="model.html#Degree">Degree</a></dd>
+<dd><a href="models.html#Degree">Degree</a></dd>
 <dd>sqlalchemy.ext.declarative.api.Base</dd>
 <dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
 </dl>
@@ -80,7 +80,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f5cf253a450; Degree&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9645cd5450; Degree&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('degree', MetaData(bind=None), Column('id'..._private', Float(), table=&lt;degree&gt;), schema=None)</dl>
 
@@ -110,7 +110,7 @@ offered&nbsp;by&nbsp;a&nbsp;university&nbsp;and&nbsp;all&nbsp;the&nbsp;universit
 <a href="http://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html#many-to-many">http://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html#many-to-many</a><br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
-<dd><a href="model.html#DegreesUniversities">DegreesUniversities</a></dd>
+<dd><a href="models.html#DegreesUniversities">DegreesUniversities</a></dd>
 <dd>sqlalchemy.ext.declarative.api.Base</dd>
 <dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
 </dl>
@@ -141,7 +141,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f5cf253a910; DegreesUniversities&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9645cd5910; DegreesUniversities&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('degreesUniversities', MetaData(bind=None)....id'), table=&lt;degreesUniversities&gt;), schema=None)</dl>
 
@@ -175,7 +175,7 @@ Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br
 Linked&nbsp;the&nbsp;<a href="#State">State</a>&nbsp;model&nbsp;to&nbsp;to&nbsp;the&nbsp;<a href="#University">University</a>&nbsp;model&nbsp;to&nbsp;find&nbsp;all&nbsp;the&nbsp;universities&nbsp;in&nbsp;a&nbsp;given&nbsp;state<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
-<dd><a href="model.html#State">State</a></dd>
+<dd><a href="models.html#State">State</a></dd>
 <dd>sqlalchemy.ext.declarative.api.Base</dd>
 <dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
 </dl>
@@ -210,7 +210,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f5cf2578f10; State&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9645d13f10; State&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('state', MetaData(bind=None), Column('id',...olleges', Integer(), table=&lt;state&gt;), schema=None)</dl>
 
@@ -245,7 +245,7 @@ Linked&nbsp;the&nbsp;<a href="#University">University</a>&nbsp;model&nbsp;to&nbs
 Linked&nbsp;the&nbsp;<a href="#University">University</a>&nbsp;model&nbsp;to&nbsp;the&nbsp;<a href="#State">State</a>&nbsp;model&nbsp;to&nbsp;check&nbsp;what&nbsp;state&nbsp;a&nbsp;university&nbsp;is&nbsp;from<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
-<dd><a href="model.html#University">University</a></dd>
+<dd><a href="models.html#University">University</a></dd>
 <dd>sqlalchemy.ext.declarative.api.Base</dd>
 <dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
 </dl>
@@ -282,7 +282,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f5cf25785d0; University&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9645d135d0; University&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('university', MetaData(bind=None), Column(...ey('state.id'), table=&lt;university&gt;), schema=None)</dl>
 
