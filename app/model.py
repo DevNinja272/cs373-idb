@@ -23,17 +23,6 @@ class University(Base):
     is_public = Column(Boolean)
     website_URL = Column(String)
     academic_cost = Column(Integer)
-    """
-    # Relationships for recipes
-    cuisine_id = Column(Integer, ForeignKey('cuisine.id'))
-    cuisine = relationship("Cuisine", back_populates="recipes")
-    ingredientInfos = relationship("IngredientInfo", back_populates="recipe")
-
-    # Override __repr__ to display object properly
-    def __repr__(self):
-        return "<Recipe(title='%s', readyInMinutes='%i', servings='%i', calories='%i', steps='%s', numberOfSteps='%i')>" % (
-            self.title, self.readyInMinutes, self.servings, self.calories, self.steps, self.numberOfSteps)
-    """
     degrees = relationship("DegreesUniversities", back_populates="university")
 
     state_id = Column(Integer, ForeignKey('state.id'))
@@ -60,16 +49,6 @@ class State(Base):
     average_public_tuition = Column(Integer)
     average_private_tuition = Column(Integer)
     number_colleges = Column(Integer)
-    """
-    # Relationships for ingredients
-    recipe = relationship("Recipe", back_populates="ingredientInfos")
-    ingredient = relationship("Ingredient", back_populates="ingredientInfos")
-
-    # Override __repr__ to display object properly
-    def __repr__(self):
-        return "<IngredientInfo(name='%s', fullName='%s')>" % (
-            self.name, self.fullName)
-    """
     universities = relationship('University', backref='state')
 
     def __repr__(self):
@@ -94,15 +73,6 @@ class Degree(Base):
     num_private_offer = Column(Integer)
     num_percent_public = Column(Float)
     num_percent_private = Column(Float)
-    """
-    # Relationships for ingredients
-    ingredientInfos = relationship("IngredientInfo", back_populates="ingredient")
-
-    # Override __repr__ to display object properly
-    def __repr__(self):
-        return "<Ingredient(title='%s', serving_size='%s', total_weight='%s', brand='%s', category='%s')>" % (
-            self.title, self.serving_size, self.total_weight, self.brand, self.category)
-    """
     universities = relationship("DegreesUniversities", back_populates="degree")
 
     def __repr__(self):
