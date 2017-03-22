@@ -96,12 +96,12 @@ status:
 	git status
 
 runtests:
-    $(PYTHON) app/tests.py
+	$(PYTHON) app/tests.py
 
 runserver:
-    $(PYTHON) app/app.py
+	$(PYTHON) app/app.py
 
 reqs:
-    pip install -r requirements.txt
+	pip install -r requirements.txt
 
 test: model.html IDB1.log check
