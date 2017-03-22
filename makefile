@@ -1,5 +1,5 @@
 FILES :=                              \
-    model.html                        \
+    models.html                        \
     IDB1.log                          \
     app/app.py                        \
     app/models.py                     \
@@ -104,4 +104,4 @@ runserver:
 reqs:
 	pip install -r requirements.txt
 
-test: model.html IDB1.log check
+test: models.html IDB1.log check
