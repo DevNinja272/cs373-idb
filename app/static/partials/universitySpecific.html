@@ -1,8 +1,29 @@
 <div class="container">
 	<div class="row">
 		<div class="box">
-			<img ng-src="{{ results.logo_url }}" onerror="this.src='https://blog.edukasyon.ph/wp-content/themes/edukasyon-p6-blog-wordpress/images/thumbnail-default.png'" style="width:200px"/>
+			<div class="col-md-8">
+				<h1>{{results["school.name"]}}</h1>
+			</div>
 
+			<div class="col-md-6">
+				<img ng-src="{{ results.logo_url }}" onerror="this.src='https://blog.edukasyon.ph/wp-content/themes/edukasyon-p6-blog-wordpress/images/thumbnail-default.png'" style="width:200px"/>
+			</div>
+			<div class="col-md-4">
+				<h1><a ng-href="/#/states/{{results['state_id']}}"> {{results.state}}</h1></a>
+				<div>Ownership: {{results["school.ownership"]}}</div>
+
+				<div>School Website: <a ng-href="http://{{ results['school.school_url'] }}"> {{ results["school.school_url"] }}</div></a>
+
+				<div>2014 Academic Cost: {{results.cost | currency}}</div>
+				<div>2014 School Size: {{results.size}}</div>
+			</div>
+
+			<div class="col-md-2">
+				<h1>Degrees</h1>
+				<div ng-repeat="degree in results.degrees">
+					<a ng-href="/#/degrees/{{degree['degree_id']}}"><span>{{ degree['degree_name'] }}</span></a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

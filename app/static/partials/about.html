@@ -1,81 +1,126 @@
 <div class="container">
 
-<div class="row">
-  <div class="box">
-    <div class="row">
-      <div class="col-md-5 col-xs-7 col-sm-7 col-center" ng-repeat="member in members">
-        <div class="row">
-          <img ng-src="{{github[member.login].avatar_url}}" style="width:100%"/>
-        </div>
-        <div class="row">
-          <h2 class="text-center">{{member.name}}</h2>
-        </div>
-        <div class="row text-center">
-          <a ng-href="{{github[member.login].url}}">
-            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-          </a>
-          <a ng-href="{{member.instagram_url}}">
-            <i ng-show="member.instagram_url != null" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-          </a>
-          <a ng-href="{{member.twitter_url}}">
-            <i ng-show="member.twitter_url != null" class="fa fa-twitter fa-2x" aria-hidden="true"></i>
-          </a>
-          <a ng-href="{{member.linkedin_url}}">
-            <i ng-show="member.linkedin_url != null" class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
-          </a>
-          <a ng-href="{{member.pintrest_url}}">
-            <i ng-show="member.pintrest_url != null" class="fa fa-pintrest fa-2x" aria-hidden="true"></i>
-          </a>
-          <a ng-href="{{member.twitch_url}}">
-            <i ng-show="member.twitch_url != null" class="fa fa-twitch fa-2x" aria-hidden="true"></i>
-          </a>
-          <a ng-href="{{member.reddit_url}}">
-            <i ng-show="member.reddit_url != null" class="fa fa-reddit-alien fa-2x" aria-hidden="true"></i>
-          </a>
-        </div>
-        <div class="row text-center">
-          <p><strong>Commit Count:</strong> {{github[member.login].contributions}}</p>
-          <p><strong>Issue Count:</strong> {{github[member.login].issues}}</p>
-          <p><strong>Unit Tests Count:</strong> {{member.tests}}</p>
-          <p><strong>Responsible for:</strong> {{member.responsibilities}}</p>
-        </div>
-        <div class="row">
-          <p class="text-center">{{member.description}}</p>
-        </div>
-      </div>
+  <link rel="stylesheet" href="/static/css/about.css">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center main-title">Team Power Rangers</h2>
     </div>
-    <div class="horizontal-divider"></div>
-    <div class="row">
-      <div class="col-md-5 text-center">
-        <h2>Statistics</h2>
-        <p><strong>Total Commit Count:</strong> {{stats.commits}}</p>
-        <p><strong>Total Issue Count:</strong> {{stats.issues}}</p>
-        <p><strong>Total Unit Tests:</strong> {{stats.tests}}</p>
+    <div class="box">
+      <div class="row">
+        <div class="col-md-5 col-md-5 text-center" ng-repeat="member in members" ng-if="member.login!='ayenabil'" style="padding-left: 200px">
+          <div class="row">
+            <img ng-src="{{github[member.login].avatar_url}}" style="width:250px"/>
+          </div>
+          <div class="row">
+            <h2 class="text-center">{{member.name}}</h2>
+          </div>
+          <div class="row text-center">
+            <a ng-href="{{github[member.login].url}}">
+              <!-- <i class="fa fa-github fa-2x" aria-hidden="true"></i> -->
+            </a>
+            <a ng-href="{{member.instagram_url}}">
+              <i ng-show="member.instagram_url != null" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            </a>
+            <a ng-href="{{member.twitter_url}}">
+              <i ng-show="member.twitter_url != null" class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+            </a>
+            <a ng-href="{{member.linkedin_url}}">
+              <i ng-show="member.linkedin_url != null" class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+            </a>
+            <a ng-href="{{member.pintrest_url}}">
+              <i ng-show="member.pintrest_url != null" class="fa fa-pintrest fa-2x" aria-hidden="true"></i>
+            </a>
+            <a ng-href="{{member.twitch_url}}">
+              <i ng-show="member.twitch_url != null" class="fa fa-twitch fa-2x" aria-hidden="true"></i>
+            </a>
+            <a ng-href="{{member.reddit_url}}">
+              <i ng-show="member.reddit_url != null" class="fa fa-reddit-alien fa-2x" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="row text-center">
+            <p><strong>Commit Count:</strong> {{github[member.login].contributions}}</p>
+            <p><strong>Issue Count:</strong> {{github[member.login].issues}}</p>
+            <p><strong>Unit Tests Count:</strong> {{member.tests}}</p>
+            <p><strong>Responsible for:</strong> {{member.responsibilities}}</p>
+          </div>
+          <div class="row">
+            <p class="text-center">{{member.description}}</p>
+          </div>
+        </div>  
+
       </div>
-      <div class="col-md-5 text-center">
-        <h2>Tools</h2>
-        <div ng-repeat="tool in tools">
-          <a ng-href="{{tool.link}}"><p>{{tool.name}}</p></a>
+      <div class="horizontal-divider"></div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4" ng-repeat="member in members" ng-if="member.login=='ayenabil'">
+          <div class="row">
+            <img ng-src="{{github[member.login].avatar_url}}" style="width:250px"/>
+          </div>
+          <div class="row">
+            <h2 class="text-center">{{member.name}}</h2>
+          </div>
+          <div class="row text-center">
+            <a ng-href="{{github[member.login].url}}">
+              <!-- <i class="fa fa-github fa-2x" aria-hidden="true"></i> -->
+            </a>
+            <a ng-href="{{member.instagram_url}}">
+              <i ng-show="member.instagram_url != null" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            </a>
+            <a ng-href="{{member.twitter_url}}">
+              <i ng-show="member.twitter_url != null" class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+            </a>
+            <a ng-href="{{member.linkedin_url}}">
+              <i ng-show="member.linkedin_url != null" class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+            </a>
+            <a ng-href="{{member.pintrest_url}}">
+              <i ng-show="member.pintrest_url != null" class="fa fa-pintrest fa-2x" aria-hidden="true"></i>
+            </a>
+            <a ng-href="{{member.twitch_url}}">
+              <i ng-show="member.twitch_url != null" class="fa fa-twitch fa-2x" aria-hidden="true"></i>
+            </a>
+            <a ng-href="{{member.reddit_url}}">
+              <i ng-show="member.reddit_url != null" class="fa fa-reddit-alien fa-2x" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="row text-center">
+            <p><strong>Commit Count:</strong> {{github[member.login].contributions}}</p>
+            <p><strong>Issue Count:</strong> {{github[member.login].issues}}</p>
+            <p><strong>Unit Tests Count:</strong> {{member.tests}}</p>
+            <p><strong>Responsible for:</strong> {{member.responsibilities}}</p>
+          </div>
+          <div class="row">
+            <p class="text-center">{{member.description}}</p>
+          </div>
+        </div> 
+      </div>
+
+      <div class="horizontal-divider"></div>
+      <div class="row">
+        <div class="col-md-5 text-center" style="padding-left: 200px">
+          <h2>Statistics</h2>
+          <p><strong>Total Commit Count:</strong> {{stats.commits}}</p>
+          <p><strong>Total Issue Count:</strong> {{stats.issues}}</p>
+          <p><strong>Total Unit Tests:</strong> {{stats.tests}}</p>
         </div>
-      </div>
-      <div class="col-md-5 text-center">
-        <h2>Project Links</h2>
-        <div ng-repeat="info in information">
-          <a ng-href="{{info.link}}"><p>{{info.name}}</p><a>
+        <div class="col-md-5 text-center" style="padding-left: 200px">
+          <h2>Tools</h2>
+          <div ng-repeat="tool in tools">
+            <a ng-href="{{tool.link}}"><p>{{tool.name}}</p></a>
           </div>
         </div>
-        <div class="col-md-5 text-center">
+        <div class="col-md-5 text-center" style="padding-left: 200px">
+          <h2>Project Links</h2>
+          <div ng-repeat="info in information">
+            <a ng-href="{{info.link}}"><p>{{info.name}}</p></a>
+          </div>
+        </div>
+        <div class="col-md-5 text-center" style="padding-left: 200px">
           <h2>Data</h2>
           <div ng-repeat="data in dataUsed">
             <a ng-href="{{data.link}}"><p>{{data.name}}</p></a>
           </div>
         </div>
-        <div class="col-md-5 text-center">
-          <h2>Other Databases</h2>
-          <div ng-repeat="site in sites">
-            <a ng-href="{{site.link}}"><p>{{site.name}}</p></a>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>
