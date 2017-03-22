@@ -107,15 +107,15 @@ myApp.factory('DegreeFactory', function() {
   };
 });
 
-myApp.factory('GithubFetchFactory', function($http) { 
+myApp.factory('GithubFactory', function($http) { 
   return $http.get('https://api.github.com/repos/JinwookKim/cs373-idb/stats/contributors');
 });
 
-myApp.factory('IssueFetchFactory', function($http) { 
+myApp.factory('IssueFactory', function($http) { 
   return $http.get('https://api.github.com/repos/JinwookKim/cs373-idb/issues?per_page=500&state=all');
 });
 
-myApp.factory('MetadataFetchFactory', function() {
+myApp.factory('AboutFactory', function() {
 
   var informationCache = [
     { name: 'Apiary',               link: 'http://docs.collegedb.apiary.io/#'},

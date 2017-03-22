@@ -35,40 +35,40 @@ myApp.controller('DegreeSpecificCtrl',
     }]);
 
 myApp.controller('AboutCtrl',
-    ['$scope', '$http', 'GithubFetchFactory', 'IssueFetchFactory', 'MetadataFetchFactory',
-    function($scope, $http, GithubFetchFactory, IssueFetchFactory, MetadataFetchFactory) {
+    ['$scope', '$http', 'GithubFactory', 'IssueFactory', 'AboutFactory',
+    function($scope, $http, GithubFactory, IssueFactory, AboutFactory) {
 
         stats               = {issues:0, tests:0, commits:0};
-        refineData          = {};
+        github              = {};
         totalCommit         = 0;
 
-        GithubFetchFactory.success(function(data) {
+        GithubFactory.success(function(data) {
             for(var i = 0; i < data.length; i++) {
                 author = data[i]['author']
-                refineData[author.login] = {};
-                refineData[author.login].avatar_url    = author.avatar_url;
-                refineData[author.login].url           = author.html_url;
-                refineData[author.login].contributions = data[i].total;
-                refineData[author.login].issues        = 0;
+                github[author.login] = {};
+                github[author.login].avatar_url    = author.avatar_url;
+                github[author.login].url           = author.html_url;
+                github[author.login].contributions = data[i].total;
+                github[author.login].issues        = 0;
                 stats.commits   += data[i].total;
             }
         });
 
-        IssueFetchFactory.success(function(data) {
+        IssueFactory.success(function(data) {
             for(var i = 0; i < data.length; i++) {
-                refineData[data[i].user.login].issues += 1;
+                github[data[i].user.login].issues += 1;
                 stats.issues   += 1;
             }
         });
 
-        $scope.members      = MetadataFetchFactory.fetchMember();
+        $scope.members      = AboutFactory.fetchMember();
         for(var i = 0; i < $scope.members.length; i++) {
             stats.tests     += $scope.members[i].tests;
         }
-        $scope.dataUsed     = MetadataFetchFactory.fetchAPI();
-        $scope.tools        = MetadataFetchFactory.fetchTool();
-        $scope.information  = MetadataFetchFactory.fetchInformation();
-        $scope.github       = refineData;
+        $scope.dataUsed     = AboutFactory.fetchAPI();
+        $scope.tools        = AboutFactory.fetchTool();
+        $scope.information  = AboutFactory.fetchInformation();
+        $scope.github       = github;
         $scope.stats        = stats;
 
     }]);

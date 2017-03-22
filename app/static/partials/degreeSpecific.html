@@ -1,13 +1,12 @@
 <div class="container">
 	<div class="row">
 		<div class="box">
-			<div class="col-md-8">
+			<div class="col-md-6">
 				<h1>{{results["name"]}}</h1>
 			</div>
 
-			<div class="col-md-6">
-				<img ng-src="{{ results.map_url }}" onerror="this.src='https://blog.edukasyon.ph/wp-content/themes/edukasyon-p6-blog-wordpress/images/thumbnail-default.png'" style="width:200px"/>
-			</div>
+			<div class="col-md-6"> </div>
+
 			<div class="col-md-4">
 				<h3></h3>
 				<div>Number of Public Schools that offer: {{results.numPub}}</div>
@@ -22,6 +21,7 @@
 					<a ng-href="/#/universities/{{university['university_id']}}"><span>{{ university['university_name'] }}</span></a>
 				</div>
 			</div>
+
 		</div>
 	</div>
 </div>
