@@ -3,7 +3,7 @@ FILES :=                              \
     IDB1.log                          \
     app/app.py                        \
     app/models.py                     \
-    app/test.py 					  \
+    app/tests.py 					  \
     .gitignore                        \
     apiary.apib                       \
     UML.pdf                           \
@@ -81,7 +81,7 @@ config:
 format:
 	$(AUTOPEP8) -i app/app.py
 	$(AUTOPEP8) -i app/models.py
-	$(AUTOPEP8) -i app/test.py
+	$(AUTOPEP8) -i app/tests.py
 
 scrub:
 	make clean
@@ -96,7 +96,7 @@ status:
 	git status
 
 runtests:
-    $(PYTHON) app/test.py
+    $(PYTHON) app/tests.py
 
 runserver:
     $(PYTHON) app/app.py
