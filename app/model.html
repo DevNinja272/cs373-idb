@@ -1,0 +1,304 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module model</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>model</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/ahmeda24/Documents/cs373-idb/app/model.py">/v/filer4b/v38q001/ahmeda24/Documents/cs373-idb/app/model.py</a></font></td></tr></table>
+    <p><tt>Model.py&nbsp;is&nbsp;used&nbsp;to&nbsp;represent&nbsp;all&nbsp;the&nbsp;tables&nbsp;in&nbsp;sqlalchemy&nbsp;database.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial">sqlalchemy.ext.declarative.api.Base(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="model.html#Degree">Degree</a>
+</font></dt><dt><font face="helvetica, arial"><a href="model.html#DegreesUniversities">DegreesUniversities</a>
+</font></dt><dt><font face="helvetica, arial"><a href="model.html#State">State</a>
+</font></dt><dt><font face="helvetica, arial"><a href="model.html#University">University</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Degree">class <strong>Degree</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Created&nbsp;5&nbsp;column&nbsp;attributes&nbsp;of&nbsp;<a href="#Degree">Degree</a>&nbsp;model:&nbsp;<br>
+1.&nbsp;Name&nbsp;of&nbsp;degree&nbsp;<br>
+2.&nbsp;Number&nbsp;of&nbsp;public&nbsp;schools&nbsp;that&nbsp;offer&nbsp;degree<br>
+3.&nbsp;Number&nbsp;of&nbsp;private&nbsp;schools&nbsp;that&nbsp;offer&nbsp;degree<br>
+4.&nbsp;Percent&nbsp;of&nbsp;public&nbsp;schools&nbsp;that&nbsp;offer&nbsp;degree<br>
+5.&nbsp;Percent&nbsp;of&nbsp;private&nbsp;schools&nbsp;that&nbsp;offer&nbsp;degree<br>
+Linked&nbsp;<a href="#Degree">Degree</a>&nbsp;model&nbsp;to&nbsp;DegreeUniversities&nbsp;model&nbsp;to&nbsp;check&nbsp;all&nbsp;the&nbsp;universities&nbsp;that&nbsp;offer&nbsp;the&nbsp;degree<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.html#Degree">Degree</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Degree-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="Degree-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>num_percent_private</strong></dt>
+</dl>
+<dl><dt><strong>num_percent_public</strong></dt>
+</dl>
+<dl><dt><strong>num_private_offer</strong></dt>
+</dl>
+<dl><dt><strong>num_public_offer</strong></dt>
+</dl>
+<dl><dt><strong>universities</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f5cf253a450; Degree&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('degree', MetaData(bind=None), Column('id'..._private', Float(), table=&lt;degree&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'degree'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DegreesUniversities">class <strong>DegreesUniversities</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Helps&nbsp;link&nbsp;the&nbsp;Degrees&nbsp;model&nbsp;and&nbsp;<a href="#University">University</a>&nbsp;model&nbsp;together&nbsp;to&nbsp;help&nbsp;check&nbsp;all&nbsp;the&nbsp;degrees&nbsp;<br>
+offered&nbsp;by&nbsp;a&nbsp;university&nbsp;and&nbsp;all&nbsp;the&nbsp;universities&nbsp;that&nbsp;offer&nbsp;a&nbsp;degree.&nbsp;Got&nbsp;help&nbsp;from&nbsp;this&nbsp;reference&nbsp;many&nbsp;to&nbsp;many:<br>
+<a href="http://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html#many-to-many">http://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html#many-to-many</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.html#DegreesUniversities">DegreesUniversities</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="DegreesUniversities-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="DegreesUniversities-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>degree</strong></dt>
+</dl>
+<dl><dt><strong>degree_id</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>university</strong></dt>
+</dl>
+<dl><dt><strong>university_id</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f5cf253a910; DegreesUniversities&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('degreesUniversities', MetaData(bind=None)....id'), table=&lt;degreesUniversities&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'degreesUniversities'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="State">class <strong>State</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Created&nbsp;5&nbsp;column&nbsp;attributes&nbsp;of&nbsp;<a href="#State">State</a>&nbsp;model:&nbsp;<br>
+1.&nbsp;Name&nbsp;of&nbsp;state&nbsp;<br>
+2.&nbsp;Region&nbsp;state&nbsp;is&nbsp;located<br>
+3.&nbsp;Average&nbsp;public&nbsp;tuition&nbsp;in&nbsp;the&nbsp;state<br>
+4.&nbsp;Average&nbsp;private&nbsp;tuition&nbsp;in&nbsp;the&nbsp;state<br>
+5.&nbsp;Number&nbsp;of&nbsp;colleges&nbsp;in&nbsp;the&nbsp;state<br>
+Linked&nbsp;the&nbsp;<a href="#State">State</a>&nbsp;model&nbsp;to&nbsp;to&nbsp;the&nbsp;<a href="#University">University</a>&nbsp;model&nbsp;to&nbsp;find&nbsp;all&nbsp;the&nbsp;universities&nbsp;in&nbsp;a&nbsp;given&nbsp;state<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.html#State">State</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="State-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="State-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>average_private_tuition</strong></dt>
+</dl>
+<dl><dt><strong>average_public_tuition</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>number_colleges</strong></dt>
+</dl>
+<dl><dt><strong>region</strong></dt>
+</dl>
+<dl><dt><strong>universities</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f5cf2578f10; State&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('state', MetaData(bind=None), Column('id',...olleges', Integer(), table=&lt;state&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'state'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="University">class <strong>University</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Created&nbsp;5&nbsp;column&nbsp;attributes&nbsp;of&nbsp;<a href="#University">University</a>&nbsp;model:&nbsp;<br>
+1.&nbsp;Name&nbsp;of&nbsp;the&nbsp;university&nbsp;<br>
+2.&nbsp;Number&nbsp;of&nbsp;students<br>
+3.&nbsp;Whether&nbsp;school&nbsp;is&nbsp;public&nbsp;or&nbsp;not<br>
+4.&nbsp;URL&nbsp;of&nbsp;school's&nbsp;website<br>
+5.&nbsp;Academic&nbsp;cost<br>
+Linked&nbsp;the&nbsp;<a href="#University">University</a>&nbsp;model&nbsp;to&nbsp;the&nbsp;<a href="#DegreesUniversities">DegreesUniversities</a>&nbsp;model&nbsp;to&nbsp;check&nbsp;all&nbsp;the&nbsp;degrees&nbsp;offered&nbsp;by&nbsp;the&nbsp;university<br>
+Linked&nbsp;the&nbsp;<a href="#University">University</a>&nbsp;model&nbsp;to&nbsp;the&nbsp;<a href="#State">State</a>&nbsp;model&nbsp;to&nbsp;check&nbsp;what&nbsp;state&nbsp;a&nbsp;university&nbsp;is&nbsp;from<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.html#University">University</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="University-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<dl><dt><a name="University-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>academic_cost</strong></dt>
+</dl>
+<dl><dt><strong>degrees</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>is_public</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>num_students</strong></dt>
+</dl>
+<dl><dt><strong>state_id</strong></dt>
+</dl>
+<dl><dt><strong>website_URL</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f5cf25785d0; University&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('university', MetaData(bind=None), Column(...ey('state.id'), table=&lt;university&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'university'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>
