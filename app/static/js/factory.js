@@ -143,7 +143,7 @@ myApp.factory('AboutFactory', function() {
   {
     name: 'Jinwook Kim', 
     login: 'JinwookKim',
-    description: "Jinwook's description",
+    description: "Ello, my name is Jinwook, but I go by Jin. I am a senior at UT Austin pursuing a BSA degree in Computer Science with a minor in Chinese. I like to learn foreign & programming languages.",
     responsibilities: 'Frontend', 
     tests: 0
   },
@@ -171,7 +171,7 @@ myApp.factory('AboutFactory', function() {
   {
     name: 'Nabil Ahmed', 
     login: 'ayenabil',
-    description:"         My name is Ahmed and I'm a sophomore studying computer science with a business certificate. Some of my interests include dancing, drawing, and going on adventures.",
+    description:"My name is Ahmed and I'm a sophomore studying computer science with a business certificate. Some of my interests include dancing, drawing, and going on adventures.",
     responsibilities: 'Backend', 
     tests: 5
   },
