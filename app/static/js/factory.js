@@ -143,35 +143,35 @@ myApp.factory('AboutFactory', function() {
   {
     name: 'Jinwook Kim', 
     login: 'JinwookKim',
-    // description:
+    description: "Jinwook's description",
     responsibilities: 'Frontend', 
     tests: 0
   },
   {
     name:'Ben Nguyen', 
     login: 'bpn252',
-    // description:
+    description: "I'm Ben, I am a junior and will hopefully graduate Fall 2017. I enjoy playing Rocket League and reading awful fanfiction.",
     responsibilities: 'Frontend', 
     tests: 0
   },
   {
     name: 'Faisal Aldilaijan', 
     login: 'aldilaff', 
-    // description: 
+    description: "My name is Faisal and I am a senior studying Computer Science at UT Austin. I like to bike around Austin",
     responsibilities:'Backend', 
     tests: 5
   },
   {
     name:'Sean Wang',
     login: 'seanyusa',
-    // description: 
+    description: "I'm Sean and I am a Junior Computer Science major at the University of Texas at Austin. In my free time I like to hang out with friends, go swimming, and study the Bible.",
     responsibilities:'Backend',
     tests: 5
   },
   {
     name: 'Nabil Ahmed', 
     login: 'ayenabil',
-    // description:
+    description:"         My name is Ahmed and I'm a sophomore studying computer science with a business certificate. Some of my interests include dancing, drawing, and going on adventures.",
     responsibilities: 'Backend', 
     tests: 5
   },
