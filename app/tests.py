@@ -196,7 +196,7 @@ class TestModels (TestCase):
         session.delete(degrees_universities)
         session.commit()
 
-    def test_degrees_universities_2(self):
+    def test_degrees_universities_3(self):
         session = self.sess()
 
         university_1 = University(name='Test University 1', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
