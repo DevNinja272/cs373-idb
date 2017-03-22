@@ -65,6 +65,7 @@ myApp.controller('AboutCtrl',
         for(var i = 0; i < $scope.members.length; i++) {
             stats.tests     += $scope.members[i].tests;
         }
+        $scope.dataUsed     = MetadataFetchFactory.fetchAPI();
         $scope.tools        = MetadataFetchFactory.fetchTool();
         $scope.information  = MetadataFetchFactory.fetchInformation();
         $scope.github       = refineData;
