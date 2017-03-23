@@ -62,9 +62,9 @@ myApp.controller('AboutCtrl',
         });
 
         $scope.members      = AboutFactory.fetchMember();
-        for(var i = 0; i < $scope.members.length; i++) {
-            stats.tests     += $scope.members[i].tests;
-        }
+
+        for(var i = 0; i < $scope.members.length; i++) { stats.tests     += $scope.members[i].tests;}
+            
         $scope.dataUsed     = AboutFactory.fetchAPI();
         $scope.tools        = AboutFactory.fetchTool();
         $scope.information  = AboutFactory.fetchInformation();
