@@ -5,8 +5,8 @@ from models import University, State, Degree
 
 class TestModels (TestCase):
 
-    def test(self):
-        self.engine = create_engine("postgresql://username:password@localhost/database")
+    def setUp(self):
+        self.engine = create_engine("postgresql://" + test_db['USER'] + ":" + test_db['PASSWORD'] + "@" + test_db['IP'] + "/" + test_db['DATABASE'])
         self.sess = sessionmaker(bind=self.engine)
         
 
