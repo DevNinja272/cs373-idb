@@ -6,7 +6,7 @@ from config import test_db
 
 class TestModels (TestCase):
 
-    def test(self):
+    def setUp(self):
         self.engine = create_engine("postgresql://" + test_db['USER'] + ":" + test_db['PASSWORD'] + "@" + test_db['IP'] + "/" + test_db['DATABASE'])
         self.sess = sessionmaker(bind=self.engine)
         
