@@ -18,11 +18,6 @@
           </div>
 
           <div class="row text-center">
-            <a ng-href="{{github[member.login].url}}">
-              <!-- <i class="fa fa-github fa-2x" aria-hidden="true"></i> -->
-            </a>
-          </div>
-          <div class="row text-center">
             <p><strong>Commit Count:</strong> {{github[member.login].contributions}}</p>
             <p><strong>Issue Count:</strong> {{github[member.login].issues}}</p>
             <p><strong>Unit Tests Count:</strong> {{member.tests}}</p>
@@ -58,7 +53,12 @@
           </div>
         </div> 
       </div>
-
+<!-- var informationCache = [
+    { name: 'Apiary',               link: 'http://docs.collegedb.apiary.io/#'},
+    { name: 'Github Issue Tracker', link: 'https://github.com/JinwookKim/cs373-idb/issues'},
+    { name: 'Github Repository',    link: 'https://github.com/JinwookKim/cs373-idb'},
+    { name: 'Github Wiki',          link: 'https://github.com/JinwookKim/cs373-idb/wiki'}
+  ]; -->
       <div class="horizontal-divider"></div>
       <div class="row">
         <div class="col-md-5 text-center" style="padding-left: 200px">
@@ -69,21 +69,25 @@
         </div>
         <div class="col-md-5 text-center" style="padding-left: 200px">
           <h2>Tools</h2>
-          <div ng-repeat="tool in tools">
-            <a ng-href="{{tool.link}}"><p>{{tool.name}}</p></a>
-          </div>
+            <a ng-href="https://angularjs.org/"><p>AngularJS</p></a>
+            <a ng-href="http://getbootstrap.com/"><p>BootstrapJS</p></a>
+            <a ng-href="http://flask.pocoo.org/"><p>Flask</p></a>
+            <a ng-href="http://www.sqlalchemy.org/"><p>SQLAlchemy</p></a>
+            <a ng-href="http://yuml.me/"><p>yUML</p></a>
         </div>
         <div class="col-md-5 text-center" style="padding-left: 200px">
           <h2>Project Links</h2>
-          <div ng-repeat="info in information">
-            <a ng-href="{{info.link}}"><p>{{info.name}}</p></a>
-          </div>
+            <a ng-href="http://docs.collegedb.apiary.io/#'"><p>Apiary</p></a>
+            <a ng-href="https://github.com/JinwookKim/cs373-idb/issues"><p>Github Issue Tracker</p></a>
+            <a ng-href="https://github.com/JinwookKim/cs373-idb"><p>Github Repository</p></a>
+            <a ng-href="https://github.com/JinwookKim/cs373-idb/wiki"><p>Github Wiki</p></a>
         </div>
         <div class="col-md-5 text-center" style="padding-left: 200px">
           <h2>Data</h2>
-          <div ng-repeat="data in dataUsed">
-            <a ng-href="{{data.link}}"><p>{{data.name}}</p></a>
-          </div>
+            <a ng-href="https://collegescorecard.ed.gov/data/documentation/"><p>College API</p></a>
+            <a ng-href="https://api.data.gov/signup/"><p>API Sign up Key</p></a>
+            <a ng-href="https://clearbit.com/logo"><p>College Logos</p></a>
+            <a ng-href="http://www.50states.com/maps/"><p>State Photos</p></a>
         </div>
 
       </div>

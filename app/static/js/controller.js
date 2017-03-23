@@ -40,7 +40,6 @@ myApp.controller('AboutCtrl',
 
         stats               = {issues:0, tests:0, commits:0};
         github              = {};
-        totalCommit         = 0;
 
         GithubFactory.success(function(data) {
             for(var i = 0; i < data.length; i++) {
@@ -65,10 +64,6 @@ myApp.controller('AboutCtrl',
 
         for(var i = 0; i < $scope.members.length; i++) { stats.tests     += $scope.members[i].tests;}
             
-        $scope.dataUsed     = AboutFactory.fetchAPI();
-        $scope.tools        = AboutFactory.fetchTool();
-        $scope.information  = AboutFactory.fetchInformation();
         $scope.github       = github;
         $scope.stats        = stats;
-
     }]);
