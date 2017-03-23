@@ -1,3 +1,53 @@
+commit 6a1f38c14db7bc18c536061c01723aa42a69d00e
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Thu Mar 23 10:37:36 2017 -0500
+
+    front end refactoring
+
+commit edcd646bb225d68772e2bcf0155d6cfc77ad11a3
+Merge: 9847b10 d6f0556
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Thu Mar 23 10:22:18 2017 -0500
+
+    fixed conflict in merge
+
+commit d6f0556c5fdbd8a189903cd0a24db579dc81c6eb
+Merge: 408293b 55370ca
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Thu Mar 23 10:21:06 2017 -0500
+
+    Merge branch 'dev-back'
+
+commit 9847b10c3afa53068a533b1fcb671403a8c3518a
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Thu Mar 23 10:19:31 2017 -0500
+
+    updated database engine string
+
+commit 408293b89c948578959d18eb20f291696a806346
+Author: Ben P. Nguyen <ben.nguyen@utexas.edu>
+Date:   Wed Mar 22 21:16:18 2017 -0500
+
+    Update README.md
+
+commit 52452cf06553c028cbafaf2913a0f7f9438fc2de
+Author: Ben Nguyen <ben.nguyen@utexas.edu>
+Date:   Wed Mar 22 21:15:36 2017 -0500
+
+    deleted unnecessary stuff and updated README
+
+commit 55370cae4edfdc246ba94786427bca468a397c4a
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Wed Mar 22 17:31:07 2017 -0500
+
+    Changed def test to def setUP in tests.py for database intialization
+
+commit a9e0d2ddc6202c994e3a64328dd45c949977ff81
+Author: Ben Nguyen <ben.nguyen@utexas.edu>
+Date:   Wed Mar 22 16:37:22 2017 -0500
+
+    fixed makefile and added .idea to gitignore
+
 commit 54373d2c877a0d3afa30212f237f868b3318649b
 Merge: 9e11cdb 1198881
 Author: Ben Nguyen <ben.nguyen@utexas.edu>
