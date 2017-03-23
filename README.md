@@ -12,4 +12,4 @@ python app/app.py
 
 #### view our web app at
 
-[www.collegedb.me](www.collegedb.me)
+[www.collegedb.me](http://www.collegedb.me)
