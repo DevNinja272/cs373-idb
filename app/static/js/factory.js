@@ -106,25 +106,36 @@ myApp.factory('DegreeFactory', function() {
 
   degrees = 
   {"results":[
-  {"entry_id":0, "name": "Education","numPub":3423,"numPriv":1231,"AwardedPub":"10%","AwardedPriv":"25%", 
+  {"entry_id":0, "name": "Education","numPub":3423,"numPriv":1231,"AwardedPub":10,"AwardedPriv":25, 
   "universities":[
   {"university_id": 0, "university_name": "Stephen F Austin State University"},
   {"university_id": 1, "university_name": "Texas Lutheran University"},
   {"university_id": 2, "university_name": "West Texas A & M University"},
   ]},
 
-  {"entry_id":1, "name": "Engineering","numPub":4213,"numPriv":2349,"AwardedPub":"17%","AwardedPriv":"12%",
+  {"entry_id":1, "name": "Engineering","numPub":4213,"numPriv":2349,"AwardedPub":17,"AwardedPriv":12,
   "universities":[
   {"university_id": 0, "university_name": "Stephen F Austin State University"},
   {"university_id": 1, "university_name": "Texas Lutheran University"},
   {"university_id": 2, "university_name": "West Texas A & M University"},
   ]},
-  {"entry_id":2, "name": "Psychology","numPub":1023,"numPriv":976,"AwardedPub":"11%","AwardedPriv":"5%",
+  {"entry_id":2, "name": "Psychology","numPub":1023,"numPriv":976,"AwardedPub":11,"AwardedPriv":5,
   "universities":[
   {"university_id": 0, "university_name": "Stephen F Austin State University"},
   {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},
-  ]}
+  {"university_id": 2, "university_name": "West Texas A & M University"},]},
+
+  {"entry_id":3, "name": "Psychology","numPub":1023,"numPriv":976,"AwardedPub":11,"AwardedPriv":5,
+  "universities":[
+  {"university_id": 0, "university_name": "Stephen F Austin State University"},
+  {"university_id": 1, "university_name": "Texas Lutheran University"},
+  {"university_id": 2, "university_name": "West Texas A & M University"},]},
+
+  {"entry_id":4, "name": "Psychology","numPub":1023,"numPriv":976,"AwardedPub":11,"AwardedPriv":5,
+  "universities":[
+  {"university_id": 0, "university_name": "Stephen F Austin State University"},
+  {"university_id": 1, "university_name": "Texas Lutheran University"},
+  {"university_id": 2, "university_name": "West Texas A & M University"},]}
   ]}
 
   function compare(a,b) {

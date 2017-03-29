@@ -1,7 +1,38 @@
 <div class="container">
   <div class="row">
     <div class="box">
-      <table class="table table-bordered table-striped">
+      <table st-table="displayedCollection" st-safe-src="results" class="table table-striped">
+        <thead>
+        <tr>
+          <th st-sort="name">Name</th>
+          <th st-sort="numPub">Number of Public Schools</th>
+          <th st-sort="AwardedPub">2014 % Awarded in Public</th>
+          <th st-sort="numPriv">Number of Private Schools</th>
+          <th st-sort="AwardedPriv">2014 % Awarded in Private</th>
+        </tr>
+        <tr>
+          <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="result in displayedCollection">
+          <td><a ng-href="/#/degrees/{{result.entry_id}}">{{ result.name }}</td>
+          <td>{{ result.numPub }}</td>
+          <td>{{ result.AwardedPub }}%</td>
+          <td>{{ result.numPriv}}</td>
+          <td>{{ result.AwardedPriv }}%</td>
+        </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5" class="text-center">
+              <div st-pagination="" st-items-by-page="itemsByPage"></div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+
+<!--       <table class="table table-bordered table-striped">
         <thead>
           <tr>
           
@@ -51,7 +82,7 @@
             <td>{{ result.AwardedPriv }}</td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
     </div>
   </div>
 </div>
