@@ -8,8 +8,8 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import create_engine, func, Table, Column, Float, Integer, String, Boolean, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from model import State, University, Degree, DegreesUniversities
-from model import db
+from models import State, University, Degree, DegreesUniversities
+from models import db
  
 # app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://master:Test123alloc@allocpg.cbdyaoty0djb.us-west-2.rds.amazonaws.com/collegedb'

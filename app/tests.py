@@ -1,20 +1,15 @@
 from unittest import main, TestCase
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models import University, State, Degrees
+from models import University, State, Degree
 from config import test_db
 
 class TestModels (TestCase):
 
-    def test(self):
+    def setUp(self):
         self.engine = create_engine("postgresql://" + test_db['USER'] + ":" + test_db['PASSWORD'] + "@" + test_db['IP'] + "/" + test_db['DATABASE'])
         self.sess = sessionmaker(bind=self.engine)
-
-        session = self.sess()
-        session.query(Recipe).delete()
-        session.query(Ingredient).delete()
-        session.query(Cuisine).delete()
-        session.commit()
+        
 
     def test_university_1(self):
         session = self.sess()
@@ -158,7 +153,7 @@ class TestModels (TestCase):
         university_1 = University(name='Test University 1', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
         degree_1 = Degree(name='Degree 1', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
         degrees_universities = DegreesUniversities()
-        degrees_universities.university = university_1
+        degrees_universities.university = [university_1]
         degree_1.universities.append(degrees_universities)
         session.add(university_1)
         session.add(degree_1)
@@ -169,6 +164,57 @@ class TestModels (TestCase):
         self.assertEqual(result.degrees[0].degree.name, 'Degree 1')
         session.delete(university_1)
         session.delete(degree_1)
+        session.delete(degrees_universities)
+        session.commit()
+
+    def test_degrees_universities_2(self):
+        session = self.sess()
+
+        university_1 = University(name='Test University 1', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        university_2 = University(name='Test University 2', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        
+        degree_1 = Degree(name='Degree 1', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
+        degrees_universities = DegreesUniversities()
+        degrees_universities.university = [university_1, university_2]
+        degree_1.universities.append(degrees_universities)
+        session.add(university_1)
+        session.add(university_2)
+        session.add(degree_1)
+        session.add(degrees_universities)
+        session.commit()
+
+        result = session.query(Degree).first()
+        self.assertEqual(len(result.degrees[0].university), 2)
+        session.delete(university_1)
+        session.delete(university_2)      
+        session.delete(degree_1)
+        session.delete(degrees_universities)
+        session.commit()
+
+    def test_degrees_universities_3(self):
+        session = self.sess()
+
+        university_1 = University(name='Test University 1', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        
+        degree_1 = Degree(name='Degree 1', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
+        degree_2 = Degree(name='Degree 2', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
+        
+        degrees_universities = DegreesUniversities()
+        degrees_universities.university = [university_1]
+        degree_1.universities.append(degrees_universities)
+        degree_2.universities.append(degrees_universities)
+
+        session.add(university_1)
+        session.add(degree_1)
+        session.add(degree_2)
+        session.add(degrees_universities)
+        session.commit()
+
+        result = session.query(University).first()
+        self.assertEqual(len(result.degrees[0].degree), 2)
+        session.delete(university_1)
+        session.delete(degree_1)
+        session.delete(degree_2)      
         session.delete(degrees_universities)
         session.commit()
 
