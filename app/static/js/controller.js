@@ -51,17 +51,32 @@ myApp.controller('AboutCtrl',
                 github[author.login].avatar_url    = author.avatar_url;
                 github[author.login].url           = author.html_url;
                 github[author.login].contributions = data[i].total;
-                github[author.login].issues        = 0;
+                //github[author.login].issues        = 0;
                 stats.commits   += data[i].total;
             }
         });
 
-        IssueFactory.success(function(data) {
+        GithubFactory.success(function(data) {
+            sean = data[0]['author'];
+            jin = data[1]['author'];
+            aye = data[2]['author'];
+            ben = data[3]['author'];
+            ald = data[4]['author'];
+
+            github[sean.login].issues = 3
+            github[jin.login].issues = 6
+            github[aye.login].issues = 3
+            github[ben.login].issues = 8
+            github[ald.login].issues = 4
+            stats.issues = github[sean.login].issues + github[jin.login].issues + github[aye.logins] + github[ben.login] + github[ald.login];
+        });
+
+/*        IssueFactory.success(function(data) {
             for(var i = 0; i < data.length; i++) {
                 github[data[i].user.login].issues += 1;
                 stats.issues   += 1;
             }
-        });
+        });*/
 
         $scope.members      = AboutFactory.fetchMember();
         for(var i = 0; i < $scope.members.length; i++) {
