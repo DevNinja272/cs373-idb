@@ -38,6 +38,8 @@ if __name__ == "__main__":
     '2014.academics.program_percentage.ethnic_cultural_gender': 'Area, Ethnic, Cultural, Gender, and Group Studies'
   }
   degree_models = {}
+  degree_private_counts = {}
+  degree_public_counts = {}
 
   url = 'https://api.data.gov/ed/collegescorecard/v1/schools.json?school.state=TX,FL&school.degrees_awarded.highest=4&school.ownership=1,2&school.degrees_awarded.predominant=3&per_page=70&_fields=school.state,school.name,school.school_url,school.ownership,2014.cost.attendance.academic_year,2014.student.size,\
 2014.academics.program_percentage.agriculture,\
@@ -139,9 +141,8 @@ if __name__ == "__main__":
     degree.percent_public = 0
     degree.percent_private = 0
     degree_models[degree_code] = degree
-    db.session.add(degree)
-
-  db.session.commit()
+    degree_private_counts[degree_code] = 0
+    degree_public_counts[degree_code] = 0
 
   for i in json["results"]:
 
@@ -167,7 +168,16 @@ if __name__ == "__main__":
         association.degree = degree_models[degree_code]
         uni.degrees.append(association)
         db.session.add(association)
+        if uni.is_public:
+          degree_public_counts[degree_code] += 1
+        else:
+          degree_private_counts[degree_code] += 1
 
     db.session.add(uni)
+
+  for degree_code, degree in degree_models.items():
+    degree.num_public_offer = degree_public_counts[degree_code]
+    degree.num_private_offer = degree_private_counts[degree_code]
+    db.session.add(degree)
 
   db.session.commit()
