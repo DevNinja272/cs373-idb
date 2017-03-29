@@ -74,6 +74,46 @@ myApp.factory('StateFactory', function() {
   {"university_id": 0, "university_name": "Stephen F Austin State University"},
   {"university_id": 1, "university_name": "Texas Lutheran University"},
   {"university_id": 2, "university_name": "West Texas A & M University"},
+  ]},{"entry_id":3, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
+  "universities":[
+  {"university_id": 0, "university_name": "Stephen F Austin State University"},
+  {"university_id": 1, "university_name": "Texas Lutheran University"},
+  {"university_id": 2, "university_name": "West Texas A & M University"},
+  ]},{"entry_id":4, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
+  "universities":[
+  {"university_id": 0, "university_name": "Stephen F Austin State University"},
+  {"university_id": 1, "university_name": "Texas Lutheran University"},
+  {"university_id": 2, "university_name": "West Texas A & M University"},
+  ]},{"entry_id":5, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
+  "universities":[
+  {"university_id": 0, "university_name": "Stephen F Austin State University"},
+  {"university_id": 1, "university_name": "Texas Lutheran University"},
+  {"university_id": 2, "university_name": "West Texas A & M University"},
+  ]},{"entry_id":6, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
+  "universities":[
+  {"university_id": 0, "university_name": "Stephen F Austin State University"},
+  {"university_id": 1, "university_name": "Texas Lutheran University"},
+  {"university_id": 2, "university_name": "West Texas A & M University"},
+  ]},{"entry_id":7, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
+  "universities":[
+  {"university_id": 0, "university_name": "Stephen F Austin State University"},
+  {"university_id": 1, "university_name": "Texas Lutheran University"},
+  {"university_id": 2, "university_name": "West Texas A & M University"},
+  ]},{"entry_id":8, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
+  "universities":[
+  {"university_id": 0, "university_name": "Stephen F Austin State University"},
+  {"university_id": 1, "university_name": "Texas Lutheran University"},
+  {"university_id": 2, "university_name": "West Texas A & M University"},
+  ]},{"entry_id":9, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
+  "universities":[
+  {"university_id": 0, "university_name": "Stephen F Austin State University"},
+  {"university_id": 1, "university_name": "Texas Lutheran University"},
+  {"university_id": 2, "university_name": "West Texas A & M University"},
+  ]},{"entry_id":10, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
+  "universities":[
+  {"university_id": 0, "university_name": "Stephen F Austin State University"},
+  {"university_id": 1, "university_name": "Texas Lutheran University"},
+  {"university_id": 2, "university_name": "West Texas A & M University"},
   ]},
   {"entry_id":1, "average_public_cost":40726,"name": "Florida","average_private_cost":57873,"schools":54,"region":"SouthEast"},
   {"entry_id":2, "average_public_cost":35733,"name": "Utah","average_private_cost":61283,"schools":10,"region":"Rocky Mountains"}]}
