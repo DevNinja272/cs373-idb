@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import create_engine, func, Table, Column, Float, Integer, String, Boolean, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from model import State, University
+from model import State, University, Degree, DegreesUniversities
 from model import db
  
 # app = Flask(__name__)
@@ -31,12 +31,15 @@ if __name__ == "__main__":
           {"name": "Far West", "states": ('AK', 'CA', 'HI', 'NV', 'OR', 'WA')},
           {"name": "Outlying Areas", "states": ('AS', 'FM', 'GU', 'MH', 'MP', 'PR', 'PW', 'VI')},
         ]
-  degrees = [
-    {'2014.academics.program_percentage.agriculture': 'Agriculture, Agriculture Operations, and Related Sciences'},
-    {'2014.academics.program_percentage.resources': 'Natural Resources and Conservation'}
-  ]
+  degrees = {
+    '2014.academics.program_percentage.agriculture': 'Agriculture, Agriculture Operations, and Related Sciences',
+    '2014.academics.program_percentage.resources': 'Natural Resources and Conservation',
+    '2014.academics.program_percentage.architecture': 'Architecture and Related Services',
+    '2014.academics.program_percentage.ethnic_cultural_gender': 'Area, Ethnic, Cultural, Gender, and Group Studies'
+  }
+  degree_models = {}
 
-  url = "https://api.data.gov/ed/collegescorecard/v1/schools.json?school.state=TX,FL&school.degrees_awarded.highest=4&school.ownership=1,2&school.degrees_awarded.predominant=3&per_page=70&_fields=school.state,school.name,school.school_url,school.ownership,2014.cost.attendance.academic_year,2014.student.size\
+  url = 'https://api.data.gov/ed/collegescorecard/v1/schools.json?school.state=TX,FL&school.degrees_awarded.highest=4&school.ownership=1,2&school.degrees_awarded.predominant=3&per_page=70&_fields=school.state,school.name,school.school_url,school.ownership,2014.cost.attendance.academic_year,2014.student.size,\
 2014.academics.program_percentage.agriculture,\
 2014.academics.program_percentage.resources,\
 2014.academics.program_percentage.architecture,\
@@ -75,7 +78,7 @@ if __name__ == "__main__":
 2014.academics.program_percentage.health,\
 2014.academics.program_percentage.business_marketing,\
 2014.academics.program_percentage.history,\
-&api_key=oWaDjGHFWwjaQLhN7BUTyYYFUGBONKxo07ZU2E0W"
+&api_key=oWaDjGHFWwjaQLhN7BUTyYYFUGBONKxo07ZU2E0W'
 
   response = urlopen(url)
   json = json.load(response)
@@ -128,6 +131,18 @@ if __name__ == "__main__":
 
   db.session.commit()
 
+  for degree_code, degree_name in degrees.items():
+    degree = Degree()
+    degree.name = degree_name
+    degree.num_public_offer = 0
+    degree.num_private_offer = 0
+    degree.percent_public = 0
+    degree.percent_private = 0
+    degree_models[degree_code] = degree
+    db.session.add(degree)
+
+  db.session.commit()
+
   for i in json["results"]:
 
     uni = University()
@@ -144,6 +159,15 @@ if __name__ == "__main__":
     state_name = i["school.state"]
     state = next(state for state in states if state.name == state_name)
     uni.state_id = state.id
+
+    # Add available degrees
+    for degree_code in degrees:
+      if i[degree_code] > 0:
+        association = DegreesUniversities()
+        association.degree = degree_models[degree_code]
+        uni.degrees.append(association)
+        db.session.add(association)
+
     db.session.add(uni)
 
   db.session.commit()
