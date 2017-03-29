@@ -44,7 +44,7 @@
         </thead>
         <tbody>
           <tr ng-repeat = "result in results | orderBy:sortType:sortReverse" >
-            <td><a ng-href="/#/degrees/{{result.id}}">{{ result.name }}</td>
+            <td><a ng-href="/#/degrees/{{result.entry_id}}">{{ result.name }}</td>
             <td>{{ result.numPub }}</td>
             <td>{{ result.AwardedPub }}</td>
             <td>{{ result.numPriv}}</td>

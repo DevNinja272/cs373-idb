@@ -44,7 +44,7 @@
         </thead>
         <tbody>
           <tr ng-repeat = "result in results | orderBy:sortType:sortReverse" >
-            <td><a ng-href="/#/states/{{result.id}}">{{ result.name }}</td>
+            <td><a ng-href="/#/states/{{result.entry_id}}">{{ result.name }}</td>
             <td>{{ result.region }}</td>
             <td>{{ result.average_public_cost | currency }}</td>
             <td>{{ result.average_private_cost | currency}}</td>

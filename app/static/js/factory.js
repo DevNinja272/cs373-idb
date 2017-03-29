@@ -1,7 +1,7 @@
 myApp.factory('UniversityFactory', function() { 
   universities = 
   {"results":[
-  {"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
+  {"entry_id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
 
   "degrees":[
   {"degree_id":0, "degree_name": "Education"},
@@ -9,495 +9,7 @@ myApp.factory('UniversityFactory', function() {
   {"degree_id":2, "degree_name": "Psychology"},
   ]
 
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
+},{"entry_id":3, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
 
   "degrees":[
   {"degree_id":0, "degree_name": "Education"},
@@ -507,14 +19,14 @@ myApp.factory('UniversityFactory', function() {
 
 },
 
-{"id":1, "cost":37444,"school.name":"Texas Lutheran University","school.ownership":2,"school.school_url":"www.tlu.edu","size":1270, "state": "Texas", "state_id": 0, 
+{"entry_id":1, "cost":37444,"school.name":"Texas Lutheran University","school.ownership":2,"school.school_url":"www.tlu.edu","size":1270, "state": "Texas", "state_id": 0, 
 "degrees":[
 {"degree_id":0, "degree_name": "Education"},
 {"degree_id":1, "degree_name": "Engineering"},
 {"degree_id":2, "degree_name": "Psychology"},
 ]},
 
-{"id":2, "cost":18039,"school.name":"West Texas A & M University","school.ownership":1,"school.school_url":"www.wtamu.edu","size":7121, "state": "Texas", "state_id": 0, 
+{"entry_id":2, "cost":18039,"school.name":"West Texas A & M University","school.ownership":1,"school.school_url":"www.wtamu.edu","size":7121, "state": "Texas", "state_id": 0, 
 "degrees":[
 {"degree_id":0, "degree_name": "Education"},
 {"degree_id":1, "degree_name": "Engineering"},
@@ -522,6 +34,17 @@ myApp.factory('UniversityFactory', function() {
 ]}
 
 ]};
+
+function compare(a,b) {
+  if (a.entry_id < b.entry_id)
+    return -1;
+  if (a.entry_id > b.entry_id)
+    return 1;
+  return 0;
+}
+
+universities.results.sort(compare);
+
 for(var i = 0; i < universities.results.length; i++) {
   if (universities.results[i]["school.ownership"] == 1){
     universities.results[i]["school.ownership"] = "Public";
@@ -546,14 +69,24 @@ myApp.factory('StateFactory', function() {
 
   states = 
   {"results":[
-  {"id":0, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
+  {"entry_id":0, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
   "universities":[
   {"university_id": 0, "university_name": "Stephen F Austin State University"},
   {"university_id": 1, "university_name": "Texas Lutheran University"},
   {"university_id": 2, "university_name": "West Texas A & M University"},
   ]},
-  {"id":1, "average_public_cost":40726,"name": "Florida","average_private_cost":57873,"schools":54,"region":"SouthEast"},
-  {"id":2, "average_public_cost":35733,"name": "Utah","average_private_cost":61283,"schools":10,"region":"Rocky Mountains"}]}
+  {"entry_id":1, "average_public_cost":40726,"name": "Florida","average_private_cost":57873,"schools":54,"region":"SouthEast"},
+  {"entry_id":2, "average_public_cost":35733,"name": "Utah","average_private_cost":61283,"schools":10,"region":"Rocky Mountains"}]}
+
+  function compare(a,b) {
+  if (a.entry_id < b.entry_id)
+    return -1;
+  if (a.entry_id > b.entry_id)
+    return 1;
+  return 0;
+  }
+
+  states.results.sort(compare);
 
   for (var i = 0; i < states.results.length; i++){
     states.results[i]["map_url"] = "http://www.50states.com/maps/" + states.results[i]["name"] + ".gif";
@@ -573,28 +106,36 @@ myApp.factory('DegreeFactory', function() {
 
   degrees = 
   {"results":[
-  {"id":0, "name": "Education","numPub":3423,"numPriv":1231,"AwardedPub":"10%","AwardedPriv":"25%", 
+  {"entry_id":0, "name": "Education","numPub":3423,"numPriv":1231,"AwardedPub":"10%","AwardedPriv":"25%", 
   "universities":[
   {"university_id": 0, "university_name": "Stephen F Austin State University"},
   {"university_id": 1, "university_name": "Texas Lutheran University"},
   {"university_id": 2, "university_name": "West Texas A & M University"},
   ]},
 
-  {"id":1, "name": "Engineering","numPub":4213,"numPriv":2349,"AwardedPub":"17%","AwardedPriv":"12%",
+  {"entry_id":1, "name": "Engineering","numPub":4213,"numPriv":2349,"AwardedPub":"17%","AwardedPriv":"12%",
   "universities":[
   {"university_id": 0, "university_name": "Stephen F Austin State University"},
   {"university_id": 1, "university_name": "Texas Lutheran University"},
   {"university_id": 2, "university_name": "West Texas A & M University"},
   ]},
-  {"id":2, "name": "Psychology","numPub":1023,"numPriv":976,"AwardedPub":"11%","AwardedPriv":"5%",
+  {"entry_id":2, "name": "Psychology","numPub":1023,"numPriv":976,"AwardedPub":"11%","AwardedPriv":"5%",
   "universities":[
   {"university_id": 0, "university_name": "Stephen F Austin State University"},
   {"university_id": 1, "university_name": "Texas Lutheran University"},
   {"university_id": 2, "university_name": "West Texas A & M University"},
   ]}
-
-
   ]}
+
+  function compare(a,b) {
+  if (a.entry_id < b.entry_id)
+    return -1;
+  if (a.entry_id > b.entry_id)
+    return 1;
+  return 0;
+  }
+
+  degrees.results.sort(compare);
 
   return {
     fetch: function () {
