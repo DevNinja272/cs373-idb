@@ -135,7 +135,7 @@ class DegreesUniversities(db.Model):
     university = relationship("University", back_populates = "degrees")
 
     def __repr__(self):
-        return "<DegreesUniversities(degree_name={})>".format(self.degree_name)
+        return "<DegreesUniversities(degree={}, university={})>".format(self.degree_id, self.university_id)
 
 
 if __name__ == '__main__':
