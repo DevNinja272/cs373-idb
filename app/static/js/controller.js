@@ -68,7 +68,7 @@ myApp.controller('AboutCtrl',
             github[aye.login].issues = 3
             github[ben.login].issues = 8
             github[ald.login].issues = 4
-            stats.issues = github[sean.login].issues + github[jin.login].issues + github[aye.logins] + github[ben.login] + github[ald.login];
+            stats.issues = github[sean.login].issues + github[jin.login].issues + github[aye.login].issues + github[ben.login].issues + github[ald.login].issues; 
         });
 
 /*        IssueFactory.success(function(data) {
