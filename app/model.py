@@ -1,6 +1,16 @@
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Table, Column, Float, Integer, String, Boolean, ForeignKey, create_engine
+from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://master:Test123alloc@allocpg.cbdyaoty0djb.us-west-2.rds.amazonaws.com/collegedb'
+engine = create_engine('postgresql://master:Test123alloc@allocpg.cbdyaoty0djb.us-west-2.rds.amazonaws.com/collegedb')
+Session = sessionmaker(bind = engine)
+
+db = SQLAlchemy(app)
 
 Base = declarative_base()
 
@@ -14,7 +24,7 @@ Created 5 column attributes of University model:
 Linked the University model to the DegreesUniversities model to check all the degrees offered by the university
 Linked the University model to the State model to check what state a university is from
 """
-class University(Base):
+class University(db.Model):
     __tablename__ = 'university'
     id = Column(Integer, primary_key=True)
 
@@ -51,7 +61,7 @@ Created 5 column attributes of State model:
 5. Number of colleges in the state
 Linked the State model to to the University model to find all the universities in a given state
 """
-class State(Base):
+class State(db.Model):
     __tablename__ = 'state'
     id = Column(Integer, primary_key=True)
 
@@ -85,7 +95,7 @@ Created 5 column attributes of Degree model:
 5. Percent of private schools that offer degree
 Linked Degree model to DegreeUniversities model to check all the universities that offer the degree
 """
-class Degree(Base):
+class Degree(db.Model):
     __tablename__ = 'degree'
     id = Column(Integer, primary_key=True)
 
@@ -113,13 +123,13 @@ class Degree(Base):
 # Reference many to many: http://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html#many-to-many
 "Helps link the Degrees model and University model together to help check all the degrees \
  offered by a university and all the universities that offer a degree"
-class DegreesUniversities(Base):
+class DegreesUniversities(db.Model):
     __tablename__ = 'degreesUniversities'
 
     id = Column(Integer, primary_key=True)
 
-    university_id = Column(Integer, ForeignKey("University.id"))
-    degree_id = Column(Integer, ForeignKey("Degree.id"))
+    university_id = Column(Integer, ForeignKey("university.id"))
+    degree_id = Column(Integer, ForeignKey("degree.id"))
 
     degree = relationship("Degree", back_populates = "universities")
     university = relationship("University", back_populates = "degrees")
