@@ -32,6 +32,7 @@ for(var i = 0; i < universities.results.length; i++) {
     universities.results[i]["school.ownership"] = "Private";
   }
   universities.results[i]["logo_url"] = "//logo.clearbit.com/" + universities.results[i]["school.school_url"];
+  universities.results[i]["map"] = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCM8BIbDS3-fO09MF7_bz1p3QJgidR9kfc&q=" + universities.results[i]["school.name"];
 }
 return {
   fetch: function () {

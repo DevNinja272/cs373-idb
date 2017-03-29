@@ -5,9 +5,10 @@ myApp.controller('UniversityCtrl',
     }]);
 
 myApp.controller('UniversitySpecificCtrl',
-    ['$scope', '$routeParams', 'UniversityFactory',
-    function($scope, $routeParams, UniversityFactory) {
+    ['$scope', '$routeParams', 'UniversityFactory', '$sce',
+    function($scope, $routeParams, UniversityFactory, $sce) {
         $scope.results = UniversityFactory.fetchAt($routeParams['id']);
+        $scope.map = $sce.trustAsResourceUrl($scope.results.map);
     }]);
 
 myApp.controller('StateCtrl',
