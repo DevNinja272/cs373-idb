@@ -1,7 +1,7 @@
 'use strict';
 
 var myApp = angular.module('myApp', [
- 'ngRoute',
+ 'ngRoute','smart-table',
 ]);
 
 myApp.config(['$routeProvider',

@@ -2,6 +2,7 @@ myApp.controller('UniversityCtrl',
     ['$scope', 'UniversityFactory',
     function($scope, UniversityFactory) {
         $scope.results = UniversityFactory.fetch();
+        $scope.itemsByPage=15;
     }]);
 
 myApp.controller('UniversitySpecificCtrl',
