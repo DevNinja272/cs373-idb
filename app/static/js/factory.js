@@ -129,7 +129,7 @@ myApp.factory('StateFactory', function() {
   states.results.sort(compare);
 
   for (var i = 0; i < states.results.length; i++){
-    states.results[i]["map_url"] = "http://www.50states.com/maps/" + states.results[i]["name"] + ".gif";
+    states.results[i]["map_url"] = "http://www.50states.com/maps/" + states.results[i]["name"].toLowerCase() + ".gif";
   }
 
   return {
