@@ -90,8 +90,8 @@ if __name__ == "__main__":
       state = State()
       state.name = st
       state.region = region["name"]
-      state.average_public_tuition = 0
-      state.average_private_tuition = 0
+      state.average_public_cost = 0
+      state.average_private_cost = 0
       state.number_colleges = 0
 
       state.num_public = 0
@@ -111,22 +111,22 @@ if __name__ == "__main__":
 
     if i["school.ownership"] == 1:
       state.num_public = state.num_public + 1
-      state.average_public_tuition = state.average_public_tuition + cost
+      state.average_public_cost = state.average_public_cost + cost
     else:
       state.num_private = state.num_private + 1
-      state.average_private_tuition = state.average_private_tuition + cost
+      state.average_private_cost = state.average_private_cost + cost
 
   for i in states:
     i.number_colleges = i.num_public + i.num_private
     if (i.num_public == 0):
-      i.average_public_tuition = 0
+      i.average_public_cost = 0
     else:
-      i.average_public_tuition = i.average_public_tuition // i.num_public
+      i.average_public_cost = i.average_public_cost // i.num_public
 
     if (i.num_private == 0):
-      i.average_private_tuition = 0
+      i.average_private_cost = 0
     else:
-      i.average_private_tuition = i.average_private_tuition // i.num_private
+      i.average_private_cost = i.average_private_cost // i.num_private
 
   for i in states:
     db.session.add(i)
