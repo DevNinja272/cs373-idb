@@ -90,12 +90,12 @@ if __name__ == "__main__":
       state = State()
       state.name = st
       state.region = region["name"]
-      state.average_public_cost = 0
-      state.average_private_cost = 0
+      state.average_public_tuition = 0
+      state.average_private_tuition = 0
       state.number_colleges = 0
 
-      state.numPublic = 0
-      state.numPrivate = 0
+      state.num_public = 0
+      state.num_private = 0
 
       states.append(state)
 
@@ -110,23 +110,23 @@ if __name__ == "__main__":
       cost = i["2014.cost.attendance.academic_year"] 
 
     if i["school.ownership"] == 1:
-      state.numPublic = state.numPublic + 1
-      state.average_public_cost = state.average_public_cost + cost
+      state.num_public = state.num_public + 1
+      state.average_public_tuition = state.average_public_tuition + cost
     else:
-      state.numPrivate = state.numPrivate + 1
-      state.average_private_cost = state.average_private_cost + cost
+      state.num_private = state.num_private + 1
+      state.average_private_tuition = state.average_private_tuition + cost
 
   for i in states:
-    i.number_colleges = i.numPublic + i.numPrivate
-    if (i.numPublic == 0):
-      i.average_public_cost = 0
+    i.number_colleges = i.num_public + i.num_private
+    if (i.num_public == 0):
+      i.average_public_tuition = 0
     else:
-      i.average_public_cost = i.average_public_cost // i.numPublic
+      i.average_public_tuition = i.average_public_tuition // i.num_public
 
-    if (i.numPrivate == 0):
-      i.average_private_cost = 0
+    if (i.num_private == 0):
+      i.average_private_tuition = 0
     else:
-      i.average_private_cost = i.average_private_cost // i.numPrivate
+      i.average_private_tuition = i.average_private_tuition // i.num_private
 
   for i in states:
     db.session.add(i)
@@ -138,8 +138,8 @@ if __name__ == "__main__":
     degree.name = degree_name
     degree.num_public_offer = 0
     degree.num_private_offer = 0
-    degree.percent_public = 0
-    degree.percent_private = 0
+    degree.num_percent_public = 0
+    degree.num_percent_private = 0
     degree_models[degree_code] = degree
     degree_private_counts[degree_code] = 0
     degree_public_counts[degree_code] = 0
@@ -176,8 +176,11 @@ if __name__ == "__main__":
     db.session.add(uni)
 
   for degree_code, degree in degree_models.items():
+    total = degree_public_counts[degree_code] + degree_private_counts[degree_code]
     degree.num_public_offer = degree_public_counts[degree_code]
     degree.num_private_offer = degree_private_counts[degree_code]
+    degree.num_percent_public = degree_public_counts[degree_code]/total
+    degree.num_percent_private = degree_private_counts[degree_code]/total
     db.session.add(degree)
 
   db.session.commit()
