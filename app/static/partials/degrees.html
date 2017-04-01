@@ -4,18 +4,47 @@
       <table st-table="displayedCollection" st-safe-src="results" class="table table-striped">
         <thead>
         <tr>
-          <th st-sort="name">Name</th>
-          <th st-sort="numPub">Number of Public Schools</th>
-          <th st-sort="AwardedPub">2014 % Awarded in Public</th>
-          <th st-sort="numPriv">Number of Private Schools</th>
-          <th st-sort="AwardedPriv">2014 % Awarded in Private</th>
+            <td width="20%">
+              <a href="/#/degrees" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+              Name
+              <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+            </td>
+
+            <td width="20%">
+              <a href="/#/degrees" ng-click="sortType = 'numPub'; sortReverse = !sortReverse">
+              Number of Public Schools that offer
+              <span ng-show="sortType == 'numPub' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'numPub' && sortReverse" class="fa fa-caret-up"></span>
+            </td>
+
+            <td width="20%">
+              <a href="/#/degrees" ng-click="sortType = 'AwardedPub'; sortReverse = !sortReverse">
+              2014 % Awarded in Public Schools
+              <span ng-show="sortType == 'AwardedPub' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'AwardedPub' && sortReverse" class="fa fa-caret-up"></span>
+            </td>
+
+            <td width="20%">
+              <a href="/#/degrees" ng-click="sortType = 'numPriv'; sortReverse = !sortReverse">
+              Number of Private Schools that offer
+              <span ng-show="sortType == 'numPriv' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'numPriv' && sortReverse" class="fa fa-caret-up"></span>
+            </td>
+
+            <td width="20%">
+              <a href="/#/degrees" ng-click="sortType = 'AwardedPriv'; sortReverse = !sortReverse">
+              2014 % Awarded in Private Schools
+              <span ng-show="sortType == 'AwardedPriv' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'AwardedPriv' && sortReverse" class="fa fa-caret-up"></span>
+            </td>
         </tr>
         <tr>
           <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="result in displayedCollection">
+        <tr ng-repeat="result in displayedCollection | orderBy:sortType:sortReverse">
           <td><a ng-href="/#/degrees/{{result.entry_id}}">{{ result.name }}</td>
           <td>{{ result.numPub }}</td>
           <td>{{ result.AwardedPub }}%</td>
