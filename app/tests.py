@@ -4,13 +4,13 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from models import University, State, Degree
-from config import db
+from config import db_config
 
 
 class TestModels (TestCase):
 
     def setUp(self):
-        self.engine = create_engine("postgresql://" + db['user'] + ":" + db['pass'] + "@" + db['host'] + "/" + db['db_name'])
+        self.engine = create_engine("postgresql://" + db_config['user'] + ":" + db_config['pass'] + "@" + db_config['host'] + "/" + db_config['db_name'])
         self.sess = sessionmaker(bind=self.engine)
         
 

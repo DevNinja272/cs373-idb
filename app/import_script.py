@@ -10,9 +10,10 @@ from sqlalchemy import create_engine, func, Table, Column, Float, Integer, Strin
 from sqlalchemy.ext.declarative import declarative_base
 from models import State, University, Degree, DegreesUniversities
 from models import db
+from config import db_config
  
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://" + db['user'] + ":" + db['pass'] + "@" + db['host'] + "/" + db['db_name']
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://" + db_config['user'] + ":" + db_config['pass'] + "@" + db_config['host'] + "/" + db_config['db_name']
 engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
 Session = sessionmaker(bind = engine)
 

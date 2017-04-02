@@ -7,10 +7,10 @@ from sqlalchemy import Table, Column, Float, Integer, String, Boolean, ForeignKe
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
-from config import db
+from config import db_config
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://" + db['user'] + ":" + db['pass'] + "@" + db['host'] + "/" + db['db_name']
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://" + db_config['user'] + ":" + db_config['pass'] + "@" + db_config['host'] + "/" + db_config['db_name']
 engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
 Session = sessionmaker(bind = engine)
 
