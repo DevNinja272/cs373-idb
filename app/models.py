@@ -7,6 +7,7 @@ from sqlalchemy import Table, Column, Float, Integer, String, Boolean, ForeignKe
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
+
 from config import db_config
 
 app = Flask(__name__)
@@ -60,14 +61,14 @@ class State(db.Model):
 
     name = Column(String)
     region = Column(String)
-    average_public_tuition = Column(Integer)
-    average_private_tuition = Column(Integer)
+    average_public_cost = Column(Integer)
+    average_private_cost = Column(Integer)
     number_colleges = Column(Integer)
     universities = relationship('University', backref='state')
 
     def __repr__(self):
-        return "<State(name={}, region={}, average_public_tuition={}, average_private_tuition={}, number_colleges={}"\
-            .format(self.name, self.region, self.average_public_tuition, self.average_private_tuition, self.number_colleges)
+        return "<State(name={}, region={}, average_public_tuition={}, average_private_cost={}, number_colleges={}"\
+            .format(self.name, self.region, self.average_public_cost, self.average_private_cost, self.number_colleges)
 
 class Degree(db.Model):
     """
