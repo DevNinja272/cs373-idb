@@ -99,4 +99,4 @@ ENV/
 data/
 /data/*.py
 
-/.idea/
+/.idea/*
