@@ -16,36 +16,30 @@ from models import db
 # engine = create_engine('postgresql://master:Test123alloc@allocpg.cbdyaoty0djb.us-west-2.rds.amazonaws.com/collegedb')
 # Session = sessionmaker(bind = engine)
 
-def import_data(url):
-  universities = []
-  states = []
-  regions =   [ 
-          {"name": "New England", "states": ('CT', 'ME', 'MA', 'NH', 'RI', 'VT')},
-          {"name": "Mentry_id East", "states": ('DE', 'DC', 'MD', 'NJ', 'NY', 'PA')},
-          {"name": "Great Lakes", "states": ('IL', 'IN', 'MI', 'OH', 'WI')},
-          {"name": "Plains", "states": ('IA', 'KS', 'MN', 'MO', 'NE', 'ND', 'SD')},
-          {"name": "Southeast", "states": ('AL', 'AR', 'FL', 'GA', 'KY', 'LA', 'MS', 'NC', 'SC', 'TN', 'VA', 'WV')},
-          {"name": "Southwest", "states": ('AZ', 'NM', 'OK', 'TX')},
-          {"name": "Rocky Mountains", "states": ('CO', 'entry_id', 'MT', 'UT', 'WY')},
-          {"name": "Far West", "states": ('AK', 'CA', 'HI', 'NV', 'OR', 'WA')},
-          {"name": "Outlying Areas", "states": ('AS', 'FM', 'GU', 'MH', 'MP', 'PR', 'PW', 'VI')},
-        ]
-  degrees = {
-    '2014.academics.program_percentage.agriculture': 'Agriculture, Agriculture Operations, and Related Sciences',
-    '2014.academics.program_percentage.resources': 'Natural Resources and Conservation',
-    '2014.academics.program_percentage.architecture': 'Architecture and Related Services',
-    '2014.academics.program_percentage.ethnic_cultural_gender': 'Area, Ethnic, Cultural, Gender, and Group Studies'
-  }
-  degree_models = {}
-  degree_private_counts = {}
-  degree_public_counts = {}
+states = []
+regions =   [ 
+        {"name": "New England", "states": ('CT', 'ME', 'MA', 'NH', 'RI', 'VT')},
+        {"name": "Mentry_id East", "states": ('DE', 'DC', 'MD', 'NJ', 'NY', 'PA')},
+        {"name": "Great Lakes", "states": ('IL', 'IN', 'MI', 'OH', 'WI')},
+        {"name": "Plains", "states": ('IA', 'KS', 'MN', 'MO', 'NE', 'ND', 'SD')},
+        {"name": "Southeast", "states": ('AL', 'AR', 'FL', 'GA', 'KY', 'LA', 'MS', 'NC', 'SC', 'TN', 'VA', 'WV')},
+        {"name": "Southwest", "states": ('AZ', 'NM', 'OK', 'TX')},
+        {"name": "Rocky Mountains", "states": ('CO', 'entry_id', 'MT', 'UT', 'WY')},
+        {"name": "Far West", "states": ('AK', 'CA', 'HI', 'NV', 'OR', 'WA')},
+        {"name": "Outlying Areas", "states": ('AS', 'FM', 'GU', 'MH', 'MP', 'PR', 'PW', 'VI')},
+      ]
+degrees = {
+  '2014.academics.program_percentage.agriculture': 'Agriculture, Agriculture Operations, and Related Sciences',
+  '2014.academics.program_percentage.resources': 'Natural Resources and Conservation',
+  '2014.academics.program_percentage.architecture': 'Architecture and Related Services',
+  '2014.academics.program_percentage.ethnic_cultural_gender': 'Area, Ethnic, Cultural, Gender, and Group Studies'
+}
+degree_models = {}
+degree_private_counts = {}
+degree_public_counts = {}
 
-  response = urlopen(url)
-  json_response = json.load(response)
-  print('Number of Pages:' + str(json_response["metadata"]["total"]))
-  print('Current Page:' + str(json_response["metadata"]["page"]))
-  print('Results per page:' + str(json_response["metadata"]["per_page"]))
-
+def import_first():
+  print("Creating regions and states")
   for region in regions:
     for st in region["states"]:
       state = State()
@@ -60,40 +54,10 @@ def import_data(url):
 
       states.append(state)
 
-  for i in json_response["results"]:
-
-    state_name = i["school.state"]
-    state = next(state for state in states if state.name == state_name)
-
-    if i["2014.cost.attendance.academic_year"] is None:
-      cost = 0
-    else:
-      cost = i["2014.cost.attendance.academic_year"] 
-
-    if i["school.ownership"] == 1:
-      state.num_public = state.num_public + 1
-      state.average_public_cost = state.average_public_cost + cost
-    else:
-      state.num_private = state.num_private + 1
-      state.average_private_cost = state.average_private_cost + cost
-
-  for i in states:
-    i.number_colleges = i.num_public + i.num_private
-    if (i.num_public == 0):
-      i.average_public_cost = 0
-    else:
-      i.average_public_cost = i.average_public_cost // i.num_public
-
-    if (i.num_private == 0):
-      i.average_private_cost = 0
-    else:
-      i.average_private_cost = i.average_private_cost // i.num_private
-
   for i in states:
     db.session.add(i)
 
-  db.session.commit()
-
+  print("Creating all degrees")
   for degree_code, degree_name in degrees.items():
     degree = Degree()
     degree.name = degree_name
@@ -105,8 +69,17 @@ def import_data(url):
     degree_private_counts[degree_code] = 0
     degree_public_counts[degree_code] = 0
 
-  for i in json_response["results"]:
+  db.session.commit()
 
+def import_data(url):
+  universities = []
+  response = urlopen(url)
+  json_response = json.load(response)
+  print('Number of Pages:' + str(json_response["metadata"]["total"]))
+  print('Current Page:' + str(json_response["metadata"]["page"]))
+  print('Results per page:' + str(json_response["metadata"]["per_page"]))
+
+  for i in json_response["results"]:
     uni = University()
     uni.name = i["school.name"]
     if i["school.ownership"] == 1:
@@ -135,19 +108,59 @@ def import_data(url):
           degree_private_counts[degree_code] += 1
 
     db.session.add(uni)
-
-  for degree_code, degree in degree_models.items():
-    total = degree_public_counts[degree_code] + degree_private_counts[degree_code]
-    degree.num_public_offer = degree_public_counts[degree_code]
-    degree.num_private_offer = degree_private_counts[degree_code]
-    degree.num_percent_public = degree_public_counts[degree_code]/total
-    degree.num_percent_private = degree_private_counts[degree_code]/total
-    db.session.add(degree)
-
   db.session.commit()
+
+  
 
   return json_response["metadata"]["total"]
 
+# Calculating cost of attendance average and number per state.
+### THIS NEEDS TO BE DONE AT THE END NOW. ###
+# Will need to update the state stats.
+
+# for i in json_response["results"]:
+#   state_name = i["school.state"]
+#   state = next(state for state in states if state.name == state_name)
+
+#   if i["2014.cost.attendance.academic_year"] is None:
+#     cost = 0
+#   else:
+#     cost = i["2014.cost.attendance.academic_year"] 
+
+#   if i["school.ownership"] == 1:
+#     state.num_public = state.num_public + 1
+#     state.average_public_cost = state.average_public_cost + cost
+#   else:
+#     state.num_private = state.num_private + 1
+#     state.average_private_cost = state.average_private_cost + cost
+
+# for i in states:
+#   i.number_colleges = i.num_public + i.num_private
+#   if (i.num_public == 0):
+#     i.average_public_cost = 0
+#   else:
+#     i.average_public_cost = i.average_public_cost // i.num_public
+
+#   if (i.num_private == 0):
+#     i.average_private_cost = 0
+#   else:
+#     i.average_private_cost = i.average_private_cost // i.num_private
+
+# Calculate degree stats.
+### THIS NEEDS TO BE DONE AT THE END NOW.
+# Will need to update the degree stats,
+
+# for degree_code, degree in degree_models.items():
+#   total = degree_public_counts[degree_code] + degree_private_counts[degree_code]
+#   degree.num_public_offer = degree_public_counts[degree_code]
+#   degree.num_private_offer = degree_private_counts[degree_code]
+#   degree.num_percent_public = degree_public_counts[degree_code]/total
+#   degree.num_percent_private = degree_private_counts[degree_code]/total
+#   db.session.add(degree)
+
+# db.session.commit()
+
+# Main
 if __name__ == "__main__":
   db.create_all()
 
@@ -194,6 +207,7 @@ if __name__ == "__main__":
 2014.academics.program_percentage.history,\
 &api_key=oWaDjGHFWwjaQLhN7BUTyYYFUGBONKxo07ZU2E0W'
   
+  import_first()
   page = 0
   while import_data(url_first_part + str(page) + url_second_part) > page:
     page += 1
