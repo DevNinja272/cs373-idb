@@ -11,10 +11,10 @@ from sqlalchemy.ext.declarative import declarative_base
 from models import State, University, Degree, DegreesUniversities
 from models import db
  
-# app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://master:Test123alloc@allocpg.cbdyaoty0djb.us-west-2.rds.amazonaws.com/collegedb'
-# engine = create_engine('postgresql://master:Test123alloc@allocpg.cbdyaoty0djb.us-west-2.rds.amazonaws.com/collegedb')
-# Session = sessionmaker(bind = engine)
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://" + db['user'] + ":" + db['pass'] + "@" + db['host'] + "/" + db['db_name']
+engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
+Session = sessionmaker(bind = engine)
 
 states = []
 regions =   [ 
