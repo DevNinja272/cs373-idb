@@ -14,7 +14,7 @@ Session = sessionmaker(bind = engine)
 def index():
     return render_template("index.html")
 
-@app.route('/universities',methods=['GET'])
+@app.route('/api/universities',methods=['GET'])
 def get_unis():
   session = Session()
   universities = []
@@ -35,7 +35,7 @@ def get_unis():
     universities.append(uni_dict)
   return jsonify(universities=universities)
 
-@app.route('/states',methods=['GET'])
+@app.route('/api/states',methods=['GET'])
 def get_states():
   session = Session()
   states = []
@@ -55,7 +55,7 @@ def get_states():
 
   return jsonify(states=states)
 
-@app.route('/degrees',methods=['GET'])
+@app.route('/api/degrees',methods=['GET'])
 def get_degrees():
   session = Session()
   degrees = []
