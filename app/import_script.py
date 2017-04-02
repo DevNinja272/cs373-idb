@@ -110,8 +110,6 @@ def import_data(url):
     db.session.add(uni)
   db.session.commit()
 
-  
-
   return json_response["metadata"]["total"]
 
 # Calculating cost of attendance average and number per state.
@@ -167,45 +165,45 @@ if __name__ == "__main__":
   # Add in the state constraint or other constraints to just import a subset of the data.
   url_first_part = 'https://api.data.gov/ed/collegescorecard/v1/schools.json?page='
   url_second_part = '&school.degrees_awarded.highest=4&school.ownership=1,2&school.degrees_awarded.predominant=3&per_page=70&_fields=school.state,school.name,school.school_url,school.ownership,2014.cost.attendance.academic_year,2014.student.size,\
-2014.academics.program_percentage.agriculture,\
-2014.academics.program_percentage.resources,\
-2014.academics.program_percentage.architecture,\
-2014.academics.program_percentage.ethnic_cultural_gender,\
-2014.academics.program_percentage.communication,\
-2014.academics.program_percentage.communications_technology,\
-2014.academics.program_percentage.computer,\
-2014.academics.program_percentage.personal_culinary,\
-2014.academics.program_percentage.education,\
-2014.academics.program_percentage.engineering,\
-2014.academics.program_percentage.engineering_technology,\
-2014.academics.program_percentage.language,\
-2014.academics.program_percentage.family_consumer_science,\
-2014.academics.program_percentage.legal,\
-2014.academics.program_percentage.english,\
-2014.academics.program_percentage.humanities,\
-2014.academics.program_percentage.library,\
-2014.academics.program_percentage.biological,\
-2014.academics.program_percentage.mathematics,\
-2014.academics.program_percentage.military,\
-2014.academics.program_percentage.multidiscipline,\
-2014.academics.program_percentage.parks_recreation_fitness,\
-2014.academics.program_percentage.philosophy_religious,\
-2014.academics.program_percentage.theology_religious_vocation,\
-2014.academics.program_percentage.physical_science,\
-2014.academics.program_percentage.science_technology,\
-2014.academics.program_percentage.psychology,\
-2014.academics.program_percentage.security_law_enforcement,\
-2014.academics.program_percentage.public_administration_social_service,\
-2014.academics.program_percentage.social_science,\
-2014.academics.program_percentage.construction,\
-2014.academics.program_percentage.mechanic_repair_technology,\
-2014.academics.program_percentage.precision_production,\
-2014.academics.program_percentage.transportation,\
-2014.academics.program_percentage.visual_performing,\
-2014.academics.program_percentage.health,\
-2014.academics.program_percentage.business_marketing,\
-2014.academics.program_percentage.history,\
-&api_key=oWaDjGHFWwjaQLhN7BUTyYYFUGBONKxo07ZU2E0W'
+  2014.academics.program_percentage.agriculture,\
+  2014.academics.program_percentage.resources,\
+  2014.academics.program_percentage.architecture,\
+  2014.academics.program_percentage.ethnic_cultural_gender,\
+  2014.academics.program_percentage.communication,\
+  2014.academics.program_percentage.communications_technology,\
+  2014.academics.program_percentage.computer,\
+  2014.academics.program_percentage.personal_culinary,\
+  2014.academics.program_percentage.education,\
+  2014.academics.program_percentage.engineering,\
+  2014.academics.program_percentage.engineering_technology,\
+  2014.academics.program_percentage.language,\
+  2014.academics.program_percentage.family_consumer_science,\
+  2014.academics.program_percentage.legal,\
+  2014.academics.program_percentage.english,\
+  2014.academics.program_percentage.humanities,\
+  2014.academics.program_percentage.library,\
+  2014.academics.program_percentage.biological,\
+  2014.academics.program_percentage.mathematics,\
+  2014.academics.program_percentage.military,\
+  2014.academics.program_percentage.multidiscipline,\
+  2014.academics.program_percentage.parks_recreation_fitness,\
+  2014.academics.program_percentage.philosophy_religious,\
+  2014.academics.program_percentage.theology_religious_vocation,\
+  2014.academics.program_percentage.physical_science,\
+  2014.academics.program_percentage.science_technology,\
+  2014.academics.program_percentage.psychology,\
+  2014.academics.program_percentage.security_law_enforcement,\
+  2014.academics.program_percentage.public_administration_social_service,\
+  2014.academics.program_percentage.social_science,\
+  2014.academics.program_percentage.construction,\
+  2014.academics.program_percentage.mechanic_repair_technology,\
+  2014.academics.program_percentage.precision_production,\
+  2014.academics.program_percentage.transportation,\
+  2014.academics.program_percentage.visual_performing,\
+  2014.academics.program_percentage.health,\
+  2014.academics.program_percentage.business_marketing,\
+  2014.academics.program_percentage.history,\
+  &api_key=oWaDjGHFWwjaQLhN7BUTyYYFUGBONKxo07ZU2E0W'
   
   import_first()
   page = 0
