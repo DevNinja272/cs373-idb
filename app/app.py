@@ -3,9 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import create_engine
 from models import State, University, Degree, DegreesUniversities
+from app.config import db
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://master:Test123alloc@allocpg.cbdyaoty0djb.us-west-2.rds.amazonaws.com/collegedb'
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://" + db['user'] + ":" + db['pass'] + "@" + db['host'] + "/" + db['db_name']
 engine = create_engine('postgresql://master:Test123alloc@allocpg.cbdyaoty0djb.us-west-2.rds.amazonaws.com/collegedb')
 Session = sessionmaker(bind = engine)
 
