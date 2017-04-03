@@ -17,16 +17,17 @@ def index():
 @app.route('/api/universities/<int:id>',methods=['GET'])
 def get_single_uni(id):
   session = Session()
-  uni = session.query(University).filter(University.id == id).one()
+  uni = session.query(University).get(id)
   state = session.query(State).filter(State.id == uni.state_id).one()
   uni.state_name = str(state.name)
   uni.state_id = state.id
 
   degreesUniversitiesList = session.query(DegreesUniversities).filter(DegreesUniversities.university_id == uni.id).all()
+  print(degreesUniversitiesList)
   degree_list = []
+  print
   for degreeUniversity in degreesUniversitiesList:
-
-    degree = session.query(Degree).filter(Degree.id == degreeUniversity.id).one()
+    degree = session.query(Degree).get(degreeUniversity.degree_id)
     degree_dict = {"degree_id":degree.id, "degree_name":str(degree.name)}
     degree_list.append(degree_dict)
 
