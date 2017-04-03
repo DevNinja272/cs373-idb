@@ -23,7 +23,6 @@ def get_single_uni(id):
   uni.state_id = state.id
 
   degreesUniversitiesList = session.query(DegreesUniversities).filter(DegreesUniversities.university_id == uni.id).all()
-  print(degreesUniversitiesList)
   degree_list = []
   for degreeUniversity in degreesUniversitiesList:
     degree = session.query(Degree).get(degreeUniversity.degree_id)
@@ -34,6 +33,26 @@ def get_single_uni(id):
   uni_dict['degrees'] = degree_list
   uni_dict.pop('_sa_instance_state', None)
   return jsonify(university=uni_dict)
+
+
+@app.route('/api/degrees/<int:id>',methods=['GET'])
+def get_single_degree(id):
+  session = Session()
+  degree = session.query(Degree).get(id)
+
+  degreesUniversitiesList = session.query(DegreesUniversities).filter(DegreesUniversities.degree_id == degree.id).all()
+  universities_list = []
+  for degreeUniversity in degreesUniversitiesList:
+    university = session.query(University).get(degreeUniversity.university_id)
+    university_dict = {"university_id":university.id, "university_name": str(university.name)}
+    universities_list.append(university_dict)
+
+  degree_dict = degree.__dict__.copy()
+  degree_dict['universities'] = universities_list
+  degree_dict.pop('_sa_instance_state', None)
+  return jsonify(degree=degree_dict)
+
+
 
 @app.route('/api/states/<int:id>',methods=['GET'])
 def get_single_state(id):
