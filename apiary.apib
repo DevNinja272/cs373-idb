@@ -1,80 +1,147 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://collegedb.me/api
 
-# cs373-idb
+# College DB
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+College DB is an API for easily retrieving information about Universities, Degrees, and States in the United States.
 
-## Questions Collection [/questions]
+## Universities Collection [/universities]
 
-### List All Questions [GET]
+### List All Universities [GET]
 
 + Response 200 (application/json)
 
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+                "id": 0,
+                "name": "The University of Texas at Austin",
+                "is_public": true,
+                "num_students": 50000,
+                "website_URL": "http://utexas.edu",
+                "academic_cost": 5000
+            },
+            {
+                "id": 1,
+                "name": "St. Edward's",
+                "is_public": false,
+                "num_students": 10000,
+                "website_URL": "http://stedwards.edu",
+                "academic_cost": 15000
             }
         ]
 
-### Create a New Question [POST]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+## A Single University [/universities/{id}]
 
-+ Request (application/json)
+### List a university with the given {id} [GET]
+Gives back information for a single university plus its state and degrees.
+
++ Response 200 (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
+            "id": 0,
+            "name": "The University of Texas at Austin",
+            "is_public": true,
+            "num_students": 50000,
+            "website_URL": "http://utexas.edu",
+            "academic_cost": 5000,
+            "state": {"state_id":0, "state_name": "Texas"},
+            "degrees": [
+                {"degree_id":0, "degree_name":"Education"},
+                {"degree_id":1, "degree_name":"Engineering"}
             ]
         }
+        
+## States Collection [/states]
 
-+ Response 201 (application/json)
+### List All States [GET]
 
-    + Headers
++ Response 200 (application/json)
 
-            Location: /questions/2
-
-    + Body
-
+        [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
+                "id": 0,
+                "name": "Texas",
+                "region": "South",
+                "average_public_tuition": 5000,
+                "average_private_tuition": 15000,
+                "number_colleges": 500
+            },
+            {
+                "id": 1,
+                "name": "California",
+                "region": "West",
+                "average_public_tuition": 10000,
+                "average_private_tuition": 30000,
+                "number_colleges": 300
+            }
+        ]
+
+
+## A Single State [/states/{id}]
+
+### List a state with the given {id} [GET]
+Gives back information for a single state plus a list of its universities.
+
++ Response 200 (application/json)
+
+        {
+                "id": 0,
+                "name": "Texas",
+                "region": "South",
+                "average_public_tuition": 5000,
+                "average_private_tuition": 15000,
+                "number_colleges": 500,
+                "universities": [ 
+                {"university_id":0, "university_name":"The University of Texas at Austin"},
+                {"university_id":0, "university_name":"St. Edward's"}
+                ]
+            }
+        
+
+
+## Degrees Collection [/degrees]
+
+### List All Degrees [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 0,
+                "name": "Engineering",
+                "num_public_offer": 5,
+                "num_private_offer": 50,
+                "num_percent_public": 6.75,
+                "num_percent_private": 7.98
+            },
+            {
+                "id": 1,
+                "name": "Engineering",
+                "num_public_offer": 10,
+                "num_private_offer": 5,
+                "num_percent_public": 5.00,
+                "num_percent_private": 8.33
+            }
+        ]
+
+
+## A Single Degree [/degrees/{id}]
+
+### List a degree with the given {id} [GET]
+Gives back information for a single degree plus a list of universities that offer that degree.
+
++ Response 200 (application/json)
+
+        {
+                "id": 0,
+                "name": "Engineering",
+                "num_public_offer": 5,
+                "num_private_offer": 50,
+                "num_percent_public": 6.75,
+                "num_percent_private": 7.98,
+                "universities": [ 
+                {"university_id":0, "university_name":"The University of Texas at Austin"},
+                {"university_id":0, "university_name":"St. Edward's"}
                 ]
             }

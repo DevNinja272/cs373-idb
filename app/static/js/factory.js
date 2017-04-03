@@ -208,28 +208,6 @@ myApp.factory('IssueFactory', function($http) {
 
 myApp.factory('AboutFactory', function() {
 
-  var informationCache = [
-    { name: 'Apiary',               link: 'http://docs.collegedb.apiary.io/#'},
-    { name: 'Github Issue Tracker', link: 'https://github.com/JinwookKim/cs373-idb/issues'},
-    { name: 'Github Repository',    link: 'https://github.com/JinwookKim/cs373-idb'},
-    { name: 'Github Wiki',          link: 'https://github.com/JinwookKim/cs373-idb/wiki'}
-  ];
-
-  var toolCache = [
-    { name: 'AngularJS',   link: 'https://angularjs.org/'},
-    { name: 'BootstrapJS', link: 'http://getbootstrap.com/'},
-    { name: 'Flask',       link: 'http://flask.pocoo.org/'},
-    { name: 'SQLAlchemy',  link: 'http://www.sqlalchemy.org/'},
-    { name: 'yUML',        link: 'http://yuml.me/'}
-  ];
-
-  var apiCache = [
-    { name: 'College API',      link: 'https://collegescorecard.ed.gov/data/documentation/'},
-    { name: 'API Sign Up Key',  link: 'https://api.data.gov/signup/'},
-    { name: 'College Logos',    link: 'https://clearbit.com/logo'},
-    { name: 'State Photos',     link: 'http://www.50states.com/maps/'}
-  ];
-
   var memberCache = [
   {
     name: 'Jinwook Kim', 
@@ -260,7 +238,7 @@ myApp.factory('AboutFactory', function() {
     tests: 5
   },
   {
-    name: 'Nabil Ahmed', 
+    name: 'Ahmed Al Nabil', 
     login: 'ayenabil',
     description:"My name is Ahmed and I'm a sophomore studying computer science with a business certificate. Some of my interests include dancing, drawing, and going on adventures.",
     responsibilities: 'Backend', 
@@ -268,15 +246,6 @@ myApp.factory('AboutFactory', function() {
   },
   ];
   return {
-    fetchAPI: function () {
-      return apiCache;
-    },
-    fetchInformation: function () {
-      return informationCache;
-    },
-    fetchTool: function () {
-      return toolCache;
-    },
     fetchMember: function () {
       return memberCache;
     }
