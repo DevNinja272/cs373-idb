@@ -101,3 +101,5 @@ ENV/
 *.swp
 data/
 /data/*.py
+
+.idea/

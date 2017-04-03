@@ -1,12 +1,15 @@
 from unittest import main, TestCase
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
 from models import University, State, Degree
+from config import db_config
 
 class TestModels (TestCase):
 
     def setUp(self):
-        self.engine = create_engine("postgresql://" + test_db['USER'] + ":" + test_db['PASSWORD'] + "@" + test_db['IP'] + "/" + test_db['DATABASE'])
+        self.engine = create_engine("postgresql://" + db_config['user'] + ":" + db_config['pass'] + "@" + db_config['host'] + "/" + db_config['db_name'])
         self.sess = sessionmaker(bind=self.engine)
         
 
