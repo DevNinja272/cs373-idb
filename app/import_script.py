@@ -27,6 +27,67 @@ if __name__ == "__main__":
   db.create_all()
   universities = []
   states = []
+
+  states_abbrevs = {
+        'AK': 'Alaska',
+        'AL': 'Alabama',
+        'AR': 'Arkansas',
+        'AS': 'American Samoa',
+        'AZ': 'Arizona',
+        'CA': 'California',
+        'CO': 'Colorado',
+        'CT': 'Connecticut',
+        'DC': 'District of Columbia',
+        'DE': 'Delaware',
+        'FL': 'Florida',
+        'GA': 'Georgia',
+        'GU': 'Guam',
+        'HI': 'Hawaii',
+        'IA': 'Iowa',
+        'ID': 'Idaho',
+        'IL': 'Illinois',
+        'IN': 'Indiana',
+        'KS': 'Kansas',
+        'KY': 'Kentucky',
+        'LA': 'Louisiana',
+        'MA': 'Massachusetts',
+        'MD': 'Maryland',
+        'ME': 'Maine',
+        'MI': 'Michigan',
+        'MN': 'Minnesota',
+        'MO': 'Missouri',
+        'MP': 'Northern Mariana Islands',
+        'MS': 'Mississippi',
+        'MT': 'Montana',
+        'NA': 'National',
+        'NC': 'North Carolina',
+        'ND': 'North Dakota',
+        'NE': 'Nebraska',
+        'NH': 'New Hampshire',
+        'NJ': 'New Jersey',
+        'NM': 'New Mexico',
+        'NV': 'Nevada',
+        'NY': 'New York',
+        'OH': 'Ohio',
+        'OK': 'Oklahoma',
+        'OR': 'Oregon',
+        'PA': 'Pennsylvania',
+        'PR': 'Puerto Rico',
+        'RI': 'Rhode Island',
+        'SC': 'South Carolina',
+        'SD': 'South Dakota',
+        'TN': 'Tennessee',
+        'TX': 'Texas',
+        'UT': 'Utah',
+        'VA': 'Virginia',
+        'VI': 'Virgin Islands',
+        'VT': 'Vermont',
+        'WA': 'Washington',
+        'WI': 'Wisconsin',
+        'WV': 'West Virginia',
+        'WY': 'Wyoming'
+}
+
   regions =   [ 
           {"name": "New England", "states": ('CT', 'ME', 'MA', 'NH', 'RI', 'VT')},
           {"name": "Mentry_id East", "states": ('DE', 'DC', 'MD', 'NJ', 'NY', 'PA')},
@@ -178,6 +239,7 @@ if __name__ == "__main__":
       i.average_private_cost = i.average_private_cost // i.numPrivate
 
   for i in states:
+    i.name = states_abbrevs[i.name]
     db.session.add(i)
 
   db.session.commit()
@@ -206,7 +268,7 @@ if __name__ == "__main__":
     uni.academic_cost = i["2014.cost.attendance.academic_year"]
     uni.num_students = i["2014.student.size"]
     
-    state_name = i["school.state"]
+    state_name = states_abbrevs[i["school.state"]]
     state = next((state for state in states if state.name == state_name),None)
     if (state):
       uni.state_id = state.id
