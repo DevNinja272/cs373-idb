@@ -1,15 +1,43 @@
 myApp.controller('UniversityCtrl',
     ['$scope', 'UniversityFactory',
     function($scope, UniversityFactory) {
-        $scope.results = UniversityFactory.fetch();
+        UniversityFactory.fetch().success(function(data){
+            results = data['universities'];
+
+            for(var i = 0; i < results.length; i++){
+                if (results[i]['is_public'] == true){
+                    results[i]['is_public'] = 'Public';
+                }
+                else{
+                    results[i]['is_public'] = 'Private';
+                }
+
+                results[i]['logo_url'] = "//logo.clearbit.com/" + results[i]["website_URL"];
+            }
+            $scope.results = results;
+        });
+
+
+
+        
         $scope.itemsByPage=15;
     }]);
 
 myApp.controller('UniversitySpecificCtrl',
     ['$scope', '$routeParams', 'UniversityFactory', '$sce',
     function($scope, $routeParams, UniversityFactory, $sce) {
-        $scope.results = UniversityFactory.fetchAt($routeParams['id']);
-        $scope.map = $sce.trustAsResourceUrl($scope.results.map);
+        UniversityFactory.fetchAt($routeParams['id']).success(function(data){
+            results = data['university'];
+
+            if (results['is_public'] == true){
+                results['is_public'] = 'Public';
+            }
+            else{
+                results['is_public'] = 'Private';
+            }
+            results['logo_url'] = "//logo.clearbit.com/" + results["website_URL"];
+            $scope.results = results;
+        });
     }]);
 
 myApp.controller('StateCtrl',

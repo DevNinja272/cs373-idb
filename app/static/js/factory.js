@@ -1,41 +1,6 @@
-myApp.factory('UniversityFactory', function() { 
-  universities = 
-  {"results":[
-  {"entry_id":0, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
+myApp.factory('UniversityFactory', function($http) { 
 
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},{"entry_id":3, "cost":22544,"school.name":"Stephen F Austin State University","school.ownership":1,"school.school_url":"www.sfasu.edu","size":10692, "state": "Texas", "state_id": 0, 
-
-  "degrees":[
-  {"degree_id":0, "degree_name": "Education"},
-  {"degree_id":1, "degree_name": "Engineering"},
-  {"degree_id":2, "degree_name": "Psychology"},
-  ]
-
-},
-
-{"entry_id":1, "cost":37444,"school.name":"Texas Lutheran University","school.ownership":2,"school.school_url":"www.tlu.edu","size":1270, "state": "Texas", "state_id": 0, 
-"degrees":[
-{"degree_id":0, "degree_name": "Education"},
-{"degree_id":1, "degree_name": "Engineering"},
-{"degree_id":2, "degree_name": "Psychology"},
-]},
-
-{"entry_id":2, "cost":18039,"school.name":"West Texas A & M University","school.ownership":1,"school.school_url":"www.wtamu.edu","size":7121, "state": "Texas", "state_id": 0, 
-"degrees":[
-{"degree_id":0, "degree_name": "Education"},
-{"degree_id":1, "degree_name": "Engineering"},
-{"degree_id":2, "degree_name": "Psychology"},
-]}
-
-]};
-
-function compare(a,b) {
+/*function compare(a,b) {
   if (a.entry_id < b.entry_id)
     return -1;
   if (a.entry_id > b.entry_id)
@@ -53,14 +18,14 @@ for(var i = 0; i < universities.results.length; i++) {
     universities.results[i]["school.ownership"] = "Private";
   }
   universities.results[i]["logo_url"] = "//logo.clearbit.com/" + universities.results[i]["school.school_url"];
-  universities.results[i]["map"] = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCM8BIbDS3-fO09MF7_bz1p3QJgidR9kfc&q=" + universities.results[i]["school.name"].replace('&', '');;
-}
+  universities.results[i]["map"] = "https://www.google.com/maps/embed/v1/place?key=AIzaSyAA3kVukykkAMpTnVPdV4cnM-C0c4NqitE  &q=" + universities.results[i]["school.name"].replace('&', '');;
+}*/
 return {
   fetch: function () {
-    return universities.results;
+    return $http.get('/api/universities')
   },
   fetchAt: function (id) {
-    return universities.results[id];
+    return $http.get('/api/universities/' + id)
   },
 };
 });

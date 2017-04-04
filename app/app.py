@@ -84,7 +84,6 @@ def get_unis():
     list_degree_ids = []
     for degree in degrees:
       list_degree_ids.append(degree.degree_id)
-    print(list_degree_ids)
 
     uni_dict = uni.__dict__.copy()
     uni_dict['degrees'] = list_degree_ids
@@ -129,4 +128,4 @@ def get_degrees():
   return jsonify(degrees=degrees)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
