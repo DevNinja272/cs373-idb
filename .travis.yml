@@ -26,6 +26,8 @@ before_script:
     - coverage --version
     - pylint   --version
     - psql -c 'create database travis_ci_test;' -U postgres
+    - psql -c 'create database travis_ci_test2;' -U postgres
+
     - cp app/config.py.travis app/config.py
 
 script:
