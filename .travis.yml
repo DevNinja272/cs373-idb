@@ -5,6 +5,9 @@ python:
 
 sudo: false
 
+services:
+  - postgresql
+
 install:
     - pip install --upgrade pip
     - pip --version
@@ -22,6 +25,8 @@ before_script:
     - pip list
     - coverage --version
     - pylint   --version
+    - psql -c 'create database travis_ci_test;' -U postgres
+    - cp app/config.py.travis app/config.py
 
 script:
     - date
