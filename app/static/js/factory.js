@@ -32,133 +32,48 @@ return {
 
 myApp.factory('StateFactory', function() { 
 
-  states = 
-  {"results":[
-  {"entry_id":0, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},
-  ]},{"entry_id":3, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},
-  ]},{"entry_id":4, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},
-  ]},{"entry_id":5, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},
-  ]},{"entry_id":6, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},
-  ]},{"entry_id":7, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},
-  ]},{"entry_id":8, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},
-  ]},{"entry_id":9, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},
-  ]},{"entry_id":10, "average_public_cost":35987,"name": "Texas","average_private_cost":67234,"schools":98,"region":"SouthWest",
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},
-  ]},
-  {"entry_id":1, "average_public_cost":40726,"name": "Florida","average_private_cost":57873,"schools":54,"region":"SouthEast"},
-  {"entry_id":2, "average_public_cost":35733,"name": "Utah","average_private_cost":61283,"schools":10,"region":"Rocky Mountains"}]}
+  // function compare(a,b) {
+  // if (a.entry_id < b.entry_id)
+  //   return -1;
+  // if (a.entry_id > b.entry_id)
+  //   return 1;
+  // return 0;
+  // }
 
-  function compare(a,b) {
-  if (a.entry_id < b.entry_id)
-    return -1;
-  if (a.entry_id > b.entry_id)
-    return 1;
-  return 0;
-  }
+  // states.results.sort(compare);
 
-  states.results.sort(compare);
-
-  for (var i = 0; i < states.results.length; i++){
-    states.results[i]["map_url"] = "http://www.50states.com/maps/" + states.results[i]["name"].toLowerCase() + ".gif";
-  }
+  // for (var i = 0; i < states.results.length; i++){
+  //   states.results[i]["map_url"] = "http://www.50states.com/maps/" + states.results[i]["name"].toLowerCase() + ".gif";
+  // }
 
   return {
     fetch: function () {
-      return states.results;
+      return $http.get('/api/states');
     },
     fetchAt: function (id) {
-      return states.results[id];
+      return $http.get('/api/states/' + id);
     },
   };
 });
 
 myApp.factory('DegreeFactory', function() { 
 
-  degrees = 
-  {"results":[
-  {"entry_id":0, "name": "Education","numPub":3423,"numPriv":1231,"AwardedPub":10,"AwardedPriv":25, 
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},
-  ]},
+  // function compare(a,b) {
+  // if (a.entry_id < b.entry_id)
+  //   return -1;
+  // if (a.entry_id > b.entry_id)
+  //   return 1;
+  // return 0;
+  // }
 
-  {"entry_id":1, "name": "Engineering","numPub":4213,"numPriv":2349,"AwardedPub":17,"AwardedPriv":12,
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},
-  ]},
-  {"entry_id":2, "name": "Psychology","numPub":1023,"numPriv":976,"AwardedPub":11,"AwardedPriv":5,
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},]},
-
-  {"entry_id":3, "name": "Psychology","numPub":1023,"numPriv":976,"AwardedPub":11,"AwardedPriv":5,
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},]},
-
-  {"entry_id":4, "name": "Psychology","numPub":1023,"numPriv":976,"AwardedPub":11,"AwardedPriv":5,
-  "universities":[
-  {"university_id": 0, "university_name": "Stephen F Austin State University"},
-  {"university_id": 1, "university_name": "Texas Lutheran University"},
-  {"university_id": 2, "university_name": "West Texas A & M University"},]}
-  ]}
-
-  function compare(a,b) {
-  if (a.entry_id < b.entry_id)
-    return -1;
-  if (a.entry_id > b.entry_id)
-    return 1;
-  return 0;
-  }
-
-  degrees.results.sort(compare);
+  // degrees.results.sort(compare);
 
   return {
     fetch: function () {
-      return degrees.results;
+      return $http.get('/api/degrees');
     },
     fetchAt: function (id) {
-      return degrees.results[id];
+      return $http.get('/api/degrees/' + id);
     },
   };
 });
