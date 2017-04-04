@@ -1,6 +1,6 @@
-db_config = {
-    'host': 'localhost',
-         'user': 'postgres',
+test_db_config = {
+    	 'host': 'localhost',
+         'user': 'aldilaff',
          'pass': '',
-         'db_name': 'travis_ci_test'
+         'db_name': 'test_db'
 }
