@@ -11,11 +11,11 @@ FILES :=                              \
     README.md                         \
 
 ifeq ($(shell uname), Darwin)          # Apple
-    PYTHON   := python3.4
+    PYTHON   := python3.5
     PIP      := pip3.5
     PYLINT   := pylint
     COVERAGE := coverage-3.5
-    PYDOC    := pydoc3.4
+    PYDOC    := pydoc3.5
     AUTOPEP8 := autopep8
 else ifeq ($(CI), true)                # Travis CI
     PYTHON   := python3.5
