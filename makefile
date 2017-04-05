@@ -1,6 +1,6 @@
 FILES :=                              \
     models.html                        \
-    IDB1.log                          \
+    IDB2.log                          \
     app/app.py                        \
     app/models.py                     \
     app/tests.py 					  \
@@ -48,8 +48,8 @@ endif
 models.html: app/models.py
 	$(PYDOC) -w models
 
-IDB1.log:
-	git log > IDB1.log
+IDB2.log:
+	git log > IDB2.log
 
 check:
 	@not_found=0;                                 \
@@ -86,7 +86,7 @@ format:
 scrub:
 	make clean
 	rm -f  models.html
-	rm -f  IDB1.log
+	rm -f  IDB2.log
 
 status:
 	make clean
@@ -104,4 +104,5 @@ runserver:
 reqs:
 	pip install -r requirements.txt
 
-test: models.html IDB1.log check
+
+test: models.html IDB2.log check runtests

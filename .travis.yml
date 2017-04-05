@@ -5,6 +5,9 @@ python:
 
 sudo: false
 
+services:
+  - postgresql
+
 install:
     - pip install --upgrade pip
     - pip --version
@@ -13,6 +16,7 @@ install:
     - pip install pylint
     - pip install requests
     - pip install sqlalchemy
+    - pip install -r requirements.txt
 
 before_script:
     - alias python3.5='python'
@@ -21,7 +25,12 @@ before_script:
     - pip list
     - coverage --version
     - pylint   --version
+    - psql -c 'create database travis_ci_test;' -U postgres
+    - psql -c 'create database travis_ci_test2;' -U postgres
+
+    - cp app/config.py.travis app/config.py
 
 script:
     - date
     - ls -al
+    - make test
