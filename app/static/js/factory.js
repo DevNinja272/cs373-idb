@@ -1,25 +1,5 @@
 myApp.factory('UniversityFactory', function($http) { 
 
-/*function compare(a,b) {
-  if (a.entry_id < b.entry_id)
-    return -1;
-  if (a.entry_id > b.entry_id)
-    return 1;
-  return 0;
-}
-
-universities.results.sort(compare);
-
-for(var i = 0; i < universities.results.length; i++) {
-  if (universities.results[i]["school.ownership"] == 1){
-    universities.results[i]["school.ownership"] = "Public";
-  }
-  else{
-    universities.results[i]["school.ownership"] = "Private";
-  }
-  universities.results[i]["logo_url"] = "//logo.clearbit.com/" + universities.results[i]["school.school_url"];
-  universities.results[i]["map"] = "https://www.google.com/maps/embed/v1/place?key=AIzaSyAA3kVukykkAMpTnVPdV4cnM-C0c4NqitE  &q=" + universities.results[i]["school.name"].replace('&', '');;
-}*/
 return {
   fetch: function () {
     return $http.get('/api/universities')
@@ -30,21 +10,7 @@ return {
 };
 });
 
-myApp.factory('StateFactory', function() { 
-
-  // function compare(a,b) {
-  // if (a.entry_id < b.entry_id)
-  //   return -1;
-  // if (a.entry_id > b.entry_id)
-  //   return 1;
-  // return 0;
-  // }
-
-  // states.results.sort(compare);
-
-  // for (var i = 0; i < states.results.length; i++){
-  //   states.results[i]["map_url"] = "http://www.50states.com/maps/" + states.results[i]["name"].toLowerCase() + ".gif";
-  // }
+myApp.factory('StateFactory', function($http) { 
 
   return {
     fetch: function () {
@@ -56,17 +22,7 @@ myApp.factory('StateFactory', function() {
   };
 });
 
-myApp.factory('DegreeFactory', function() { 
-
-  // function compare(a,b) {
-  // if (a.entry_id < b.entry_id)
-  //   return -1;
-  // if (a.entry_id > b.entry_id)
-  //   return 1;
-  // return 0;
-  // }
-
-  // degrees.results.sort(compare);
+myApp.factory('DegreeFactory', function($http) { 
 
   return {
     fetch: function () {
@@ -100,7 +56,7 @@ myApp.factory('AboutFactory', function() {
     name:'Ben Nguyen', 
     login: 'bpn252',
     description: "I'm Ben, I am a junior and will hopefully graduate Fall 2017. I enjoy playing Rocket League and reading awful fanfiction.",
-    responsibilities: 'Frontend', 
+    responsibilities: 'Full Stack', 
     tests: 0
   },
   {

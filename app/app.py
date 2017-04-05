@@ -108,7 +108,7 @@ def get_degrees():
 @app.route('/runtests',methods=['GET'])
 def runtests():
   try:
-    proc = subprocess.check_output(["python3.4","tests.py"], stderr= subprocess.STDOUT, universal_newlines=True)
+    proc = subprocess.check_output(["python","tests.py"], stderr= subprocess.STDOUT, universal_newlines=True)
   except subprocess.CalledProcessError as e:
     print(e.output)
     proc = 'error. Check console'

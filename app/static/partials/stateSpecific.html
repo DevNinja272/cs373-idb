@@ -11,15 +11,15 @@
 			<div class="col-md-4">
 				<h3></h3>
 				<div>Region: {{results.region}}</div>
-				<div>2014 Average Public Cost: {{ results["average_public_cost"] | currency }}</div>
-				<div>2014 Average Private Cost: {{results["average_private_cost"] | currency}}</div>
-				<div>Number of Colleges: {{results.schools}}</div>
+				<div>2014 Average Public Cost: {{ results["average_private_cost"] | currency }}</div>
+				<div>2014 Average Private Cost: {{results["average_public	_cost"] | currency}}</div>
+				<div>Number of Colleges: {{results['number_colleges']}}</div>
 			</div>
 
 			<div class="col-md-2">
 				<h3>Universities</h3>
 				<div ng-repeat="university in results.universities">
-					<a ng-href="/#/universities/{{university['university_id']}}"><span>{{ university['university_name'] }}</span></a>
+					<a ng-href="/#/universities/{{university['university_id']}}"><span>{{ university['unviersity_name'] }}</span></a>
 				</div>
 			</div>
 		</div>

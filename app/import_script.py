@@ -90,7 +90,7 @@ if __name__ == "__main__":
 
   regions =   [ 
           {"name": "New England", "states": ('CT', 'ME', 'MA', 'NH', 'RI', 'VT')},
-          {"name": "Mentry_id East", "states": ('DE', 'DC', 'MD', 'NJ', 'NY', 'PA')},
+          {"name": "NorthEast", "states": ('DE', 'DC', 'MD', 'NJ', 'NY', 'PA')},
           {"name": "Great Lakes", "states": ('IL', 'IN', 'MI', 'OH', 'WI')},
           {"name": "Plains", "states": ('IA', 'KS', 'MN', 'MO', 'NE', 'ND', 'SD')},
           {"name": "Southeast", "states": ('AL', 'AR', 'FL', 'GA', 'KY', 'LA', 'MS', 'NC', 'SC', 'TN', 'VA', 'WV')},

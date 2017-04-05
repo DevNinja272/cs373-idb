@@ -5,10 +5,10 @@
         <thead>
         <tr>
           <th st-sort="name">Name</th>
-          <th st-sort="numPub">Number of Public Schools</th>
-          <th st-sort="AwardedPub">2014 % Awarded in Public</th>
-          <th st-sort="numPriv">Number of Private Schools</th>
-          <th st-sort="AwardedPriv">2014 % Awarded in Private</th>
+          <th st-sort="num_private_offer">Number of Private Schools</th>
+          <th st-sort="num_percent_private">2014 % Awarded in Private Schools</th>
+          <th st-sort="num_public_offer">Number of Public Schools</th>
+          <th st-sort="num_percent_public">2014 % Awarded in Public</th>
         </tr>
         <tr>
           <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
@@ -16,11 +16,11 @@
         </thead>
         <tbody>
         <tr ng-repeat="result in displayedCollection">
-          <td><a ng-href="/#/degrees/{{result.entry_id}}">{{ result.name }}</td>
-          <td>{{ result.numPub }}</td>
-          <td>{{ result.AwardedPub }}%</td>
-          <td>{{ result.numPriv}}</td>
-          <td>{{ result.AwardedPriv }}%</td>
+          <td><a ng-href="/#/degrees/{{result.id}}">{{ result.name }}</td>
+          <td>{{ result['num_private_offer']}}</td>
+          <td>{{ result['num_percent_private'] }}%</td>
+          <td>{{ result['num_public_offer']}}</td>
+          <td>{{ result['num_percent_public'] }}%</td>
         </tr>
         </tbody>
         <tfoot>

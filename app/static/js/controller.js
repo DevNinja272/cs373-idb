@@ -43,25 +43,47 @@ myApp.controller('UniversitySpecificCtrl',
 myApp.controller('StateCtrl',
     ['$scope', 'StateFactory',
     function($scope, StateFactory) {
-        $scope.results = StateFactory.fetch();
+        StateFactory.fetch().success(function(data){
+            results = data['states'];
+
+              for (var i = 0; i < results.length; i++){
+                results[i]["map_url"] = "http://www.50states.com/maps/" + results[i]["name"].toLowerCase() + ".gif";
+              }
+
+            $scope.results = results;
+        });
     }]);
 
 myApp.controller('StateSpecificCtrl',
     ['$scope', '$routeParams', 'StateFactory',
     function($scope, $routeParams, StateFactory) {
-        $scope.results = StateFactory.fetchAt($routeParams['id']);
+        StateFactory.fetchAt($routeParams['id']).success(function(data){
+            results = data['state'];
+
+            results["map_url"] = "http://www.50states.com/maps/" + results["name"].toLowerCase() + ".gif";
+            console.log(results.universities['unviersity_name']);
+            $scope.results = results;
+        });    
     }]);
 
 myApp.controller('DegreeCtrl',
     ['$scope', 'DegreeFactory',
     function($scope, DegreeFactory) {
-        $scope.results = DegreeFactory.fetch();
+        DegreeFactory.fetch().success(function(data){
+            results = data['degrees'];
+
+            $scope.results = results;
+        });
     }]);
 
 myApp.controller('DegreeSpecificCtrl',
     ['$scope', '$routeParams', 'DegreeFactory',
     function($scope, $routeParams, DegreeFactory) {
-        $scope.results = DegreeFactory.fetchAt($routeParams['id']);
+        DegreeFactory.fetchAt($routeParams['id']).success(function(data){
+            results = data['degree'];
+
+            $scope.results = results;
+        });
     }]);
 
 myApp.controller('AboutCtrl',
@@ -90,11 +112,11 @@ myApp.controller('AboutCtrl',
             ben = data[3]['author'];
             ald = data[4]['author'];
 
-            github[sean.login].issues = 3
+            github[sean.login].issues = 6
             github[jin.login].issues = 6
-            github[aye.login].issues = 3
+            github[aye.login].issues = 6
             github[ben.login].issues = 8
-            github[ald.login].issues = 4
+            github[ald.login].issues = 5
             stats.issues = github[sean.login].issues + github[jin.login].issues + github[aye.login].issues + github[ben.login].issues + github[ald.login].issues; 
         });
 
@@ -111,4 +133,10 @@ myApp.controller('AboutCtrl',
             
         $scope.github       = github;
         $scope.stats        = stats;
+
+        $scope.runUnittests = function () {
+            $http.get('/runtests').success(function(data) {
+                $scope.tests = data
+            });
+        }
     }]);
