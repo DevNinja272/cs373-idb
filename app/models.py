@@ -12,6 +12,7 @@ from config import db_config
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://" + db_config['user'] + ":" + db_config['pass'] + "@" + db_config['host'] + "/" + db_config['db_name']
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
 Session = sessionmaker(bind = engine)
 

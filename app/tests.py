@@ -1,12 +1,10 @@
 from unittest import main, TestCase
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from models import University, State, Degree, DegreesUniversities, db
 from config import test_db_config
-
 
 class TestModels (TestCase):
 

@@ -4,6 +4,8 @@ from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import create_engine
 from models import State, University, Degree, DegreesUniversities
 from config import db_config
+import subprocess
+import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://" + db_config['user'] + ":" + db_config['pass'] + "@" + db_config['host'] + "/" + db_config['db_name']
@@ -102,6 +104,16 @@ def get_degrees():
     degrees.append(degree_dict)
 
   return jsonify(degrees=degrees)
+
+@app.route('/runtests',methods=['GET'])
+def runtests():
+  try:
+    proc = subprocess.check_output(["python3.4","tests.py"], stderr= subprocess.STDOUT, universal_newlines=True)
+  except subprocess.CalledProcessError as e:
+    print(e.output)
+    proc = 'error. Check console'
+  return str(proc) 
+
 
 if __name__ == "__main__":
     app.run(debug=True)
