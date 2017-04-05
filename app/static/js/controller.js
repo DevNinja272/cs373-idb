@@ -11,8 +11,6 @@ myApp.controller('UniversityCtrl',
                 else{
                     results[i]['is_public'] = 'Private';
                 }
-
-                results[i]['logo_url'] = "//logo.clearbit.com/" + results[i]["website_URL"];
             }
             $scope.results = results;
         });
@@ -36,6 +34,8 @@ myApp.controller('UniversitySpecificCtrl',
                 results['is_public'] = 'Private';
             }
             results['logo_url'] = "//logo.clearbit.com/" + results["website_URL"];
+            map = "https://www.google.com/maps/embed/v1/place?key=AIzaSyAA3kVukykkAMpTnVPdV4cnM-C0c4NqitE  &q=" + results["name"].replace('&', '');
+            $scope.map = $sce.trustAsResourceUrl(map);
             $scope.results = results;
         });
     }]);
