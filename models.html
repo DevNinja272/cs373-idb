@@ -9,8 +9,8 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/ahmeda24/Documents/cs373-idb/app/models.py">/v/filer4b/v38q001/ahmeda24/Documents/cs373-idb/app/models.py</a></font></td></tr></table>
-    <p><tt>Model.py&nbsp;is&nbsp;used&nbsp;to&nbsp;represent&nbsp;all&nbsp;the&nbsp;tables&nbsp;in&nbsp;sqlalchemy&nbsp;database.</tt></p>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/jinwook/cs373-idb/app/models.py">/v/filer4b/v38q001/jinwook/cs373-idb/app/models.py</a></font></td></tr></table>
+    <p></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
@@ -19,7 +19,7 @@
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
-<dt><font face="helvetica, arial">sqlalchemy.ext.declarative.api.Base(<a href="__builtin__.html#object">__builtin__.object</a>)
+<dt><font face="helvetica, arial">flask_sqlalchemy.Model(<a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>)
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="models.html#Degree">Degree</a>
@@ -33,7 +33,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Degree">class <strong>Degree</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="Degree">class <strong>Degree</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt>Created&nbsp;5&nbsp;column&nbsp;attributes&nbsp;of&nbsp;<a href="#Degree">Degree</a>&nbsp;model:&nbsp;<br>
@@ -46,7 +46,8 @@ Linked&nbsp;<a href="#Degree">Degree</a>&nbsp;model&nbsp;to&nbsp;DegreeUniversit
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="models.html#Degree">Degree</a></dd>
-<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
 <dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
 </dl>
 <hr>
@@ -80,14 +81,21 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9645cd5450; Degree&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7ff7afc952d0; Degree&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('degree', MetaData(bind=None), Column('id'..._private', Float(), table=&lt;degree&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'degree'</dl>
 
 <hr>
-Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -95,14 +103,19 @@ Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
 <dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
 <hr>
-Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
-<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 
 </td></tr></table> <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="DegreesUniversities">class <strong>DegreesUniversities</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="DegreesUniversities">class <strong>DegreesUniversities</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt>Helps&nbsp;link&nbsp;the&nbsp;Degrees&nbsp;model&nbsp;and&nbsp;<a href="#University">University</a>&nbsp;model&nbsp;together&nbsp;to&nbsp;help&nbsp;check&nbsp;all&nbsp;the&nbsp;degrees&nbsp;<br>
@@ -111,7 +124,8 @@ offered&nbsp;by&nbsp;a&nbsp;university&nbsp;and&nbsp;all&nbsp;the&nbsp;universit
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="models.html#DegreesUniversities">DegreesUniversities</a></dd>
-<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
 <dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
 </dl>
 <hr>
@@ -141,14 +155,21 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9645cd5910; DegreesUniversities&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7ff7afc95850; DegreesUniversities&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('degreesUniversities', MetaData(bind=None)....id'), table=&lt;degreesUniversities&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'degreesUniversities'</dl>
 
 <hr>
-Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -156,14 +177,19 @@ Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
 <dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
 <hr>
-Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
-<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 
 </td></tr></table> <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="State">class <strong>State</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="State">class <strong>State</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt>Created&nbsp;5&nbsp;column&nbsp;attributes&nbsp;of&nbsp;<a href="#State">State</a>&nbsp;model:&nbsp;<br>
@@ -176,7 +202,8 @@ Linked&nbsp;the&nbsp;<a href="#State">State</a>&nbsp;model&nbsp;to&nbsp;to&nbsp;
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="models.html#State">State</a></dd>
-<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
 <dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
 </dl>
 <hr>
@@ -194,9 +221,9 @@ for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.<
 
 <hr>
 Data descriptors defined here:<br>
-<dl><dt><strong>average_private_tuition</strong></dt>
+<dl><dt><strong>average_private_cost</strong></dt>
 </dl>
-<dl><dt><strong>average_public_tuition</strong></dt>
+<dl><dt><strong>average_public_cost</strong></dt>
 </dl>
 <dl><dt><strong>id</strong></dt>
 </dl>
@@ -210,14 +237,21 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9645d13f10; State&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7ff7b3f29c90; State&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('state', MetaData(bind=None), Column('id',...olleges', Integer(), table=&lt;state&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'state'</dl>
 
 <hr>
-Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -225,14 +259,19 @@ Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
 <dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
 <hr>
-Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
-<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 
 </td></tr></table> <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="University">class <strong>University</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="University">class <strong>University</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt>Created&nbsp;5&nbsp;column&nbsp;attributes&nbsp;of&nbsp;<a href="#University">University</a>&nbsp;model:&nbsp;<br>
@@ -246,7 +285,8 @@ Linked&nbsp;the&nbsp;<a href="#University">University</a>&nbsp;model&nbsp;to&nbs
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="models.html#University">University</a></dd>
-<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
 <dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
 </dl>
 <hr>
@@ -276,20 +316,29 @@ Data descriptors defined here:<br>
 </dl>
 <dl><dt><strong>num_students</strong></dt>
 </dl>
+<dl><dt><strong>state</strong></dt>
+</dl>
 <dl><dt><strong>state_id</strong></dt>
 </dl>
 <dl><dt><strong>website_URL</strong></dt>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9645d135d0; University&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7ff7b3f293d0; University&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('university', MetaData(bind=None), Column(...ey('state.id'), table=&lt;university&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'university'</dl>
 
 <hr>
-Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -297,8 +346,24 @@ Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
 <dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
 <hr>
-Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
-<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 
-</td></tr></table></td></tr></table>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>Session</strong> = sessionmaker(class_='Session',autoflush=True, bi...373_db), autocommit=False, expire_on_commit=True)<br>
+<strong>app</strong> = &lt;Flask 'models'&gt;<br>
+<strong>db</strong> = &lt;SQLAlchemy engine='postgresql://faisal:123456@localhost/cs373_db'&gt;<br>
+<strong>db_config</strong> = {'db_name': 'cs373_db', 'host': 'localhost', 'pass': '123456', 'user': 'faisal'}<br>
+<strong>engine</strong> = Engine(postgresql://faisal:***@localhost/cs373_db)</td></tr></table>
 </body></html>
