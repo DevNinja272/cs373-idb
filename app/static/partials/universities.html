@@ -4,14 +4,14 @@
       <table st-table="displayedCollection" st-safe-src="results" class="table table-striped">
         <thead>
         <tr>
-          <th st-sort="name">Name</th>
-          <th st-sort="is_public">Ownership</th>
-          <th st-sort="website_URL">School Website</th>
-          <th st-sort="academic_cost">2014 Academic Cost</th>
-          <th st-sort="num_students">2014 Student Size</th>
+          <th style="cursor:pointer" st-sort="name">Name</th>
+          <th style="cursor:pointer" st-sort="is_public">Ownership</th>
+          <th style="cursor:pointer" st-sort="website_URL">School Website</th>
+          <th style="cursor:pointer" st-sort="academic_cost">2014 Academic Cost</th>
+          <th style="cursor:pointer" st-sort="num_students">2014 Student Size</th>
         </tr>
         <tr>
-          <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+          <th colspan="5"><input st-search="" class="form-control" placeholder="filter ..." type="text"/></th>
         </tr>
         </thead>
         <tbody>
@@ -26,7 +26,7 @@
         <tfoot>
           <tr>
             <td colspan="5" class="text-center">
-              <div st-pagination="" st-items-by-page="itemsByPage"></div>
+              <div st-pagination="" st-items-by-page="itemsByPage"  st-displayed-pages="10"></div>
             </td>
           </tr>
         </tfoot>

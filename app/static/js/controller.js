@@ -69,7 +69,7 @@ myApp.controller('StateCtrl',
             results = data['states'];
 
             for (var i = 0; i < results.length; i++){
-                results[i]["map_url"] = "http://www.50states.com/maps/" + results[i]["name"].toLowerCase() + ".gif";
+                results[i]["map_url"] = "http://www.50states.com/maps/" + results[i]["name"].toLowerCase()+ ".gif";
             }
 
             $scope.results = results;
@@ -81,7 +81,7 @@ myApp.controller('StateSpecificCtrl',
     function($scope, $routeParams, StateFactory) {
         StateFactory.fetchAt($routeParams['id']).success(function(data){
             results = data['state'];
-            results["map_url"] = "http://www.50states.com/maps/" + results["name"].toLowerCase() + ".gif";
+            results["map_url"] = "http://www.50states.com/maps/" + results["name"].toLowerCase().replace(/ /g,"_") + ".gif";
             $scope.results = results;
         });    
     }]);

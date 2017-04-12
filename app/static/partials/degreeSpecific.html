@@ -14,10 +14,14 @@
  
 			<div class="col-md-2">
 				<h3>Universities</h3>
-				<div ng-repeat="university in results.universities">
+				<div ng-repeat="university in results.universities | limitTo:showMore ? results.degrees.length : 5">
 					<a ng-href="/#/universities/{{university['university_id']}}"><span>{{ university['university_name'] }}
 					</span></a>
 				</div>
+				<button class="btn btn-primary btn-md" ng-click="showMore = !showMore">
+				    <span ng-show="showMore">Show Less</span>
+				    <span ng-hide="showMore">Show More</span>
+				</button>
 			</div>
 		</div>
 	</div>
