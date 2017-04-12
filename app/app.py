@@ -121,7 +121,7 @@ def search():
   print(query_params['query'])
   words = query_params['query'].split()
   combos = []
-  for i in range(1, len(words)+1):
+  for i in range(len(words), 0, -1):
     for combo in combinations(words, i):
       combos.append(combo)
   # combinations(words)
@@ -140,20 +140,21 @@ def matching(word_list):
   university_results = None
   degree_results = None
   for word in word_list:
+    word = '%' + word + '%'
     if state_results == None:
-      state_results = session.query(State).filter(State.name.contains(word))
+      state_results = session.query(State).filter(State.name.ilike(word))
     else:
-      state_results = state_results.intersect(session.query(State).filter(State.name.contains(word)))
+      state_results = state_results.intersect(session.query(State).filter(State.name.ilike(word)))
 
     if university_results == None:
-      university_results = session.query(University).filter(University.name.contains(word))
+      university_results = session.query(University).filter(University.name.ilike(word))
     else:
-      university_results = university_results.intersect(session.query(University).filter(University.name.contains(word)))
+      university_results = university_results.intersect(session.query(University).filter(University.name.ilike(word)))
 
     if degree_results == None:
-      degree_results = session.query(Degree).filter(Degree.name.contains(word))
+      degree_results = session.query(Degree).filter(Degree.name.ilike(word))
     else:
-      degree_results = degree_results.intersect(session.query(Degree).filter(Degree.name.contains(word)))
+      degree_results = degree_results.intersect(session.query(Degree).filter(Degree.name.ilike(word)))
 
   for state in state_results.all():
     result_entry = {}

@@ -289,6 +289,7 @@ if __name__ == "__main__":
           degree_models[degree_code].num_percent_private += i[degree_code]
 
     db.session.add(uni)
+    db.session.commit()
 
   for degree_code, degree in degree_models.items():
     degree.num_public_offer = degree_public_counts[degree_code]
