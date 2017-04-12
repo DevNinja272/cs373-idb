@@ -8,7 +8,7 @@ myApp.config(['$routeProvider',
      function($routeProvider) {
          $routeProvider.
              when('/', {
-                 templateUrl: '/static/partials/search.html',
+                 templateUrl: '/static/partials/splash.html',
              }).
              when('/about', {
                  templateUrl: '../static/partials/about.html',
