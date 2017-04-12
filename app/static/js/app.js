@@ -9,6 +9,7 @@ myApp.config(['$routeProvider',
          $routeProvider.
              when('/', {
                  templateUrl: '/static/partials/splash.html',
+                 controller: 'SplashCtrl'
              }).
              when('/about', {
                  templateUrl: '../static/partials/about.html',

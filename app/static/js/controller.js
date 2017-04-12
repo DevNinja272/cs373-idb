@@ -1,3 +1,34 @@
+myApp.controller('SplashCtrl',
+    ['$scope', '$location',
+    function($scope, $location) {
+        
+        
+
+        $scope.stringSearch = function(searchString)
+        {
+            var parsedStringArray = searchString.split(" ");
+            var currentString = "";
+
+            for (var i = 0; i < parsedStringArray.length; i++)
+            {
+                currentString = parsedStringArray[i];
+
+                if(i == 0)
+                {}
+                else
+                {
+                    currentString = parsedStringArray[i];
+                }
+                console.log(parsedStringArray);
+                $location.search('param'+i, currentString);
+            }
+            
+
+            
+        };
+
+    }]);
+
 myApp.controller('UniversityCtrl',
     ['$scope', 'UniversityFactory',
     function($scope, UniversityFactory) {
