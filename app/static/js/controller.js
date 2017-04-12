@@ -1,8 +1,8 @@
 myApp.controller('SplashCtrl',
     ['$scope', '$location',
     function($scope, $location) {
-        
-        
+
+
 
         $scope.stringSearch = function(searchString)
         {
@@ -13,18 +13,12 @@ myApp.controller('SplashCtrl',
             {
                 currentString = parsedStringArray[i];
 
-                if(i == 0)
-                {}
-                else
-                {
-                    currentString = parsedStringArray[i];
-                }
+                currentString = parsedStringArray[i];
                 console.log(parsedStringArray);
                 $location.search('param'+i, currentString);
             }
-            
-
-            
+            var paramString = '/search' + $location.url();
+            console.log(paramString);
         };
 
     }]);
@@ -46,9 +40,6 @@ myApp.controller('UniversityCtrl',
             $scope.results = results;
         });
 
-
-
-        
         $scope.itemsByPage=15;
     }]);
 
@@ -77,9 +68,9 @@ myApp.controller('StateCtrl',
         StateFactory.fetch().success(function(data){
             results = data['states'];
 
-              for (var i = 0; i < results.length; i++){
+            for (var i = 0; i < results.length; i++){
                 results[i]["map_url"] = "http://www.50states.com/maps/" + results[i]["name"].toLowerCase() + ".gif";
-              }
+            }
 
             $scope.results = results;
         });
@@ -90,9 +81,7 @@ myApp.controller('StateSpecificCtrl',
     function($scope, $routeParams, StateFactory) {
         StateFactory.fetchAt($routeParams['id']).success(function(data){
             results = data['state'];
-
             results["map_url"] = "http://www.50states.com/maps/" + results["name"].toLowerCase() + ".gif";
-            console.log(results.universities['unviersity_name']);
             $scope.results = results;
         });    
     }]);
@@ -102,7 +91,6 @@ myApp.controller('DegreeCtrl',
     function($scope, DegreeFactory) {
         DegreeFactory.fetch().success(function(data){
             results = data['degrees'];
-
             $scope.results = results;
         });
     }]);
@@ -112,7 +100,6 @@ myApp.controller('DegreeSpecificCtrl',
     function($scope, $routeParams, DegreeFactory) {
         DegreeFactory.fetchAt($routeParams['id']).success(function(data){
             results = data['degree'];
-
             $scope.results = results;
         });
     }]);
@@ -151,23 +138,16 @@ myApp.controller('AboutCtrl',
             stats.issues = github[sean.login].issues + github[jin.login].issues + github[aye.login].issues + github[ben.login].issues + github[ald.login].issues; 
         });
 
-/*        IssueFactory.success(function(data) {
-            for(var i = 0; i < data.length; i++) {
-                github[data[i].user.login].issues += 1;
-                stats.issues   += 1;
-            }
-        });*/
+$scope.members      = AboutFactory.fetchMember();
 
-        $scope.members      = AboutFactory.fetchMember();
+for(var i = 0; i < $scope.members.length; i++) { stats.tests     += $scope.members[i].tests;}
 
-        for(var i = 0; i < $scope.members.length; i++) { stats.tests     += $scope.members[i].tests;}
-            
-        $scope.github       = github;
-        $scope.stats        = stats;
+    $scope.github       = github;
+    $scope.stats        = stats;
 
-        $scope.runUnittests = function () {
-            $http.get('/runtests').success(function(data) {
-                $scope.tests = data
-            });
-        }
-    }]);
+$scope.runUnittests = function () {
+    $http.get('/runtests').success(function(data) {
+        $scope.tests = data
+    });
+}
+}]);
