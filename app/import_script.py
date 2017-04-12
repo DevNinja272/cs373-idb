@@ -188,6 +188,7 @@ if __name__ == "__main__":
   jsonData = 0
   resultList = []
   for i in range(0,15):
+    print('Num: ' + str(i))
     response = urlopen(url + "&page=" + str(i))
     jsonData = json.load(response)
     resultList = resultList + jsonData["results"] 
