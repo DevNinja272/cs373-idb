@@ -114,6 +114,26 @@ def runtests():
     proc = 'error. Check console'
   return str(proc) 
 
+@app.route('/search',methods=['GET'])
+def search():
+  query_param = request.args.to_dict()
+  matching(['Texas'])
+
+
+def matching(word_list):
+  state_results = None
+  for word in word_list:
+    if state_results == None:
+      state_results = session.query(State).filter(State.name.contains(word))
+    else:
+      state_results = state_results.intersect(session.query(State).filter(State.name.contains(word)))
+    #university_results = university_results.intersect(session.query(University).filter(University.name.contains(word)))
+    #degree_results = degree_results.intersect(session.query(Degree).filter(Degree.name.contains(word)))
+
+  for state in state_results.all():
+    print(state.name + " " + state.id)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
