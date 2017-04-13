@@ -1,9 +1,18 @@
+myApp.controller('SmashdbCtrl',
+    ['$scope', '$location',
+    function($scope, $location) {
+          $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+          $scope.data = [300, 500, 100];
+          $scope.options = {
+            legend: {display: true},
+            title: {display: true, text: "text", fontSize: 20}
+            };
+    }]);
+
+
 myApp.controller('SplashCtrl',
     ['$scope', '$location',
     function($scope, $location) {
-
-
-
         $scope.stringSearch = function(searchString)
         {
             var parsedStringArray = searchString.split(" ");
