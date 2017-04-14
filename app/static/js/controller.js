@@ -1,12 +1,30 @@
 myApp.controller('SmashdbCtrl',
-    ['$scope', '$location',
-    function($scope, $location) {
-          $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
-          $scope.data = [300, 500, 100];
-          $scope.options = {
-            legend: {display: true},
-            title: {display: true, text: "text", fontSize: 20}
-            };
+    ['$scope', 'PFactory',
+    function($scope, PFactory) {
+          
+          PFactory.fetch().success(function(data){
+                results = data['participants'];
+                var map = {}
+                for (var i = 0; i < results.length; i++){
+                    if (map.hasOwnProperty(results[i]['location'] )){
+                        map[results[i]['location']] +=  1;
+                    }else if (results[i]['location'].length > 0){
+                        map[results[i]['location']] = 1;
+                    }
+                }
+                $scope.labels = [];
+                $scope.data = [];
+                $scope.options = {
+                    legend: {display: true},
+                    title: {display: true, text: "Most Popular Countries/States/Provinces", fontSize: 20}
+                };
+                for (var key in map){
+                    if (map.hasOwnProperty(key) && map[key] > 100) {
+                        $scope.labels.push(key);
+                        $scope.data.push(map[key]);
+                    }      
+                }
+          });
     }]);
 
 

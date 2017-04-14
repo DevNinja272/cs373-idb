@@ -1,3 +1,16 @@
+myApp.factory('PFactory', function($http) { 
+
+return {
+  fetch: function () {
+    return $http.get('http://smashdb.me/api/participants')
+  },
+  fetchAt: function (id) {
+    return $http.get('http://smashdb.me/api/participant/' + id)
+  },
+};
+});
+
+
 myApp.factory('UniversityFactory', function($http) { 
 
 return {
