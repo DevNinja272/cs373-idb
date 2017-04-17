@@ -126,9 +126,18 @@ def search():
       combos.append(combo)
   # combinations(words)
   results = []
+  result_set = set()
   for combo in combos:
     print(combo)
-    results += matching(combo)
+    for result in matching(combo):
+      if len(combo) == len(words):
+        result['match_type'] = 'and'
+      else:
+        result['match_type'] = 'or'
+      identifier = (result['type'], result['id'])
+      if identifier not in result_set:
+        result_set.add(identifier)
+        results.append(result)
 
   return jsonify(results)
 
