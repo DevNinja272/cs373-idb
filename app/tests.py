@@ -3,6 +3,7 @@ from flask import Flask
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+
 from models import University, State, Degree, DegreesUniversities, db
 from config import test_db_config
 from app import app

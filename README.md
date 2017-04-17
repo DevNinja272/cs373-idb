@@ -9,3 +9,7 @@ source ./venv/bin/activate
 pip install -r requirements.txt
 python app/app.py
 ```
+
+#### view our web app at
+
+[www.collegedb.me](http://www.collegedb.me)

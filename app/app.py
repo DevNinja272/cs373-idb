@@ -109,16 +109,17 @@ def get_degrees():
 @app.route('/runtests',methods=['GET'])
 def runtests():
   try:
-    proc = subprocess.check_output(["python3.4","tests.py"], stderr= subprocess.STDOUT, universal_newlines=True)
+    proc = subprocess.check_output(["python","tests.py"], stderr= subprocess.STDOUT, universal_newlines=True)
   except subprocess.CalledProcessError as e:
     print(e.output)
     proc = 'error. Check console'
   return str(proc) 
 
-@app.route('/search',methods=['GET'])
+@app.route('/api/search',methods=['GET'])
 def search():
   query_params = request.args.to_dict()
-  print(query_params['query'])
+  if 'query' not in query_params:
+    return jsonify({'Error': 'Please submit a parameter named "query".'})
   words = query_params['query'].split()
   combos = []
   for i in range(len(words), 0, -1):
@@ -126,9 +127,18 @@ def search():
       combos.append(combo)
   # combinations(words)
   results = []
+  result_set = set()
   for combo in combos:
     print(combo)
-    results += matching(combo)
+    for result in matching(combo):
+      if len(combo) == len(words):
+        result['match_type'] = 'and'
+      else:
+        result['match_type'] = 'or'
+      identifier = (result['type'], result['id'])
+      if identifier not in result_set:
+        result_set.add(identifier)
+        results.append(result)
 
   return jsonify(results)
 

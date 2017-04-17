@@ -1,4 +1,4 @@
-ng.module('smart-table')
+angular.module('smart-table')
   .directive('stSort', ['stConfig', '$parse', '$timeout', function (stConfig, $parse, $timeout) {
     return {
       restrict: 'A',
@@ -30,7 +30,7 @@ ng.module('smart-table')
           }
 
           var func;
-          predicate = ng.isFunction(getter(scope)) || ng.isArray(getter(scope)) ? getter(scope) : attr.stSort;
+          predicate = angular.isFunction(getter(scope)) || angular.isArray(getter(scope)) ? getter(scope) : attr.stSort;
           if (index % 3 === 0 && !!skipNatural !== true) {
             //manual reset
             index = 0;

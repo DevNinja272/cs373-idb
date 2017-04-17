@@ -1,4 +1,4 @@
-ng.module('smart-table')
+angular.module('smart-table')
   .controller('stTableController', ['$scope', '$parse', '$filter', '$attrs', function StTableController ($scope, $parse, $filter, $attrs) {
     var propertyName = $attrs.stTable;
     var displayGetter = $parse(propertyName);
@@ -83,7 +83,7 @@ ng.module('smart-table')
       tableState.sort.predicate = predicate;
       tableState.sort.reverse = reverse === true;
 
-      if (ng.isFunction(predicate)) {
+      if (angular.isFunction(predicate)) {
         tableState.sort.functionName = predicate.name;
       } else {
         delete tableState.sort.functionName;
@@ -102,7 +102,7 @@ ng.module('smart-table')
       var predicateObject = tableState.search.predicateObject || {};
       var prop = predicate ? predicate : '$';
 
-      input = ng.isString(input) ? input.trim() : input;
+      input = angular.isString(input) ? input.trim() : input;
       $parse(prop).assign(predicateObject, input);
       // to avoid to filter out null value
       if (!input) {

@@ -1,4 +1,4 @@
-ng.module('smart-table')
+angular.module('smart-table')
   .constant('stConfig', {
     pagination: {
       template: 'template/smart-table/pagination.html',
