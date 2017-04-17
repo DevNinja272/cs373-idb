@@ -1,11 +1,28 @@
 myApp.factory('PFactory', function($http) { 
 
 return {
-  fetch: function () {
+  fetchP: function () {
     return $http.get('http://smashdb.me/api/participants')
   },
-  fetchAt: function (id) {
-    return $http.get('http://smashdb.me/api/participant/' + id)
+
+  fetchPAt: function (id) {
+    return $http.get('http://smashdb.me/api/participant/ + id')
+  },
+
+  fetchT: function () {
+    return $http.get('http://smashdb.me/api/tournaments')
+  },
+
+  fetchTAt: function (id) {
+    return $http.get('http://smashdb.me/api/tournament/' + id)
+  },
+
+  fetchC: function () {
+    return $http.get('http://smashdb.me/api/characters')
+  },
+
+  fetchCAt: function (id) {
+    return $http.get('http://smashdb.me/api/character/' + id)
   },
 };
 });
