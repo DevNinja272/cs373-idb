@@ -118,7 +118,8 @@ def runtests():
 @app.route('/api/search',methods=['GET'])
 def search():
   query_params = request.args.to_dict()
-  print(query_params['query'])
+  if 'query' not in query_params:
+    return jsonify({'Error': 'Please submit a parameter named "query".'})
   words = query_params['query'].split()
   combos = []
   for i in range(len(words), 0, -1):
