@@ -254,25 +254,62 @@ class TestModels (TestCase):
         self.assertEqual(result.status_code, 200) 
 
     def test_get_single_uni_1(self):
+        session = self.sess()
+
+        university = University(name='Test University', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        session.add(university)
+        session.commit()
+
         result = self.app.get('/api/universities/1')
         self.assertEqual(result.status_code, 200) 
 
+        session.delete(university)
+        session.commit()
+        
+
     def test_get_single_uni_2(self):
+        session = self.sess()
+
+        university = University(name='Test University', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        session.add(university)
+        session.commit()
+
         result = self.app.get('/api/universities/1')
         result = json.loads(result.data.decode('utf-8'))
         self.assertIn("university", result)
         self.assertIn("academic_cost", result["university"])
         self.assertIn("state_name", result["university"])
 
+        session.delete(university)
+        session.commit()
+
     def test_get_all_unis_1(self):
+        session = self.sess()
+
+        university = University(name='Test University', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        session.add(university)
+        session.commit()
+
         result = self.app.get('/api/universities')
         self.assertEqual(result.status_code, 200) 
 
+        session.delete(university)
+        session.commit()
+
 
     def test_get_all_unis_2(self):
+        session = self.sess()
+
+        university = University(name='Test University', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        session.add(university)
+        session.commit()
+
         result = self.app.get('/api/universities')
         result = json.loads(result.data.decode('utf-8'))
         self.assertIn("universities", result)
+
+        session.delete(university)
+        session.commit()
 
     def test_get_single_degree_1(self):
         result = self.app.get("api/degrees/1")
