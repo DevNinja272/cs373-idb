@@ -264,7 +264,7 @@ class TestModels (TestCase):
         session.commit()
 
 
-        result = self.app.get('/api/universities/'+str(university.id))
+        result = self.app.get('/api/universities/'+str(university_1.id))
         self.assertEqual(result.status_code, 200) 
 
         session.delete(university_1)
@@ -282,7 +282,7 @@ class TestModels (TestCase):
         session.add(state_1)
         session.commit()
 
-        result = self.app.get('/api/universities/'+str(university.id))
+        result = self.app.get('/api/universities/'+str(university_1.id))
         result = json.loads(result.data.decode('utf-8'))
         self.assertIn("university", result)
         self.assertIn("academic_cost", result["university"])
@@ -458,7 +458,7 @@ class TestModels (TestCase):
         result = self.app.get('/api/search?query=Theology')
         self.assertEqual(result.status_code, 200)
 
-    def test_search_4(self):
+    def test_search_5(self):
         result = self.app.get('/api/search')
         result = json.loads(result.data.decode('utf-8'))
         self.assertIn("Error", result)
