@@ -188,6 +188,7 @@ if __name__ == "__main__":
   jsonData = 0
   resultList = []
   for i in range(0,15):
+    print('Num: ' + str(i))
     response = urlopen(url + "&page=" + str(i))
     jsonData = json.load(response)
     resultList = resultList + jsonData["results"] 
@@ -288,6 +289,7 @@ if __name__ == "__main__":
           degree_models[degree_code].num_percent_private += i[degree_code]
 
     db.session.add(uni)
+    db.session.commit()
 
   for degree_code, degree in degree_models.items():
     degree.num_public_offer = degree_public_counts[degree_code]

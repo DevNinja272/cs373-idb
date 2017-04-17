@@ -6,6 +6,7 @@ from models import State, University, Degree, DegreesUniversities
 from config import db_config
 import subprocess
 import os
+from itertools import combinations
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://" + db_config['user'] + ":" + db_config['pass'] + "@" + db_config['host'] + "/" + db_config['db_name']
@@ -114,6 +115,81 @@ def runtests():
     proc = 'error. Check console'
   return str(proc) 
 
+@app.route('/api/search',methods=['GET'])
+def search():
+  query_params = request.args.to_dict()
+  print(query_params['query'])
+  words = query_params['query'].split()
+  combos = []
+  for i in range(len(words), 0, -1):
+    for combo in combinations(words, i):
+      combos.append(combo)
+  # combinations(words)
+  results = []
+  result_set = set()
+  for combo in combos:
+    print(combo)
+    for result in matching(combo):
+      if len(combo) == len(words):
+        result['match_type'] = 'and'
+      else:
+        result['match_type'] = 'or'
+      identifier = (result['type'], result['id'])
+      if identifier not in result_set:
+        result_set.add(identifier)
+        results.append(result)
+
+  return jsonify(results)
+
+
+def matching(word_list):
+  session = Session()
+  results = []
+  state_results = None
+  university_results = None
+  degree_results = None
+  for word in word_list:
+    word = '%' + word + '%'
+    if state_results == None:
+      state_results = session.query(State).filter(State.name.ilike(word))
+    else:
+      state_results = state_results.intersect(session.query(State).filter(State.name.ilike(word)))
+
+    if university_results == None:
+      university_results = session.query(University).filter(University.name.ilike(word))
+    else:
+      university_results = university_results.intersect(session.query(University).filter(University.name.ilike(word)))
+
+    if degree_results == None:
+      degree_results = session.query(Degree).filter(Degree.name.ilike(word))
+    else:
+      degree_results = degree_results.intersect(session.query(Degree).filter(Degree.name.ilike(word)))
+
+  for state in state_results.all():
+    result_entry = {}
+    result_entry['name'] = state.name
+    result_entry['id'] = state.id
+    result_entry['matching_words'] = word_list
+    result_entry['type'] = 'states'
+    results.append(result_entry)
+
+  for university in university_results.all():
+    result_entry = {}
+    result_entry['name'] = university.name
+    result_entry['id'] = university.id
+    result_entry['matching_words'] = word_list
+    result_entry['type'] = 'universities'
+    results.append(result_entry)
+
+  for degree in degree_results.all():
+    result_entry = {}
+    result_entry['name'] = degree.name
+    result_entry['id'] = degree.id
+    result_entry['matching_words'] = word_list
+    result_entry['type'] = 'degrees'
+    results.append(result_entry)
+
+  return results
 
 if __name__ == "__main__":
     app.run(debug=True)
