@@ -318,7 +318,7 @@ class TestModels (TestCase):
         session.add(degree)
         session.commit()
         
-        result = self.app.get("api/degrees/1")
+        result = self.app.get("/api/degrees/1")
         self.assertEqual(result.status_code, 200) 
 
         session.delete(degree)
@@ -333,7 +333,7 @@ class TestModels (TestCase):
         session.add(degree)
         session.commit()
 
-        result = self.app.get("api/degrees/1")
+        result = self.app.get("/api/degrees/1")
         result = json.loads(result.data.decode("utf-8"))
         self.assertIn("degree", result)
         self.assertIn("universities", result["degree"])
@@ -376,7 +376,7 @@ class TestModels (TestCase):
         session.add(state)
         session.commit()
 
-        result = self.app.get("api/states/1")
+        result = self.app.get("/api/states/1")
         self.assertEqual(result.status_code, 200) 
 
         session.delete(state)
@@ -389,7 +389,7 @@ class TestModels (TestCase):
         session.add(state)
         session.commit()
 
-        result = self.app.get("api/states/1")
+        result = self.app.get("/api/states/1")
         result = json.loads(result.data.decode("utf-8"))
         self.assertIn("state", result)
         self.assertIn("universities", result["state"])
