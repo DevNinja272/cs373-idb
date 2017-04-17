@@ -16,8 +16,7 @@ class TestModels (TestCase):
         self.engine = create_engine("postgresql://" + test_db_config['user'] + ":" + test_db_config['pass'] + "@" + test_db_config['host'] + "/" + test_db_config['db_name'])
         self.sess = sessionmaker(bind = self.engine)
         db.metadata.create_all(self.engine)
-        #TODO: maybe uncomment this line       
-        #app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://" + test_db_config['user'] + ":" + test_db_config['pass'] + "@" + test_db_config['host'] + "/" + test_db_config['db_name']
+        app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://" + test_db_config['user'] + ":" + test_db_config['pass'] + "@" + test_db_config['host'] + "/" + test_db_config['db_name']
         
         # from https://damyanon.net/flask-series-testing/
         # creates a test client
