@@ -33,5 +33,4 @@ before_script:
 script:
     - date
     - ls -al
-    - python app/app.py
     - make test
