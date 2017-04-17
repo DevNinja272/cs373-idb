@@ -5,6 +5,9 @@ from sqlalchemy.orm import sessionmaker
 
 from models import University, State, Degree, DegreesUniversities, db
 from config import test_db_config
+from app import app
+import json
+
 
 class TestModels (TestCase):
 
@@ -12,6 +15,15 @@ class TestModels (TestCase):
         self.engine = create_engine("postgresql://" + test_db_config['user'] + ":" + test_db_config['pass'] + "@" + test_db_config['host'] + "/" + test_db_config['db_name'])
         self.sess = sessionmaker(bind = self.engine)
         db.metadata.create_all(self.engine)
+        #TODO: maybe uncomment this line       
+        #app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://" + test_db_config['user'] + ":" + test_db_config['pass'] + "@" + test_db_config['host'] + "/" + test_db_config['db_name']
+        
+        # from https://damyanon.net/flask-series-testing/
+        # creates a test client
+        self.app = app.test_client()
+
+        # propagate the exceptions to the test client
+        self.app.testing = True 
 
 
 
@@ -236,6 +248,93 @@ class TestModels (TestCase):
         session.delete(degrees_universities_1)
         session.delete(degrees_universities_2)
         session.commit()
+
+    def test_get_home(self):
+        result = self.app.get('/')
+        self.assertEqual(result.status_code, 200) 
+
+    def test_get_single_uni_1(self):
+        result = self.app.get('/api/universities/1')
+        self.assertEqual(result.status_code, 200) 
+
+    def test_get_single_uni_2(self):
+        result = self.app.get('/api/universities/1')
+        result = json.loads(result.data.decode('utf-8'))
+        self.assertIn("university", result)
+        self.assertIn("academic_cost", result["university"])
+        self.assertIn("state_name", result["university"])
+
+    def test_get_all_unis_1(self):
+        result = self.app.get('/api/universities')
+        self.assertEqual(result.status_code, 200) 
+
+
+    def test_get_all_unis_2(self):
+        result = self.app.get('/api/universities')
+        result = json.loads(result.data.decode('utf-8'))
+        self.assertIn("universities", result)
+
+    def test_get_single_degree_1(self):
+        result = self.app.get("api/degrees/1")
+        self.assertEqual(result.status_code, 200) 
+
+    def test_get_single_degree_2(self):
+        result = self.app.get("api/degrees/1")
+        result = json.loads(result.data.decode("utf-8"))
+        self.assertIn("degree", result)
+        self.assertIn("universities", result["degree"])
+        self.assertIn("id", result["degree"])
+
+    def test_get_all_degrees_1(self):
+        result = self.app.get('/api/degrees')
+        self.assertEqual(result.status_code, 200) 
+
+    def test_get_all_degrees_2(self):
+        result = self.app.get('/api/degrees')
+        result = json.loads(result.data.decode('utf-8'))
+        self.assertIn("degrees", result) 
+
+    def test_get_single_state_1(self):
+        result = self.app.get("api/states/1")
+        self.assertEqual(result.status_code, 200) 
+
+    def test_get_single_state_2(self):
+        result = self.app.get("api/states/1")
+        result = json.loads(result.data.decode("utf-8"))
+        self.assertIn("state", result)
+        self.assertIn("universities", result["state"])
+        self.assertIn("id", result["state"])
+
+    def test_get_all_states_1(self):
+        result = self.app.get('/api/states')
+        self.assertEqual(result.status_code, 200) 
+
+    def test_get_all_states_2(self):
+        result = self.app.get('/api/states')
+        result = json.loads(result.data.decode('utf-8'))
+        self.assertIn("states", result) 
+
+    def test_search_1(self):
+        result = self.app.get('/search?query=tx')
+        self.assertEqual(result.status_code, 200) 
+
+    def test_search_2(self):
+        result = self.app.get('/search?query=texas')
+        self.assertEqual(result.status_code, 200) 
+
+    def test_search_3(self):
+        result = self.app.get('/search?query=CA')
+        self.assertEqual(result.status_code, 200)
+
+    def test_search_4(self):
+        result = self.app.get('/search?query=Theology')
+        self.assertEqual(result.status_code, 200)
+
+    
+
+
+
+
 
 if __name__ == "__main__":
     main()
