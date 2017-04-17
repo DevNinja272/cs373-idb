@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="box">
-      <table st-table="displayedCollection" st-safe-src="results" class="table table-striped">
+      <table st-table="displayedCollection" st-safe-src="results" class="table table-striped table-hover table-mc-light-blue">
         <thead>
         <tr>
-          <th st-sort="name">Name</th>
-          <th st-sort="num_private_offer">Number of Private Schools</th>
-          <th st-sort="num_percent_private">2014 % Awarded in Private Schools</th>
-          <th st-sort="num_public_offer">Number of Public Schools</th>
-          <th st-sort="num_percent_public">2014 % Awarded in Public</th>
+          <th style="cursor:pointer" st-sort="name">Name</th>
+          <th style="cursor:pointer" st-sort="num_private_offer">Number of Private Schools</th>
+          <th style="cursor:pointer" st-sort="num_percent_private">2014 % Awarded in Private Schools</th>
+          <th style="cursor:pointer" st-sort="num_public_offer">Number of Public Schools</th>
+          <th style="cursor:pointer" st-sort="num_percent_public">2014 % Awarded in Public</th>
         </tr>
         <tr>
-          <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+          <th colspan="5"><input st-search="" class="form-control" placeholder="filter ..." type="text"/></th>
         </tr>
         </thead>
         <tbody>

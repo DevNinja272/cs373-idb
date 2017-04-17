@@ -1,14 +1,15 @@
 'use strict';
 
 var myApp = angular.module('myApp', [
- 'ngRoute','smart-table',
+ 'ngRoute','smart-table', 'chart.js',
 ]);
 
 myApp.config(['$routeProvider',
      function($routeProvider) {
          $routeProvider.
              when('/', {
-                 templateUrl: '/static/partials/search.html',
+                 templateUrl: '/static/partials/splash.html',
+                 controller: 'SplashCtrl'
              }).
              when('/about', {
                  templateUrl: '../static/partials/about.html',
@@ -37,6 +38,10 @@ myApp.config(['$routeProvider',
              when('/degrees/:id', {
                  templateUrl: '../static/partials/degreeSpecific.html',
                  controller: 'DegreeSpecificCtrl'
+             }).
+            when('/smashdb', {
+                 templateUrl: '../static/partials/smashdb.html',
+                 controller: 'SmashdbCtrl'
              }).
              otherwise({
                  redirectTo: '/'

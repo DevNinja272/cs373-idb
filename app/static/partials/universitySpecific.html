@@ -20,11 +20,16 @@
 
 			<div class="col-md-2">
 				<h1>Degrees</h1>
-				<div ng-repeat="degree in results.degrees">
+				
+				<div ng-repeat="degree in results.degrees | limitTo:showMore ? results.degrees.length : 5">
 					<a ng-href="/#/degrees/{{degree['degree_id']}}"><span>{{ degree['degree_name'] }}</span></a>
 				</div>
+				<button class="btn btn-primary btn-md" ng-click="showMore = !showMore">
+				    <span ng-show="showMore">Show Less</span>
+				    <span ng-hide="showMore">Show More</span>
+				</button>
 			</div>
-
+			
 			<div class="row">
 				<iframe
 					 width="600"

@@ -7,17 +7,21 @@
 			<div class="col-md-4">
 				<h3></h3>
 				<div>Number of Private Schools Offered: {{results['num_private_offer']}}</div>
-				<div>2014 % Awarded in Private Schools: {{ results["num_percent_private"]}}</div>
+				<div>2014 % Awarded in Private Schools: {{ results["num_percent_private"]}}%</div>
 				<div>Number of Public Schools Offered: {{results["num_public_offer"]}}</div>
-				<div>2014 % Awarded in Public Schools: {{results['num_percent_private']}}</div>
+				<div>2014 % Awarded in Public Schools: {{results['num_percent_public']}}%</div>
 			</div>
  
 			<div class="col-md-2">
 				<h3>Universities</h3>
-				<div ng-repeat="university in results.universities">
+				<div ng-repeat="university in results.universities | limitTo:showMore ? results.degrees.length : 5">
 					<a ng-href="/#/universities/{{university['university_id']}}"><span>{{ university['university_name'] }}
 					</span></a>
 				</div>
+				<button class="btn btn-primary btn-md" ng-click="showMore = !showMore">
+				    <span ng-show="showMore">Show Less</span>
+				    <span ng-hide="showMore">Show More</span>
+				</button>
 			</div>
 		</div>
 	</div>
