@@ -1,7 +1,24 @@
 <div class="container">
 	<div class="row">
 		<div class="box">
-			   {{ results.name }}
+			<div class="col-md-8">
+				<h1>{{results["name"]}}</h1>
+			</div>
+			<div class="col-md-4">
+				<h3></h3>
+				<div>Number of Private Schools Offered: {{results['num_private_offer']}}</div>
+				<div>2014 % Awarded in Private Schools: {{ results["num_percent_private"]}}</div>
+				<div>Number of Public Schools Offered: {{results["num_public_offer"]}}</div>
+				<div>2014 % Awarded in Public Schools: {{results['num_percent_private']}}</div>
+			</div>
+ 
+			<div class="col-md-2">
+				<h3>Universities</h3>
+				<div ng-repeat="university in results.universities">
+					<a ng-href="/#/universities/{{university['university_id']}}"><span>{{ university['university_name'] }}
+					</span></a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

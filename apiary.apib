@@ -45,7 +45,8 @@ Gives back information for a single university plus its state and degrees.
             "num_students": 50000,
             "website_URL": "http://utexas.edu",
             "academic_cost": 5000,
-            "state": {"state_id":0, "state_name": "Texas"},
+            "state_id":0, 
+            "state_name": "Texas",
             "degrees": [
                 {"degree_id":0, "degree_name":"Education"},
                 {"degree_id":1, "degree_name":"Engineering"}
@@ -126,9 +127,9 @@ Gives back information for a single state plus a list of its universities.
         ]
 
 
-## A Single State [/degrees/{id}]
+## A Single Degree [/degrees/{id}]
 
-### List a state with the given {id} [GET]
+### List a degree with the given {id} [GET]
 Gives back information for a single degree plus a list of universities that offer that degree.
 
 + Response 200 (application/json)
@@ -145,3 +146,15 @@ Gives back information for a single degree plus a list of universities that offe
                 {"university_id":0, "university_name":"St. Edward's"}
                 ]
             }
+            
+## Search [/search]
+
+### Search based on given query parameters [GET]
+Give ordered search results based on given query parameters.
+
++ Response 200 (application/json)
+
+        [
+            {"name": "Texas", "type": "states", "id": 1, "matching_words": ["Texas"], "match_type": "and"},
+            {"name": "Texas State University", "type": "universities", "id": 34, "matching_words": ["Texas"], "match_type": "and"}
+        ]

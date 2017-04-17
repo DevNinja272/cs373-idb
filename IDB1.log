@@ -1,0 +1,500 @@
+commit 6a1f38c14db7bc18c536061c01723aa42a69d00e
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Thu Mar 23 10:37:36 2017 -0500
+
+    front end refactoring
+
+commit edcd646bb225d68772e2bcf0155d6cfc77ad11a3
+Merge: 9847b10 d6f0556
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Thu Mar 23 10:22:18 2017 -0500
+
+    fixed conflict in merge
+
+commit d6f0556c5fdbd8a189903cd0a24db579dc81c6eb
+Merge: 408293b 55370ca
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Thu Mar 23 10:21:06 2017 -0500
+
+    Merge branch 'dev-back'
+
+commit 9847b10c3afa53068a533b1fcb671403a8c3518a
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Thu Mar 23 10:19:31 2017 -0500
+
+    updated database engine string
+
+commit 408293b89c948578959d18eb20f291696a806346
+Author: Ben P. Nguyen <ben.nguyen@utexas.edu>
+Date:   Wed Mar 22 21:16:18 2017 -0500
+
+    Update README.md
+
+commit 52452cf06553c028cbafaf2913a0f7f9438fc2de
+Author: Ben Nguyen <ben.nguyen@utexas.edu>
+Date:   Wed Mar 22 21:15:36 2017 -0500
+
+    deleted unnecessary stuff and updated README
+
+commit 55370cae4edfdc246ba94786427bca468a397c4a
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Wed Mar 22 17:31:07 2017 -0500
+
+    Changed def test to def setUP in tests.py for database intialization
+
+commit a9e0d2ddc6202c994e3a64328dd45c949977ff81
+Author: Ben Nguyen <ben.nguyen@utexas.edu>
+Date:   Wed Mar 22 16:37:22 2017 -0500
+
+    fixed makefile and added .idea to gitignore
+
+commit 54373d2c877a0d3afa30212f237f868b3318649b
+Merge: 9e11cdb 1198881
+Author: Ben Nguyen <ben.nguyen@utexas.edu>
+Date:   Wed Mar 22 16:31:20 2017 -0500
+
+    Merge remote-tracking branch 'origin/dev-back'
+
+commit 9e11cdbdbbd52da48185370324f7cfbf4ad6d223
+Merge: 0a671f3 7aaf571
+Author: Ben Nguyen <ben.nguyen@utexas.edu>
+Date:   Wed Mar 22 16:29:34 2017 -0500
+
+    Merge remote-tracking branch 'origin/dev-front'
+
+commit 1198881fcbb9052fbb04ac292b3312fe98363761
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Wed Mar 22 14:45:56 2017 -0500
+
+    Fixed tab errors in makefile
+
+commit 0a671f3435d5f10e1861a0d7d07d8583e14501d7
+Author: seanyusa <seanyusa@gmail.com>
+Date:   Wed Mar 22 14:35:15 2017 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 5d2b58e272ba6f01ac793df1368435beb795f2e7
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Wed Mar 22 14:34:11 2017 -0500
+
+    Debugged tests.py
+
+commit 7aaf571b64b8b94214a6f5053c2d628ecb8f64a4
+Author: Jinwook Kim <jininja7@gmail.com>
+Date:   Wed Mar 22 14:23:47 2017 -0500
+
+    updated jin's desc to format about page better
+
+commit af491a606c495cadc310d951fe36babf5ae7500a
+Author: Jinwook Kim <jininja7@gmail.com>
+Date:   Wed Mar 22 14:20:34 2017 -0500
+
+    added Jin's desc
+
+commit 5f94f4375f3f3c2a9a5f49a88973103f3cbb7ba7
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Wed Mar 22 14:02:29 2017 -0500
+
+    Fixed test case
+
+commit 02d47a40e5a4bf6d22a9cba7e66685030426e1f7
+Author: Ben Nguyen <ben.nguyen@utexas.edu>
+Date:   Wed Mar 22 13:57:22 2017 -0500
+
+    Added all descriptions but jin
+
+commit 84f6846a2a24a235fb8843406d615cd7e4bd1fa1
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Wed Mar 22 13:19:52 2017 -0500
+
+    Fixed indentation error on travis file
+
+commit cc06da34e355d3f5dd7bcd3fe8a2c17b6c875afe
+Author: Ben Nguyen <ben.nguyen@utexas.edu>
+Date:   Wed Mar 22 13:18:34 2017 -0500
+
+    Added font files
+
+commit c5cab9e583e5ab68341a6bac3a74b4ce2498ccc6
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Wed Mar 22 13:16:13 2017 -0500
+
+    Modified travis file
+
+commit b34a79d268a4523b65e49dcd18e6e4b35aa76df0
+Author: Ben Nguyen <ben.nguyen@utexas.edu>
+Date:   Wed Mar 22 13:14:59 2017 -0500
+
+    Refactoring and formmating
+
+commit 6622dc3b1f3df0b7a6b0649c99a454d2b782600d
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Wed Mar 22 13:09:20 2017 -0500
+
+    updated test.py to tests.py in makefile
+
+commit 9a714058331b4a80388741b2490f09715e25a9c4
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Wed Mar 22 13:08:25 2017 -0500
+
+    Renamed test.py to tests.py
+
+commit da4795961c9fb8bdfb3c3ec46a53a3bd827b8218
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Wed Mar 22 13:06:48 2017 -0500
+
+    Added .travis.yml file for backend
+
+commit 73c13753e7b84b9329e67c17bf83beea5a3eda56
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Wed Mar 22 13:01:02 2017 -0500
+
+    created makefile
+
+commit d31d8e7db9c479e93ed0ca9c6e39716181ef46fc
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Wed Mar 22 12:56:20 2017 -0500
+
+    Renamed model.py to models.py and moved models.html from app to idb directory
+
+commit 16607fe28abfa58778b9a100b4cce4a9cf358ad1
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Wed Mar 22 12:48:30 2017 -0500
+
+    added two more unit tests
+
+commit 69354df0a3d13d8fedf7588890efd06b5e7cc0fc
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Wed Mar 22 12:46:43 2017 -0500
+
+    Ran pydoc on model.py to create model.html file
+
+commit 56fab579052e8d299a67bab533a896284ead0acd
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Wed Mar 22 12:43:39 2017 -0500
+
+    updated comments location in model.py
+
+commit 0cf34b0438d44584eac3cefd84ab6d62d71143c7
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Wed Mar 22 12:40:47 2017 -0500
+
+    removed extra comments from model.py
+
+commit 069af8a090efa281145e13718e9218205d8e7f32
+Author: Jinwook Kim <jinwook@cs.utexas.edu>
+Date:   Wed Mar 22 11:01:10 2017 -0500
+
+    prettified about page
+
+commit 27e729cf85651e723dddd575a2d9575ed05da1f7
+Author: Jinwook Kim <jinwook@cs.utexas.edu>
+Date:   Wed Mar 22 10:21:55 2017 -0500
+
+    added new content to about page and testing travis
+
+commit 9329da02633fe50980406f0b836751661a98632e
+Author: Sean Wang <seanyusa@gmail.com>
+Date:   Wed Mar 22 08:14:08 2017 -0500
+
+    Updated UML
+
+commit 330c5e90814fcf98b2f6623d22313d85f92a0d58
+Author: Jinwook Kim <jininja7@gmail.com>
+Date:   Mon Mar 20 23:06:40 2017 -0500
+
+    filled in most of the about page
+
+commit ae4205d142c0919f61a0532acc1f2d2eb5d1251d
+Author: Ben P. Nguyen <ben.nguyen@utexas.edu>
+Date:   Mon Mar 20 21:25:41 2017 -0500
+
+    http to https
+
+commit d3fa9e976954055daca428ff32e517bb8ecaded6
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Mon Mar 20 18:40:52 2017 -0500
+
+    Added comments explaining the code of the Degree and DegreeUniversities model
+
+commit 1b6a7304d730fa99ff2e014aa5afe9356a789e0f
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Mon Mar 20 18:34:38 2017 -0500
+
+    Added comments explaining the code in the State model
+
+commit 1bc8d08c3e85fae3eac6c7ee9f08591c9fd3f2be
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Mon Mar 20 18:33:14 2017 -0500
+
+    Finished state and degree specifics
+
+commit b15c38967070132485d73623f6c5e50a971aafe9
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Mon Mar 20 18:27:30 2017 -0500
+
+    Added comments explaning the code of the University model
+
+commit 4a2261749f8a728bf8ecfe775b4cf86dc44b5096
+Author: Faisal <aldilaff@gmail.com>
+Date:   Mon Mar 20 18:06:12 2017 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit c2aaa2ef78c4132edf72b00c0bdfc2dc9f499ab8
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Mon Mar 20 17:49:50 2017 -0500
+
+    Finished university specific page
+
+commit 6d699ea8bfb5b96166d20726639efc74eee2982b
+Merge: 35ad993 d42bb91
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Mon Mar 20 17:12:30 2017 -0500
+
+    Merging master with front
+
+commit 35ad993bc4f3951f9bee4a8f8a72c01914961640
+Merge: 16f2a33 ec7ed46
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 17:08:17 2017 -0500
+
+    Merge branch 'dev-back'
+
+commit 16f2a33a1a8e77edcba7fa158882142f82d11ea4
+Author: Jinwook Kim <jinwook.kim@utexas.edu>
+Date:   Mon Mar 20 17:04:00 2017 -0500
+
+    Apiary
+
+commit d42bb91a4e21d5d97fa15264d4f8243e4aacf090
+Author: Jinwook Kim <jininja7@gmail.com>
+Date:   Mon Mar 20 16:58:45 2017 -0500
+
+    logos are working
+
+commit ec7ed462a6f80ad75438c502b623b697c311da7e
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 16:58:31 2017 -0500
+
+    Added degreesuniversities test
+
+commit 8f4315d0d8c5477ead4581b69267b6313669c501
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 16:50:55 2017 -0500
+
+    Renamed relationship ends
+
+commit aa18470fde37a40753e4cd238a9b2668b6b827c6
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 16:47:08 2017 -0500
+
+    Added degree tests and changed degree datatypes
+
+commit f4192b86267b707af5b619b01870df0e9198633c
+Author: Jinwook Kim <jininja7@gmail.com>
+Date:   Mon Mar 20 16:39:48 2017 -0500
+
+    factory added and connected with controller
+
+commit 8ae8bd7c1a5e964f2b320ec111ae95d6f0d7fb6c
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 16:03:18 2017 -0500
+
+    Rename degreesrelationship to DegreesUniversities
+
+commit 088c58f54dfceda2cc5b399d7ddf6d1ee7c19f1c
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 16:00:18 2017 -0500
+
+    Renamed degrees to degree
+
+commit eac49b9dd6a70bbc72be3ba5e63157be25aa0cfe
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 15:54:33 2017 -0500
+
+    Added 3 state tests
+
+commit da4d488e85c3ac52f7057f2c30e9a2ac55dde4c2
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 15:47:58 2017 -0500
+
+    Added 3 university tests
+
+commit 128c8483739bbf30ebe0a23537246549601a87e6
+Merge: 16e8e9c 55a4cc7
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 15:23:35 2017 -0500
+
+    Merge branch 'dev-back' of https://github.com/JinwookKim/cs373-idb into dev-back
+
+commit 16e8e9cb09f82b07756f2aff80a5e5a86b4ae5a5
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 15:23:09 2017 -0500
+
+    Added state to university relationship
+
+commit a26e2cb5f623a02abeb2069ac37b9a357208f34c
+Author: Jinwook Kim <jininja7@gmail.com>
+Date:   Mon Mar 20 15:22:48 2017 -0500
+
+    fetch isn't working
+
+commit 55a4cc7a874cc9adfe4e2e2aabbabff0417a26e3
+Author: Sean Wang <seanyusa@gmail.com>
+Date:   Mon Mar 20 15:13:44 2017 -0500
+
+    UML Diagram
+
+commit 5ec52f73202c7903109af2fbadb88fa39fa20388
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 14:52:37 2017 -0500
+
+    changed model class names to lower case and updated degrees realtionship
+
+commit ea62797181fb533b4ed0ba36fb10f80d467d7be8
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 14:45:19 2017 -0500
+
+    changed completion_rate to academic_cost
+
+commit 9c4b12317788bee04e3bc2f5166299d604b9ab24
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 14:41:34 2017 -0500
+
+    overwrote repr for Univesrity
+
+commit cbaebea9f31686a1426035970431bc7711d1cb0e
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 14:39:48 2017 -0500
+
+    overwrote repr for State
+
+commit cacffd03fe4171b54607f0c5c6a739d4959772f8
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 14:37:02 2017 -0500
+
+    overwrote repr for Degrees
+
+commit 75d0e7d657fe7a75d3259d92176f0c91c840b46e
+Author: Faisal Aldilaijan <faisald@utexas.edu>
+Date:   Mon Mar 20 14:33:17 2017 -0500
+
+    added model for DegreesInfo to show information between degrees and universities
+
+commit 4d3475486921aaa4218ba79c78f991ab97f2e54b
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Mon Mar 20 14:24:29 2017 -0500
+
+    filled out degree table with static data
+
+commit 9e9fb0be859bb22aaec44800c041de207798caee
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Mon Mar 20 13:10:13 2017 -0500
+
+    Added possible test cases to be filled out later
+
+commit 16992d8e481592e5afdea75e20a0a0572c6584f9
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Mon Mar 20 12:54:45 2017 -0500
+
+    Corrected column types in models.py
+
+commit 01462e402d11809819a497383f66be1e9c4eae31
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Mon Mar 20 12:35:47 2017 -0500
+
+    fixed merging
+
+commit 697a2e602b086b2fc6cda1c852fd5ed57491245b
+Merge: 9be0760 87a0504
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Mon Mar 20 12:32:09 2017 -0500
+
+    fixing merge
+
+commit 87a0504806f0dcd5b68c45db46199c1e49e1fd95
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Mon Mar 20 12:28:25 2017 -0500
+
+    filled out states table with static data
+
+commit 9be0760b1a2962473a2dc37103c2be6074a3c6a9
+Author: Jinwook Kim <jininja7@gmail.com>
+Date:   Mon Mar 20 11:53:42 2017 -0500
+
+    started on state table
+
+commit 816f0aee24a31a00c098750dca5bbbf7afa12721
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Mon Mar 20 11:25:57 2017 -0500
+
+    filled university table with static data
+
+commit 77442f8e6a7d2e00ad89e68d0081fcadd49aba41
+Author: Ben P. Nguyen <ben.nguyen@utexas.edu>
+Date:   Sun Mar 19 21:34:07 2017 -0500
+
+    Update README.md
+
+commit 90b3f77ecee11fa0214680496b74ef733a8cf99a
+Author: Jinwook Kim <jininja7@gmail.com>
+Date:   Sun Mar 19 20:46:00 2017 -0500
+
+    changes typos
+
+commit dcd05268d89d38148413f67c68ab5d9d178eed40
+Author: Ben Nguyen <ben.nguyen@utexas.edu>
+Date:   Sat Mar 11 22:02:26 2017 -0600
+
+    Added routing navigation
+
+commit d6fb4e1a8f0e710364cc346ddae68aca2e2fc0d8
+Merge: f003af0 f203d05
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Sat Mar 11 17:05:37 2017 -0600
+
+    iMerge branch 'dev-back' into dev-front
+
+commit f003af09d4468f1bc9a7bd64d1e4eed21581cd27
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Sat Mar 11 16:49:11 2017 -0600
+
+    Created other partial html files
+
+commit f203d0529ce6511b4399d8623e550c91b005d76a
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Sat Mar 11 16:41:44 2017 -0600
+
+    Added base models for later use
+
+commit 5962c2379f8251af1f69542f57ed2c89e2b7fb3b
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Sat Mar 11 16:33:00 2017 -0600
+
+    Added code to app.py to run index.html
+
+commit 02609cd44c2c83a0523372bc619f4940f6fcbd0b
+Author: Ahmed Al Nabil <nabilthenabil@gmail.com>
+Date:   Sat Mar 11 16:28:23 2017 -0600
+
+    Created Base BackEnd Python Files
+
+commit 783cc858c0eb59dd1b77e6c97c6725210512781f
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Fri Mar 10 17:49:09 2017 -0600
+
+    started on index and about page
+
+commit bc61f7fa528d700f7c62026691d82411660961a1
+Author: Ben Nguyen <bpn252@cs.utexas.edu>
+Date:   Fri Mar 10 17:15:31 2017 -0600
+
+    set up initial files/folders
+
+commit b263a643c2b19c95d5da7b6adbf7a74e28a35a4f
+Author: Jinwook Kim <jininja7@gmail.com>
+Date:   Wed Mar 8 17:29:52 2017 -0600
+
+    Initial commit

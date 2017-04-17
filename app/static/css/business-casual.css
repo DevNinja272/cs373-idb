@@ -36,6 +36,14 @@ hr {
     border-color: #999999;
 }
 
+.st-sort-ascent:before{
+content: '\25B2';
+}
+
+.st-sort-descent:before{
+content: '\25BC';
+}
+
 .brand,
 .address-bar {
     display: none;
