@@ -115,7 +115,7 @@ def runtests():
     proc = 'error. Check console'
   return str(proc) 
 
-@app.route('/search',methods=['GET'])
+@app.route('/api/search',methods=['GET'])
 def search():
   query_params = request.args.to_dict()
   print(query_params['query'])
