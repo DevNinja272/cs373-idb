@@ -129,7 +129,7 @@ def search():
   results = []
   result_set = set()
   for combo in combos:
-    print(combo)
+    # print(combo)
     for result in matching(combo):
       if len(combo) == len(words):
         result['match_type'] = 'and'

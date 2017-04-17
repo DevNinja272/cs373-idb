@@ -316,20 +316,26 @@ class TestModels (TestCase):
         self.assertIn("states", result) 
 
     def test_search_1(self):
-        result = self.app.get('/search?query=tx')
+        result = self.app.get('/api/search?query=tx')
         self.assertEqual(result.status_code, 200) 
 
     def test_search_2(self):
-        result = self.app.get('/search?query=texas')
+        result = self.app.get('/api/search?query=texas')
         self.assertEqual(result.status_code, 200) 
 
     def test_search_3(self):
-        result = self.app.get('/search?query=CA')
+        result = self.app.get('/api/search?query=CA')
         self.assertEqual(result.status_code, 200)
 
     def test_search_4(self):
-        result = self.app.get('/search?query=Theology')
+        result = self.app.get('/api/search?query=Theology')
         self.assertEqual(result.status_code, 200)
+
+    def test_search_4(self):
+        result = self.app.get('/api/search')
+        result = json.loads(result.data.decode('utf-8'))
+        self.assertIn("Error", result)
+
 
     
 
