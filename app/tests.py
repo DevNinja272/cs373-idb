@@ -256,22 +256,30 @@ class TestModels (TestCase):
     def test_get_single_uni_1(self):
         session = self.sess()
 
-        university = University(name='Test University', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
-        session.add(university)
+        university_1 = University(name='Test University 1', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        state_1 = State(name='Alabama', region='South', average_public_cost=5, average_private_cost=109, number_colleges=1)
+        university_1.state = state_1
+        session.add(university_1)
+        session.add(state_1)
         session.commit()
+
 
         result = self.app.get('/api/universities/'+str(university.id))
         self.assertEqual(result.status_code, 200) 
 
-        session.delete(university)
+        session.delete(university_1)
+        session.delete(state_1)
         session.commit()
         
 
     def test_get_single_uni_2(self):
         session = self.sess()
 
-        university = University(name='Test University', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
-        session.add(university)
+        university_1 = University(name='Test University 1', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        state_1 = State(name='Alabama', region='South', average_public_cost=5, average_private_cost=109, number_colleges=1)
+        university_1.state = state_1
+        session.add(university_1)
+        session.add(state_1)
         session.commit()
 
         result = self.app.get('/api/universities/'+str(university.id))
@@ -280,35 +288,44 @@ class TestModels (TestCase):
         self.assertIn("academic_cost", result["university"])
         self.assertIn("state_name", result["university"])
 
-        session.delete(university)
+        session.delete(university_1)
+        session.delete(state_1)
         session.commit()
 
     def test_get_all_unis_1(self):
         session = self.sess()
 
-        university = University(name='Test University', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
-        session.add(university)
+        university_1 = University(name='Test University 1', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        state_1 = State(name='Alabama', region='South', average_public_cost=5, average_private_cost=109, number_colleges=1)
+        university_1.state = state_1
+        session.add(university_1)
+        session.add(state_1)
         session.commit()
 
         result = self.app.get('/api/universities')
         self.assertEqual(result.status_code, 200) 
 
-        session.delete(university)
+        session.delete(university_1)
+        session.delete(state_1)
         session.commit()
 
 
     def test_get_all_unis_2(self):
         session = self.sess()
 
-        university = University(name='Test University', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
-        session.add(university)
+        university_1 = University(name='Test University 1', num_students=3, is_public=True, website_URL='http://test.safsfa', academic_cost=34564)
+        state_1 = State(name='Alabama', region='South', average_public_cost=5, average_private_cost=109, number_colleges=1)
+        university_1.state = state_1
+        session.add(university_1)
+        session.add(state_1)
         session.commit()
 
         result = self.app.get('/api/universities')
         result = json.loads(result.data.decode('utf-8'))
         self.assertIn("universities", result)
 
-        session.delete(university)
+        session.delete(university_1)
+        session.delete(state_1)
         session.commit()
 
     def test_get_single_degree_1(self):
