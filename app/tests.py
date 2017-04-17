@@ -312,44 +312,118 @@ class TestModels (TestCase):
         session.commit()
 
     def test_get_single_degree_1(self):
+        session = self.sess()
+
+        degree = Degree(name='Degree', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
+        session.add(degree)
+        session.commit()
+        
         result = self.app.get("api/degrees/1")
         self.assertEqual(result.status_code, 200) 
 
+        session.delete(degree)
+        session.commit()
+
+        
+
     def test_get_single_degree_2(self):
+        session = self.sess()
+
+        degree = Degree(name='Degree', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
+        session.add(degree)
+        session.commit()
+
         result = self.app.get("api/degrees/1")
         result = json.loads(result.data.decode("utf-8"))
         self.assertIn("degree", result)
         self.assertIn("universities", result["degree"])
         self.assertIn("id", result["degree"])
 
+        session.delete(degree)
+        session.commit()
+
     def test_get_all_degrees_1(self):
+        session = self.sess()
+
+        degree = Degree(name='Degree', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
+        session.add(degree)
+        session.commit()
+
         result = self.app.get('/api/degrees')
         self.assertEqual(result.status_code, 200) 
 
+        session.delete(degree)
+        session.commit()
+
     def test_get_all_degrees_2(self):
+        session = self.sess()
+
+        degree = Degree(name='Degree', num_public_offer=3, num_private_offer=3, num_percent_public=4.03, num_percent_private=3.234)
+        session.add(degree)
+        session.commit()
+
         result = self.app.get('/api/degrees')
         result = json.loads(result.data.decode('utf-8'))
         self.assertIn("degrees", result) 
 
+        session.delete(degree)
+        session.commit()
+
     def test_get_single_state_1(self):
+        session = self.sess()
+
+        state = State(name='Alabama', region='South', average_public_cost=5, average_private_cost=109, number_colleges=1)
+        session.add(state)
+        session.commit()
+
         result = self.app.get("api/states/1")
         self.assertEqual(result.status_code, 200) 
 
+        session.delete(state)
+        session.commit()
+
     def test_get_single_state_2(self):
+        session = self.sess()
+
+        state = State(name='Alabama', region='South', average_public_cost=5, average_private_cost=109, number_colleges=1)
+        session.add(state)
+        session.commit()
+
         result = self.app.get("api/states/1")
         result = json.loads(result.data.decode("utf-8"))
         self.assertIn("state", result)
         self.assertIn("universities", result["state"])
         self.assertIn("id", result["state"])
 
+        session.delete(state)
+        session.commit()
+
     def test_get_all_states_1(self):
+        session = self.sess()
+
+        state = State(name='Alabama', region='South', average_public_cost=5, average_private_cost=109, number_colleges=1)
+        session.add(state)
+        session.commit()
+
         result = self.app.get('/api/states')
         self.assertEqual(result.status_code, 200) 
 
+        session.delete(state)
+        session.commit()
+
     def test_get_all_states_2(self):
+        session = self.sess()
+
+        state = State(name='Alabama', region='South', average_public_cost=5, average_private_cost=109, number_colleges=1)
+        session.add(state)
+        session.commit()
+
         result = self.app.get('/api/states')
         result = json.loads(result.data.decode('utf-8'))
         self.assertIn("states", result) 
+
+        session.delete(state)
+        session.commit()
 
     def test_search_1(self):
         result = self.app.get('/api/search?query=tx')
