@@ -6,6 +6,7 @@ from models import State, University, Degree, DegreesUniversities
 from config import db_config
 import subprocess
 import os
+import requests
 from itertools import combinations
 
 app = Flask(__name__)
@@ -191,6 +192,33 @@ def matching(word_list):
     results.append(result_entry)
 
   return results
+
+@app.route('/smash/participants',methods=['GET'])
+def get_participants():
+  url = "http://smashdb.me/api/participants"
+  response = requests.get(url)
+  jsonData = response.json()
+
+  return jsonify(jsonData)
+
+@app.route('/smash/tournaments',methods=['GET'])
+def get_tournaments():
+  url = "http://smashdb.me/api/tournaments"
+  response = requests.get(url)
+  jsonData = response.json()
+
+  return jsonify(jsonData)
+
+@app.route('/smash/characters',methods=['GET'])
+def get_characters():
+  url = "http://smashdb.me/api/characters"
+  response = requests.get(url)
+  jsonData = response.json()
+
+  return jsonify(jsonData)
+
+
+  
 
 if __name__ == "__main__":
     app.run(debug=True)
