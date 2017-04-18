@@ -2,40 +2,29 @@ myApp.factory('PFactory', function($http) {
 
 return {
   fetchP: function () {
-    return $http.get('http://smashdb.me/api/participants')
-  },
-
-  fetchPAt: function (id) {
-    return $http.get('http://smashdb.me/api/participant/ + id')
+    return $http.get('/smash/participants')
   },
 
   fetchT: function () {
-    return $http.get('http://smashdb.me/api/tournaments')
-  },
-
-  fetchTAt: function (id) {
-    return $http.get('http://smashdb.me/api/tournament/' + id)
+    return $http.get('/smash/tournaments')
   },
 
   fetchC: function () {
-    return $http.get('http://smashdb.me/api/characters')
-  },
-
-  fetchCAt: function (id) {
-    return $http.get('http://smashdb.me/api/character/' + id)
+    return $http.get('/smash/characters')
   },
 };
 });
+
 
 
 myApp.factory('UniversityFactory', function($http) { 
 
 return {
   fetch: function () {
-    return $http.get('http://www.collegedb.me/api/universities')
+    return $http.get('/api/universities')
   },
   fetchAt: function (id) {
-    return $http.get('http://www.collegedb.me/api/universities/' + id)
+    return $http.get('/api/universities/' + id)
   },
 };
 });
@@ -44,10 +33,10 @@ myApp.factory('StateFactory', function($http) {
 
   return {
     fetch: function () {
-      return $http.get('http://www.collegedb.me/api/states');
+      return $http.get('/api/states');
     },
     fetchAt: function (id) {
-      return $http.get('http://www.collegedb.me/api/states/' + id);
+      return $http.get('/api/states/' + id);
     },
   };
 });
@@ -56,10 +45,10 @@ myApp.factory('DegreeFactory', function($http) {
 
   return {
     fetch: function () {
-      return $http.get('http://www.collegedb.me/api/degrees');
+      return $http.get('/api/degrees');
     },
     fetchAt: function (id) {
-      return $http.get('http://www.collegedb.me/api/degrees/' + id);
+      return $http.get('/api/degrees/' + id);
     },
   };
 });
