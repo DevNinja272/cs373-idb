@@ -1,32 +1,39 @@
 myApp.factory('PFactory', function($http) { 
 
-return {
-  fetchP: function () {
-    return $http.get('/smash/participants')
-  },
+  return {
+    fetchP: function () {
+      return $http.get('/smash/participants')
+    },
 
-  fetchT: function () {
-    return $http.get('/smash/tournaments')
-  },
+    fetchT: function () {
+      return $http.get('/smash/tournaments')
+    },
 
-  fetchC: function () {
-    return $http.get('/smash/characters')
-  },
-};
+    fetchC: function () {
+      return $http.get('/smash/characters')
+    },
+  };
 });
 
+myApp.factory('SearchFactory', function($http) { 
 
+  return {
+    fetch: function (param) {
+      return $http.get('/api/search' + param)
+    },
+  };
+});
 
 myApp.factory('UniversityFactory', function($http) { 
 
-return {
-  fetch: function () {
-    return $http.get('/api/universities')
-  },
-  fetchAt: function (id) {
-    return $http.get('/api/universities/' + id)
-  },
-};
+  return {
+    fetch: function () {
+      return $http.get('/api/universities')
+    },
+    fetchAt: function (id) {
+      return $http.get('/api/universities/' + id)
+    },
+  };
 });
 
 myApp.factory('StateFactory', function($http) { 

@@ -10,46 +10,42 @@
 					</div>
 				</div>
 				<br>
-				<div id="carousel-example-generic" class="carousel slide">
-					<h5 class="brand-name">Where will you study?</h5>
 
-					<!-- Indicators -->
-					<ol class="carousel-indicators hidden-xs">
-						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="3"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+				<!-- Wrapper for Search Table -->
+				<table st-table="displayedCollection" st-safe-src="results" class="table table-striped table-hover table-mc-light-blue">
+					<thead>
+						<tr>
+							<th style="cursor:pointer" st-sort="name">Name</th>
+							<th style="cursor:pointer" st-sort="type">Type</th>
+							<th style="cursor:pointer" st-sort="match_type">Match Type</th>
+						</tr>
+						<tr>
+							<th colspan="3"><input st-search="" class="form-control" placeholder="filter ..." type="text"/></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="result in displayedCollection">
+								<!-- If block -->
+								<td ng-if="result.type == 'states'" align="left"><a ng-href="/#/states/{{result.id}}" >{{ result.name }}</td>
+							
+								<!-- Your Else Block -->
+								<td ng-if="result.type == 'universities'" align="left"><a ng-href="/#/universities/{{result.id}}" >{{ result.name }}</td>
+							
+							<td align="left">{{ result["type"] }}</td>
+							<td align="left">{{ result["match_type"] }}</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="5" class="text-center">
+								<div st-pagination="" st-items-by-page="itemsByPage"></div>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
 
-					</ol>
-
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner">
-						<div class="item active">
-							<img class="img-responsive img-full" src="static/img/slide1.jpg" alt="">
-						</div>
-						<div class="item">
-							<img class="img-responsive img-full" src="static/img/slide2.jpg" alt="">
-						</div>
-						<div class="item">
-							<img class="img-responsive img-full" src="static/img/slide3.jpg" alt="">
-						</div>
-						<div class="item">
-							<img class="img-responsive img-full" src="static/img/slide4.jpg" alt="">
-						</div>
-						<div class="item">
-							<img class="img-responsive img-full" src="static/img/slide5.jpg" alt="">
-						</div>
-					</div>
-
-				</div>
+			
 			</div>
 		</div>
 	</div>
 </div>
-
-<script>
-$('.carousel').carousel({
-        interval: 3000 //changes the speed
-    })
-</script>
