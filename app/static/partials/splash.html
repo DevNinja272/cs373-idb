@@ -25,12 +25,9 @@
 					</thead>
 					<tbody>
 						<tr ng-repeat="result in displayedCollection">
-								<!-- If block -->
-								<td ng-if="result.type == 'states'" align="left"><a ng-href="/#/states/{{result.id}}" >{{ result.name }}</td>
-							
-								<!-- Your Else Block -->
-								<td ng-if="result.type == 'universities'" align="left"><a ng-href="/#/universities/{{result.id}}" >{{ result.name }}</td>
-							
+							<td ng-if="result.type == 'states'" align="left"><a ng-href="/#/states/{{result.id}}" >{{ result.name }}</td>
+							<td ng-if="result.type == 'universities'" align="left"><a ng-href="/#/universities/{{result.id}}" >{{ result.name }}</td>
+							<td ng-if="result.type == 'degrees'" align="left"><a ng-href="/#/degrees/{{result.id}}" >{{ result.name }}</td>
 							<td align="left">{{ result["type"] }}</td>
 							<td align="left">{{ result["match_type"] }}</td>
 						</tr>
@@ -44,7 +41,7 @@
 					</tfoot>
 				</table>
 
-			
+
 			</div>
 		</div>
 	</div>
