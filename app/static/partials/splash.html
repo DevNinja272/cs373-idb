@@ -6,7 +6,7 @@
 				<div style="margin-top:15px" class="input-group input-group-lg">
 					<input type="text" ng-model="searchString" class="form-control" placeholder="Where Will You Study?" aria-describedby="sizing-addon1">
 					<div class="input-group-btn">
-						<button type="submit" class="btn btn-primary btn-lg" ng-click="stringSearch(searchString)">Search</button>
+						<button type="submit" class="btn btn-primary btn-lg" ng-keyup="$event.charCode==13 && stringSearch(searchString)"  ng-click="stringSearch(searchString)">Search</button>
 					</div>
 				</div>
 				<br>

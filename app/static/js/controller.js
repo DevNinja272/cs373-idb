@@ -267,10 +267,10 @@ myApp.controller('AboutCtrl',
             ben = data[3]['author'];
             ald = data[4]['author'];
 
-            github[sean.login].issues = 6
-            github[jin.login].issues = 6
-            github[aye.login].issues = 6
-            github[ben.login].issues = 8
+            github[sean.login].issues = 10
+            github[jin.login].issues = 9
+            github[aye.login].issues = 9
+            github[ben.login].issues = 12
             github[ald.login].issues = 5
             stats.issues = github[sean.login].issues + github[jin.login].issues + github[aye.login].issues + github[ben.login].issues + github[ald.login].issues; 
         });

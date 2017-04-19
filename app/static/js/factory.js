@@ -76,35 +76,35 @@ myApp.factory('AboutFactory', function() {
     login: 'JinwookKim',
     description: "Hi, I'm Jin. I am a senior at UT Austin. I like to learn foreign & programming languages.",
     responsibilities: 'Frontend', 
-    tests: 0
+    tests: 3
   },
   {
     name:'Ben Nguyen', 
     login: 'bpn252',
-    description: "I'm Ben, I am a junior and will hopefully graduate Fall 2017. I enjoy playing Rocket League and reading awful fanfiction.",
+    description: "I'm Ben, I am a junior and will hopefully graduate Fall 2017. I enjoy playing World of Warcraft and reading awful fanfiction.",
     responsibilities: 'Full Stack', 
-    tests: 0
+    tests: 3
   },
   {
     name: 'Faisal Aldilaijan', 
     login: 'aldilaff', 
     description: "My name is Faisal and I am a senior studying Computer Science at UT Austin. I like to bike around Austin",
     responsibilities:'Backend', 
-    tests: 5
+    tests: 8
   },
   {
     name:'Sean Wang',
     login: 'seanyusa',
     description: "I'm Sean and I am a Junior Computer Science major at the University of Texas at Austin. In my free time I like to hang out with friends, go swimming, and study the Bible.",
     responsibilities:'Backend',
-    tests: 5
+    tests: 8
   },
   {
     name: 'Ahmed Al Nabil', 
     login: 'ayenabil',
     description:"My name is Ahmed and I'm a sophomore studying computer science with a business certificate. Some of my interests include dancing, drawing, and going on adventures.",
     responsibilities: 'Backend', 
-    tests: 5
+    tests: 8
   },
   ];
   return {
